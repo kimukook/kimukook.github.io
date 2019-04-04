@@ -11,13 +11,13 @@ title: Research
 		&Delta;-DOGS is an efficient response surface method that efficiently and globally solves black-box, computationally expensive, nonconvex optimization problems. 
 		&Delta;-DOGS iteratively determines the minimum of the response surface where the minimizer of the truth function locates with the highest probability. 
 		This response surface s(x) models the relationship between input-output data and is constructed based on an interpolant p(x), which curves the fidelity of the underlying function, and an artificially generated uncertainty function e(x) which quantifies how uncertain of the regions that have not yet been explored.</p>
-	<p style="font-family: Arial; font-size: 17pt;"> 1.1 Dimension reduction of &Delta;-DOGS via Active Subspace Method </p>
+	<p style="font-family: Arial; font-size: 17pt;"> 1.1 Dimension reduction of &Delta;-DOGS via Active Subspace Method[1]: </p>
 	<p style="font-family: Times; font-size: 15pt;"> It is well-known that the derivative-free algorithm suffers deeply from the curse of dimensionality. 
 		The computational cost of the parameter space increases exponentially as the dimension of the input data increases. 
 		The dimension reduction techniques become an essential tool for derivative-free optimization to deal with moderate dimensional input parameter space. 
 		&Delta;-DOGS is suitable for the number of input parameteres relatively low, (say less than 10). 
 		Throught utilizing the dimension reduction of parameter space using Active Subspace Method, we extended the restriction of the number of design parameters from 10 to 20, which is also the restriction on the number of parameters that Bayesian optimization could possibly handle.
-	<p style="font-family: Arial; font-size: 17pt;"> 1.2 Safety learning algorithm S-DOGS: <b>S</b>afety-guaranteed <b>D</b>erivative-free <b>O</b>ptimization via <b>G</b>lobal <b>S</b>urrogates: </p>
+	<p style="font-family: Arial; font-size: 17pt;"> 1.2 Safety learning algorithm S-DOGS: <b>S</b>afety-guaranteed <b>D</b>erivative-free <b>O</b>ptimization via <b>G</b>lobal <b>S</b>urrogates[2]: </p>
 	<p style="font-family: Times; font-size: 15pt;"> In autonomous systems, it is often necessary to tune parameters in order to optimize towards a given objective. However, users often do not know in advance the region(s) of the otherwise feasible parameter space which, if explored during the optimization process, could lead to severe damage of the experimental system. 
 		For such problems, it is useful to develop algorithms that automatically minimize a given performance measure with unknown mathematical form, while assuring at each function evaluation that the safety of the system is guaranteed. 
 		In this work, a new algorithm is developed such that any user-supplied safety constraints are ensured to be satisfied during each step of the optimization process. 
