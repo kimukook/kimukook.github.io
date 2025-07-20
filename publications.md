@@ -27,7 +27,7 @@ permalink: /publications/
 <ul>
 {% for pub in pubs_sorted %}
   {% if pub.type == "conference" %}
-    <li><a href="{{ pub.url }}">{{ pub.title }}</a> ({{ pub.journal }}, {{ pub.date | date: "%Y" }})</li>
+    <li><a href="{{ pub.url }}">{{ pub.title }}</a> ({{ pub.conference }}, {{ pub.date | date: "%Y" }})</li>
   {% endif %}
 {% endfor %}
 </ul>
