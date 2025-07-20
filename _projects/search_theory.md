@@ -1,7 +1,7 @@
 ---
 layout: project
 title: "Search Theory for Moving Targets"
-permalink: /projects/search/
+permalink: /projects/search-theory/
 ---
 
 ![Search Trajectory](../assets/img/search-trajectory.png)
