@@ -10,11 +10,15 @@ layout: default
 {% endif %}
 
 {% if page.journal %}
-  <p><strong>Published in:</strong> {{ page.journal }}</p>
+  <p><strong>Published in:</strong> {{ page.journal }} ({% if page.date %}, {{ page.date | date: "%Y" }}){% endif %}</p>
 {% endif %}
 
 {% if page.conference %}
-  <p><strong>Published in:</strong> {{ page.conference }}</p>
+  <p><strong>Published in:</strong> {{ page.conference }} ({% if page.date %}, {{ page.date | date: "%Y" }}){% endif %}</p>
+{% endif %}
+
+{% if page.abstract %}
+  <p><strong>Abstract:</strong><br>{{ page.abstract }}</p>
 {% endif %}
 
 {% if page.externallink %}
@@ -23,8 +27,4 @@ layout: default
 
 {% if page.paperlink %}
   <p><a href="{{ page.paperlink }}" target="_blank">Read it now</a></p>
-{% endif %}
-
-{% if page.abstract %}
-  <p><strong>Abstract:</strong><br>{{ page.abstract }}</p>
 {% endif %}
