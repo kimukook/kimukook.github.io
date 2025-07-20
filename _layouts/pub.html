@@ -12,9 +12,9 @@ layout: default
   <p><strong>Published in:</strong> {{ page.journal }}</p>
 {% endif %}
 
-{% if page.permalink %}
-  <p><a href="{{ page.permalink }}" target="_blank">Official journal link (may require access)</a></p>
+{% if page.externallink %}
+  <p><a href="{{ page.externallink }}" target="_blank">Official journal link (may require access)</a></p>
 
 {% if page.paperlink %}
-  <p><a href="{{ page.permalink }}" target="_blank">Read it now</a></p>
+  <p><a href="{{ page.paperlink }}" target="_blank">Read it now</a></p>
 {% endif %}
