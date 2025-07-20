@@ -4,9 +4,7 @@ title: Projects
 permalink: /projects/
 ---
 
-<h1>Projects</h1>
+# Projects
 
-<ul>
-  <li><a href="/projects/search/">Search Theory for Moving Targets</a></li>
-  <li><a href="/projects/dfo/">Delaunay-based Derivative-Free Optimization</a></li>
-</ul>
+* [Search Theory for Moving Targets](/projects/search-theory/)
+* [Delaunay-based Derivative-Free Optimization](/projects/derivative-free/)
