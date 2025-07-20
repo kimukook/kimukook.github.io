@@ -13,5 +13,8 @@ layout: default
 {% endif %}
 
 {% if page.permalink %}
-  <p><a href="{{ page.permalink }}" target="_blank">Read the paper</a></p>
+  <p><a href="{{ page.permalink }}" target="_blank">Official journal link (may require access)</a></p>
+
+{% if page.paperlink %}
+  <p><a href="{{ page.permalink }}" target="_blank">Read it now</a></p>
 {% endif %}
