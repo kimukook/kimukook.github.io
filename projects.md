@@ -4,7 +4,17 @@ title: Projects
 permalink: /projects/
 ---
 
-# Projects
+<h1>Projects</h1>
 
-* [Search Theory for Moving Targets](/projects/search-theory/)
-* [Delaunay-based Derivative-Free Optimization](/projects/derivative-free-optimization/)
+<p>Below are some of the research projects I’ve been working on. Each project showcases multiple efforts and publications on a shared theme.</p>
+
+<ul>
+  {% for project in site.projects %}
+    <li>
+      <h3><a href="{{ project.url }}">{{ project.title }}</a></h3>
+      {% if project.summary %}
+        <p>{{ project.summary }}</p>
+      {% endif %}
+    </li>
+  {% endfor %}
+</ul>
