@@ -12,6 +12,10 @@ layout: default
   <p><strong>Published in:</strong> {{ page.journal }}</p>
 {% endif %}
 
+{% if page.conference %}
+  <p><strong>Published in:</strong> {{ page.conference }}</p>
+{% endif %}
+
 {% if page.externallink %}
   <p><a href="{{ page.externallink }}" target="_blank">Official journal link (may require access)</a></p>
 
