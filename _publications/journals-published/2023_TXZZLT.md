@@ -6,4 +6,5 @@ journal: "Journal of Hydrology"
 date: "2023-3-20"
 type: "journal-published"
 externallink: "https://www.sciencedirect.com/science/article/pii/S0022169423003773"
+permalink "/publications/2023_TXZZLT"
 ---
