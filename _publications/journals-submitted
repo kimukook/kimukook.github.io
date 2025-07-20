@@ -1,0 +1,14 @@
+---
+layout: pub
+title: "Probabilistic search for randomly moving targets using optimized time-periodic orbits of multiple search vehicles"
+author: "Muhan Zhao, and Thomas R. Bewley"
+journal: "Automatica"
+date: "2025-2-14"
+type: "journal-submitted"
+externallink: "http://robotics.ucsd.edu/pubs/ZB_periodic_search.pdf"
+permalink: "/publications/2025_ZB"
+abstract: "This paper addresses the problem of optimizing the motion of unmanned vehicles to search for a target, such as an animal, that is moving in an unpredictable manner, modeled as a diffusion process. In the absence of observations by the search vehicles, the probability density function (PDF) modeling the target’s possible whereabouts is taken as statistically stationary, localized to within some region of interest (ROI); such a model is valid for the “territory” or “range” of many animals, both predators and prey. The time evolution of this PDF is governed by a forced Fokker–Planck equation (fFPE), which balances
+(a) the suppression of the PDF in the vicinity of the (moving) search vehicles, due to their observations,
+(b) the diffusion of the PDF, proportional to the assumed average speed of the (randomly moving) target, and (c) the advection of the PDF, modeling the tendency of the target to remain within its ROI;
+note that the integral of the PDF remains unity until the location of the target is discovered by the search vehicles. A com- putational framework based on iterative computations of a relevant adjoint field is developed and implemented numerically. This facilitates gradient-based optimization of the feasible motions of the search vehicles, mathematically modeled as nonholo- nomic unicycles, to maximize the expected time-averaged rate of discovery of the target, based on the (evolving) PDF model of the target’s possible whereabouts, together with the paths of the search vehicles through this PDF. For simplicity in the subsequent (repeated) application of the optimized result, the trajectories of the search vehicles over the ROI are constrained by the optimization approach used in this work to be periodic in time."
+---
