@@ -10,11 +10,15 @@ layout: default
 {% endif %}
 
 {% if page.journal %}
-  <p><strong>Published in:</strong> {{ page.journal }} ({% if page.date %}{{ page.date | date: "%Y" }}){% endif %}</p>
+  {% if page.type == "journal-submitted" %}
+    <p><strong>Submitted to:</strong> {{ page.journal }}{% if page.date %} ({{ page.date | date: "%Y" }}){% endif %}</p>
+  {% else %}
+    <p><strong>Published in:</strong> {{ page.journal }}{% if page.date %} ({{ page.date | date: "%Y" }}){% endif %}</p>
+  {% endif %}
 {% endif %}
 
 {% if page.conference %}
-  <p><strong>Published in:</strong> {{ page.conference }} ({% if page.date %}{{ page.date | date: "%Y" }}){% endif %}</p>
+  <p><strong>Published in:</strong> {{ page.conference }}{% if page.date %} ({{ page.date | date: "%Y" }}){% endif %}</p>
 {% endif %}
 
 {% if page.abstract %}
