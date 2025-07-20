@@ -89,7 +89,7 @@ exclude:
 collections:
   publications:
     output: true
-    permalink: /projects/:name/
+    permalink: /publications/:name/
   projects:
     output: true
     permalink: /projects/:name/
