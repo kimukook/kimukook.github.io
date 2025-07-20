@@ -3,10 +3,15 @@ layout: default
 ---
 
 <h1>{{ page.title }}</h1>
-<p><strong>Authors:</strong> {{ page.authors }}</p>
-<p><strong>Published in:</strong> {{ page.journal }}</p>
-<p><a href="{{ page.link }}" target="_blank">Read the paper</a></p>
 
-<div class="pub-body">
-  {{ content }}
-</div>
+{% if page.author %}
+  <p><strong>Authors:</strong> {{ page.author }}</p>
+{% endif %}
+
+{% if page.journal %}
+  <p><strong>Published in:</strong> {{ page.journal }}</p>
+{% endif %}
+
+{% if page.permalink %}
+  <p><a href="{{ page.permalink }}" target="_blank">Read the paper</a></p>
+{% endif %}
