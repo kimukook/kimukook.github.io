@@ -2,8 +2,6 @@
 layout: project
 title: "Probabilistic Search Theory for Randomly Moving Targets"
 ---
-# Probabilistic Search Theory
-
 ## Motivation
 
 Search problems are common in both military and civilian domains—from rescuing missing persons, pets or wreckage like MH370 (non-evasive randomly moving targets), to tracking fugitives or foraging animals (evasive randomly moving targets). Unfortunately, many traditional methods are limited in adaptability and struggle in dynamic or uncertain environments. **Figure 1a and 1b** below showcase the real-world examples illustrating these challenges, often resorting to predetermined or exhaustive sweeps.
@@ -42,8 +40,9 @@ searchers tasked with locating an unseen, randomly moving target, whose motion m
 
 ### Modeling Target Behavior
 
+
 **Assumption**
-PDF ss in the absence of searchers
+The probability density function of target's position (hereafter referred to as PDF) is statistically stationary in the absence of searchers. 
 
 **SDE**
 
