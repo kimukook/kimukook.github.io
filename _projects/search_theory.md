@@ -2,14 +2,11 @@
 layout: default
 title: "Probabilistic Search Theory for Randomly Moving Targets"
 ---
-# Search Theory for Moving Targets
+# Probabilistic Search Theory for Randomly Moving Targets
 
 ## Motivation
 
-Search problems are common in both military and civilian domains—from rescuing missing persons, pets or wreckage like MH370 (non-evasive randomly moving targets), to tracking fugitives or foraging animals (evasive randomly moving targets). Unfortunately, many traditional methods are limited in adaptability and struggle in dynamic or uncertain environments. **Figure 1a and 1b** below showcase the real-world examples illustrating these challenges:
-
-As illustrated in [Figure 1a](#fig:lawnmower) and [Figure 1b](#fig:mh370), current search methods often rely on predetermined or exhaustive sweeps.
-
+Search problems are common in both military and civilian domains—from rescuing missing persons, pets or wreckage like MH370 (non-evasive randomly moving targets), to tracking fugitives or foraging animals (evasive randomly moving targets). Unfortunately, many traditional methods are limited in adaptability and struggle in dynamic or uncertain environments. **Figure 1a and 1b** below showcase the real-world examples illustrating these challenges, often resorting to predetermined or exhaustive sweeps.
 
 <div class="image-pair">
   <div class="image-box">
@@ -31,7 +28,7 @@ As illustrated in [Figure 1a](#fig:lawnmower) and [Figure 1b](#fig:mh370), curre
 
 ### Existing research 
 Previous work in probabilistic search has several limitations:
-The search problem has been widely studied [^1].
+The search problem has been widely studied [<a href="#ref1">1</a>].
 
 
 ## Modeling Target Behavior
@@ -75,4 +72,14 @@ We are extending the framework to:
 - Design hybrid strategies blending exploration and exploitation.
 
 Stay tuned for updates as we apply this framework to real-world scenarios and more challenging target dynamics.
-[1^] Chris Phelps, Qi Gong, Johannes O. Royset, Claire Walton, and Isaac Kaminer. Consistent approximation of a nonlinear optimal control problem with uncertain parameters. Automatica, 50(12):2987–2997, 2014.
+
+## References
+
+<ol>
+  <li id="ref1">
+    Chris Phelps, Qi Gong, Johannes O. Royset, Claire Walton, and Isaac Kaminer. <em>Consistent approximation of a nonlinear optimal control problem with uncertain parameters<em>. <a href="https://www.sciencedirect.com/science/article/pii/S0005109814004063">Automatica</a>, 50(12):2987–2997, 2014. <a href="#cite1">↩</a>
+  </li>
+  <li id="ref2">
+    M. Zhao and T. Bewley, <em>Probabilistic search for randomly moving targets using optimized time-periodic orbits</em>, submitted to Automatica, 2025.
+  </li>
+</ol>
