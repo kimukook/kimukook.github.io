@@ -2,7 +2,7 @@
 layout: default
 title: "Probabilistic Search Theory for Randomly Moving Targets"
 ---
-# Probabilistic Search Theory for Randomly Moving Targets
+# Probabilistic Search Theory
 
 ## Motivation
 
@@ -29,12 +29,23 @@ Search problems are common in both military and civilian domains—from rescuing
 ### Existing research 
 Previous work in probabilistic search has several limitations:
 
-- <a href="#ref1">Phelps et al. [2014]</a> considers only uncertainty in the initial target location, neglecting uncertainty in its motion;
+- <a href="#ref1">Phelps et al. [2014]</a> considers only uncertainty in the target's initial location, neglecting uncertainty in its motion;
 - <a href="#ref2">Hellman [1972]</a> focuses on optimizing search trajectories, but ignores dynamic feasibility of searchers;
 - <a href="#ref3">Ohsumi [1991]</a> introduces dynamic programming for optimal control, but is computationally intensive and impractical for complex models;
 
+In contrast, this project develops novel and efficient mathematical frameworks for the control of multiple autonomous
+searchers tasked with locating an unseen, randomly moving target, whose motion may be <em>non-evasive</em>, or even <em>evasive</em>.
 
-## Modeling Target Behavior
+<div class="section-divider"></div>
+
+## Probabilistic Search for Randomly Moving Targets
+
+### Modeling Target Behavior
+
+**Assumption**
+PDF ss in the absence of searchers
+
+**SDE**
 
 We model the motion of a target \( x(t) \in \mathbb{R}^d \) using a stochastic differential equation (SDE):
 
@@ -46,6 +57,7 @@ dx(t) = a(x(t), t)dt + B(x(t), t)dW(t)
 - **Evasive targets** modify behavior based on searcher proximity, intentionally avoiding detection.
 - The belief over target location is encoded in a probability density function \( p(x, t) \).
 
+<!-- Here I need a gif to show the motion of non-evasive and evasive targets, with respect to the same searchers' trajectories. -->
 ## Adaptive Observation: The Crux
 
 The interaction between the searchers and the environment is fundamentally informational. Searchers adapt their motion not merely to explore, but to maximize information gain.
