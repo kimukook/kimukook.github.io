@@ -331,66 +331,56 @@ footer {
 }
 
 /* === Sidebar TOC Styles === */
-.toc-container {
-  position: fixed;
-  top: 140px;
-  left: 20px;
-  width: 250px;
-  max-height: 80vh;
-  overflow-y: auto;
-  padding: 1rem;
-  background-color: #f9f9f9;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  font-family: sans-serif;
-  font-size: 0.9rem;
-  line-height: 1.4;
-  z-index: 1000;
+.project-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 2rem;
 }
 
-.toc-container h2 {
-  font-size: 1rem;
-  font-weight: bold;
-  margin-bottom: 0.75rem;
+.toc-container {
+  width: 240px;
+  position: sticky;
+  top: 100px;
+  align-self: flex-start;
+  padding: 1rem;
+  background-color: #f8f8f8;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  max-height: 80vh;
+  overflow-y: auto;
 }
 
 .toc-container ul {
   list-style: none;
   padding-left: 0;
-  margin: 0;
+  margin-top: 0.5rem;
 }
 
 .toc-container li {
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.3rem;
 }
 
-.toc-container li a {
-  text-decoration: none;
-  color: #333;
-}
-
-.toc-container li a:hover {
-  text-decoration: underline;
-}
-
-/* Indentation by heading level */
-.toc-container .toc-h1 {
+.toc-h1 {
   font-weight: bold;
-  margin-left: 0rem;
+  margin-top: 0.7rem;
 }
 
-.toc-container .toc-h2 {
-  margin-left: 1rem;
-  font-size: 0.9rem;
+.toc-h2 {
+  padding-left: 1rem;
+  font-weight: normal;
 }
 
-.toc-container .toc-h3 {
-  margin-left: 2rem;
-  font-size: 0.85rem;
+.toc-h3 {
+  padding-left: 2rem;
+  font-style: italic;
+  font-weight: normal;
 }
 
 .project-content {
-  margin-left: 300px; /* Push main content to the right of sidebar */
-  padding-top: 2rem;
+  flex: 1;
+  max-width: 800px;
 }
 
