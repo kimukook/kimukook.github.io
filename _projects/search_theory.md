@@ -28,7 +28,10 @@ Search problems are common in both military and civilian domains—from rescuing
 
 ### Existing research 
 Previous work in probabilistic search has several limitations:
-The search problem has been widely studied [<a href="#ref1">1</a>].
+
+- <a href="#ref1">Phelps et al. [2014]</a> considers only uncertainty in the initial target location, neglecting uncertainty in its motion;
+- <a href="#ref2">Hellman [1972]</a> focuses on optimizing search trajectories, but ignores dynamic feasibility of searchers;
+- <a href="#ref3">Ohsumi [1991]</a> introduces dynamic programming for optimal control, but is computationally intensive and impractical for complex models;
 
 
 ## Modeling Target Behavior
@@ -77,9 +80,16 @@ Stay tuned for updates as we apply this framework to real-world scenarios and mo
 
 <ol>
   <li id="ref1">
-    Chris Phelps, Qi Gong, Johannes O. Royset, Claire Walton, and Isaac Kaminer. <em>Consistent approximation of a nonlinear optimal control problem with uncertain parameters<em>. <a href="https://www.sciencedirect.com/science/article/pii/S0005109814004063">Automatica</a>, 50(12):2987–2997, 2014. <a href="#cite1">↩</a>
+    Chris Phelps, Qi Gong, Johannes O. Royset, Claire Walton, and Isaac Kaminer. <em>Consistent approximation of a nonlinear optimal control problem with uncertain parameters</em>. <a href="https://www.sciencedirect.com/science/article/pii/S0005109814004063">Automatica</a>, 50(12):2987–2997, 2014. <a href="#cite1">↩</a>
   </li>
   <li id="ref2">
+    Olavi Hellman. <em>On the optimal search for a randomly moving target.</em> <a href="https://www.jstor.org/stable/2099690">SIAM Journal on Applied Mathematics</a>, 22(4):
+    545–552, 1972.
+  </li>
+  <li id="ref3">
+    Akira Ohsumi. <em>Optimal search for a markovian target.</em> <a href="https://onlinelibrary.wiley.com/doi/abs/10.1002/1520-6750%28199108%2938%3A4%3C531%3A%3AAID-NAV3220380407%3E3.0.CO%3B2-L">Naval Research Logistics (NRL)</a>, 38(4):531–554, 1991.
+  </li>
+  <li id="ref4">
     M. Zhao and T. Bewley, <em>Probabilistic search for randomly moving targets using optimized time-periodic orbits</em>, submitted to Automatica, 2025.
   </li>
 </ol>
