@@ -8,17 +8,6 @@ title: "Probabilistic Search Theory for Randomly Moving Targets"
 
 Search problems are common in both military and civilian domains—from rescuing missing persons or wreckage like MH370 (non-evasive randomly moving targets), to tracking fugitives or foraging animals (evasive randomly moving targets). Unfortunately, many traditional methods are limited in adaptability and struggle in dynamic, cluttered, or ambiguous environments. Below are real-world examples illustrating these challenges:
 
-<div style="display: flex; gap: 20px; justify-content: center; align-items: flex-start; flex-wrap: wrap;">
-  <div style="text-align: center;">
-    <img src="/assets/lawnmower.jpeg" width="300px" alt="Lawnmower trajectory"><br>
-    <em>Figure 1a. Lawnmower trajectory used to search for the missing F-35B fighter jet. <a href="https://x.com/flightradar24/status/1703827299412455459?lang=en">Image source</a></em>
-  </div>
-  <div style="text-align: center;">
-    <img src="/assets/image-9.png" width="300px" alt="Debris of MH370"><br>
-    <em>Figure 1b. Searching for the debris of MH370 <a href="https://mh370.radiantphysics.com/2025/03/31/update-on-the-search-for-mh370/">Image source</a></em>
-  </div>
-</div>
-
 <div class="image-pair">
   <div class="image-box">
     <img src="/assets/lawnmower.jpeg" alt="Lawnmower trajectory">
@@ -35,17 +24,6 @@ Search problems are common in both military and civilian domains—from rescuing
     </div>
   </div>
 </div>
-
-
-<center>
-  <img src="/assets/lawnmower.jpeg" width="40%" alt="Lawnmower trajectory"><br>
-  <em>Figure 1a. Lawnmower trajectory used to search for the missing F-35B fighter jet. <a href="https://x.com/flightradar24/status/1703827299412455459?lang=en">Image source</a></em>
-</center>
-
-<center>
-  <img src="/assets/image-9.png" width="40%" alt="Debris of MH370"><br>
-  <em>Figure 1b. Searching for the debris of MH370 <a href="https://mh370.radiantphysics.com/2025/03/31/update-on-the-search-for-mh370/">Image source</a></em>
-</center>
 
 ## Modeling Target Behavior
 
