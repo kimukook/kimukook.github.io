@@ -80,16 +80,33 @@ Stay tuned for updates as we apply this framework to real-world scenarios and mo
 
 <ol>
   <li id="ref1">
-    Chris Phelps, Qi Gong, Johannes O. Royset, Claire Walton, and Isaac Kaminer. <em>Consistent approximation of a nonlinear optimal control problem with uncertain parameters</em>. <a href="https://www.sciencedirect.com/science/article/pii/S0005109814004063">Automatica</a>, 50(12):2987–2997, 2014. <a href="#cite1">↩</a>
+    Chris Phelps, Qi Gong, Johannes O. Royset, Claire Walton, and Isaac Kaminer. 
+    <a href="https://www.sciencedirect.com/science/article/pii/S0005109814004063" target="_blank">
+      <em>Consistent approximation of a nonlinear optimal control problem with uncertain parameters</em>
+    </a>. 
+    Automatica, 50(12):2987–2997, 2014. <a href="#cite1">↩</a>
   </li>
+
   <li id="ref2">
-    Olavi Hellman. <em>On the optimal search for a randomly moving target.</em> <a href="https://www.jstor.org/stable/2099690">SIAM Journal on Applied Mathematics</a>, 22(4):
-    545–552, 1972.
+    Olavi Hellman. 
+    <a href="https://www.jstor.org/stable/2099690" target="_blank">
+      <em>On the optimal search for a randomly moving target</em>
+    </a>. 
+    SIAM Journal on Applied Mathematics, 22(4):545–552, 1972.
   </li>
+
   <li id="ref3">
-    Akira Ohsumi. <em>Optimal search for a markovian target.</em> <a href="https://onlinelibrary.wiley.com/doi/abs/10.1002/1520-6750%28199108%2938%3A4%3C531%3A%3AAID-NAV3220380407%3E3.0.CO%3B2-L">Naval Research Logistics (NRL)</a>, 38(4):531–554, 1991.
+    Akira Ohsumi. 
+    <a href="https://onlinelibrary.wiley.com/doi/abs/10.1002/1520-6750%28199108%2938%3A4%3C531%3A%3AAID-NAV3220380407%3E3.0.CO%3B2-L" target="_blank">
+      <em>Optimal search for a Markovian target</em>
+    </a>. 
+    Naval Research Logistics (NRL), 38(4):531–554, 1991.
   </li>
+
   <li id="ref4">
-    M. Zhao and T. Bewley, <em>Probabilistic search for randomly moving targets using optimized time-periodic orbits</em>, submitted to Automatica, 2025.
+    M. Zhao and T. Bewley, 
+    <em>Probabilistic search for randomly moving targets using optimized time-periodic orbits</em>, 
+    submitted to Automatica, 2025.
   </li>
 </ol>
+
