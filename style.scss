@@ -288,7 +288,8 @@ footer {
 @import "highlights";
 @import "svg-icons";
 
-// Muhan Added for showing images from projects
+// Muhan Added 
+// For showing images from projects
 .image-pair {
   display: flex;
   justify-content: center;
@@ -319,6 +320,7 @@ footer {
   color: #666;
 }
 
+// For section divider
 .section-divider {
   width: 100%;
   height: 2px;
@@ -328,3 +330,57 @@ footer {
   box-shadow: 0 1px 3px rgba(0,0,0,0.05);
 }
 
+/* --- Floating TOC Sidebar for Project Pages --- */
+.project-wrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+}
+
+.toc-sidebar {
+  position: sticky;
+  top: 100px;
+  max-height: calc(100vh - 120px);
+  overflow-y: auto;
+  flex: 0 0 250px;
+  padding: 1rem;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  font-size: 0.9rem;
+}
+
+#toc a {
+  display: block;
+  margin-bottom: 0.4rem;
+  text-decoration: none;
+  color: #333;
+  transition: all 0.2s ease-in-out;
+}
+
+#toc a:hover {
+  color: #007acc;
+  padding-left: 4px;
+}
+
+/* Indentation by header level */
+#toc a.toc-h1 {
+  font-weight: bold;
+  margin-top: 0.75rem;
+}
+
+#toc a.toc-h2 {
+  padding-left: 1em;
+  font-weight: normal;
+}
+
+#toc a.toc-h3 {
+  padding-left: 2em;
+  font-style: italic;
+}
+
+/* Make sure main content still looks good */
+.project-content {
+  flex: 1;
+  max-width: 800px;
+}
