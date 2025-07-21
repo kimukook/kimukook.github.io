@@ -2,17 +2,20 @@
 layout: default
 title: "Probabilistic Search Theory for Randomly Moving Targets"
 ---
-
 # Search Theory for Moving Targets
 
 ## Motivation
 
-In a range of applications — from wildlife tracking to search-and-rescue to defense — autonomous agents are tasked with locating targets moving in uncertain ways. Unfortunately, many traditional methods are limited in adaptability and struggle in dynamic, cluttered, or ambiguous environments. Below are real-world examples illustrating these challenges:
+Search problems are common in both military and civilian domains -from rescuing missing persons or wreckage like MH370 (non-evasive randomly moving targets), to tracking fugitives or foraging animals (evasive randomly moving targets). Unfortunately, many traditional methods are limited in adaptability and struggle in dynamic, cluttered, or ambiguous environments. Below are real-world examples illustrating these challenges:
 
-<!-- Add your image links -->
 <center>
-  <img src="/assets/img/animal_tracking_example.jpg" width="70%" alt="Tracking in the wild"><br>
-  <em>Example: Inefficient coverage in wildlife tracking with static patrol routes.</em>
+  <img src="/assets/lawnmower.jpeg" width="40%" alt="Lawnmower trajectory"><br>
+  <em>Figure 1a. Lawnmower trajectory used to search for the missing F-35B fighter jet. <a href="https://x.com/flightradar24/status/1703827299412455459?lang=en">Image source</a></em>
+</center>
+
+<center>
+  <img src="/assets/image-9.png" width="40%" alt="Debris of MH370"><br>
+  <em>Figure 1b. Searching for the debris of MH370 <a href="https://mh370.radiantphysics.com/2025/03/31/update-on-the-search-for-mh370/">Image source</a></em>
 </center>
 
 ## Modeling Target Behavior
