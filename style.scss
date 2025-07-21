@@ -340,10 +340,9 @@ footer {
   position: relative;
 }
 
-/* Ensure title aligns with content, not TOC */
 .project-wrapper > h1 {
   flex: 1;
-  margin-left: 260px; /* width of TOC + gap */
+  margin-left: 260px; /* aligns with TOC width */
 }
 
 .toc-container {
@@ -360,42 +359,50 @@ footer {
   max-height: 80vh;
   overflow-y: auto;
   flex-shrink: 0;
+  word-wrap: break-word;
+  white-space: normal;
+}
+
+.toc-container h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.6rem;
+  color: #222;
 }
 
 .toc-container ul {
   list-style: none;
   padding-left: 0;
-  margin: 0.5rem 0 0 0;
+  margin: 0;
 }
 
 .toc-container li {
   margin-bottom: 0.3rem;
-  line-height: 1.3;
-  white-space: normal;
+  line-height: 1.4;
   word-break: break-word;
+  white-space: normal;
+  text-indent: -1rem;
+  padding-left: 1rem;
 }
 
 .toc-h1 {
   font-weight: bold;
-  margin-top: 0.7rem;
+  color: #000;
 }
 
 .toc-h2 {
   padding-left: 1rem;
-  font-weight: normal;
+  color: #555;
 }
 
 .toc-h3 {
   padding-left: 2rem;
   font-size: 0.85em;
-  font-weight: normal;
+  color: #888;
 }
 
-/* Tweak project content width and left margin */
 .project-content {
   flex: 1;
   max-width: 880px;
-  margin-left: -0.5rem; /* Reduce the TOC-to-content spacing */
+  margin-left: -0.5rem;
 }
-
-
