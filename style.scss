@@ -330,57 +330,48 @@ footer {
   box-shadow: 0 1px 3px rgba(0,0,0,0.05);
 }
 
-/* --- Floating TOC Sidebar for Project Pages --- */
 .project-wrapper {
   display: flex;
-  flex-direction: row;
   gap: 2rem;
 }
 
 .toc-sidebar {
+  width: 220px;
+  flex-shrink: 0;
+  padding: 1rem;
+  border-left: 3px solid #e0e0e0;
+  background: #f9f9f9;
+  height: max-content;
   position: sticky;
   top: 100px;
-  max-height: calc(100vh - 120px);
-  overflow-y: auto;
-  flex: 0 0 250px;
-  padding: 1rem;
-  background-color: #f8f9fa;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  font-size: 0.9rem;
+  font-size: 0.9em;
 }
 
-#toc a {
-  display: block;
-  margin-bottom: 0.4rem;
-  text-decoration: none;
-  color: #333;
-  transition: all 0.2s ease-in-out;
-}
-
-#toc a:hover {
-  color: #007acc;
-  padding-left: 4px;
-}
-
-/* Indentation by header level */
-#toc a.toc-h1 {
+.toc-sidebar h3 {
+  margin-top: 0;
+  font-size: 1rem;
   font-weight: bold;
-  margin-top: 0.75rem;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 0.3rem;
 }
 
-#toc a.toc-h2 {
-  padding-left: 1em;
-  font-weight: normal;
+.toc-link {
+  display: block;
+  margin: 0.3em 0;
+  color: #333;
+  text-decoration: none;
 }
 
-#toc a.toc-h3 {
-  padding-left: 2em;
-  font-style: italic;
+.toc-link:hover {
+  text-decoration: underline;
 }
 
-/* Make sure main content still looks good */
+.toc-h1 { font-weight: bold; }
+.toc-h2 { padding-left: 1em; }
+.toc-h3 { padding-left: 2em; }
+
 .project-content {
-  flex: 1;
-  max-width: 800px;
+  flex-grow: 1;
+  min-width: 0;
 }
+
