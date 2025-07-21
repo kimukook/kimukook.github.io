@@ -1,7 +1,6 @@
 ---
 layout: default
-title: "Search Theory for Moving Targets"
-permalink: /projects/search-project/
+title: "Probabilistic Search Theory for Randomly Moving Targets"
 ---
 
 # Search Theory for Moving Targets
