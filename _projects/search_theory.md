@@ -8,22 +8,26 @@ title: "Probabilistic Search Theory for Randomly Moving Targets"
 
 Search problems are common in both military and civilian domains—from rescuing missing persons, pets or wreckage like MH370 (non-evasive randomly moving targets), to tracking fugitives or foraging animals (evasive randomly moving targets). Unfortunately, many traditional methods are limited in adaptability and struggle in dynamic or uncertain environments. **Figure 1a and 1b** below showcase the real-world examples illustrating these challenges:
 
+As illustrated in [Figure 1a](#fig:lawnmower) and [Figure 1b](#fig:mh370), current search methods often rely on predetermined or exhaustive sweeps.
+
+
 <div class="image-pair">
   <div class="image-box">
     <img src="/assets/lawnmower.jpeg" alt="Lawnmower trajectory">
     <div class="caption">
-      Figure 1a. Lawnmower trajectory used to search for the missing F-35B fighter jet.
+      Figure 1a. Lawnmower trajectory used to search for the missing F-35B fighter jet. 
       <a href="https://x.com/flightradar24/status/1703827299412455459?lang=en">Image source</a>
     </div>
   </div>
   <div class="image-box">
     <img src="/assets/image-9.png" alt="MH370 search">
     <div class="caption">
-      Figure 1b. Searching for the debris of MH370.
+      Figure 1b. Searching for the debris of MH370. 
       <a href="https://mh370.radiantphysics.com/2025/03/31/update-on-the-search-for-mh370/">Image source</a>
     </div>
   </div>
 </div>
+
 
 ### Existing research 
 Previous work in probabilistic search has several limitations:
