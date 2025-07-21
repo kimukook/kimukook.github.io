@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: project
 title: "Probabilistic Search Theory for Randomly Moving Targets"
 ---
 # Probabilistic Search Theory
