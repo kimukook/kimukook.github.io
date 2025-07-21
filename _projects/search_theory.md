@@ -6,7 +6,7 @@ title: "Probabilistic Search Theory for Randomly Moving Targets"
 
 ## Motivation
 
-Search problems are common in both military and civilian domains—from rescuing missing persons or wreckage like MH370 (non-evasive randomly moving targets), to tracking fugitives or foraging animals (evasive randomly moving targets). Unfortunately, many traditional methods are limited in adaptability and struggle in dynamic, cluttered, or ambiguous environments. Below are real-world examples illustrating these challenges:
+Search problems are common in both military and civilian domains—from rescuing missing persons, pets or wreckage like MH370 (non-evasive randomly moving targets), to tracking fugitives or foraging animals (evasive randomly moving targets). Unfortunately, many traditional methods are limited in adaptability and struggle in dynamic or uncertain environments. **Figure 1a and 1b** below showcase the real-world examples illustrating these challenges:
 
 <div class="image-pair">
   <div class="image-box">
@@ -24,6 +24,11 @@ Search problems are common in both military and civilian domains—from rescuing
     </div>
   </div>
 </div>
+
+### Existing research 
+Previous work in probabilistic search has several limitations:
+The search problem has been widely studied [^1].
+
 
 ## Modeling Target Behavior
 
@@ -66,3 +71,4 @@ We are extending the framework to:
 - Design hybrid strategies blending exploration and exploitation.
 
 Stay tuned for updates as we apply this framework to real-world scenarios and more challenging target dynamics.
+[1^] Chris Phelps, Qi Gong, Johannes O. Royset, Claire Walton, and Isaac Kaminer. Consistent approximation of a nonlinear optimal control problem with uncertain parameters. Automatica, 50(12):2987–2997, 2014.
