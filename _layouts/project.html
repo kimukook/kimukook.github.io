@@ -2,32 +2,38 @@
 layout: default
 ---
 
+<h1>{{ page.title }}</h1>
+
 <div class="project-wrapper">
-  <aside class="toc-sidebar">
-    <h3>On This Page</h3>
-    <nav id="toc"></nav>
-  </aside>
+  <nav class="toc-container">
+    <p><strong>Contents</strong></p>
+    <ul id="table-of-contents"></ul>
+  </nav>
 
   <div class="project-content">
-    <h1>{{ page.title }}</h1>
     {{ content }}
   </div>
 </div>
 
 <script>
 document.addEventListener("DOMContentLoaded", function () {
-  const toc = document.getElementById("toc");
+  const tocList = document.getElementById("table-of-contents");
   const headers = document.querySelectorAll(".project-content h1, .project-content h2, .project-content h3");
 
-  headers.forEach((header, index) => {
-    const id = "section-" + index;
-    header.id = id;
+  headers.forEach(function (header) {
+    if (!header.id) {
+      header.id = header.textContent.toLowerCase().replace(/\s+/g, "-");
+    }
+
+    const li = document.createElement("li");
+    li.classList.add("toc-" + header.tagName.toLowerCase());
 
     const link = document.createElement("a");
-    link.href = "#" + id;
+    link.href = "#" + header.id;
     link.textContent = header.textContent;
-    link.className = "toc-link toc-" + header.tagName.toLowerCase();
-    toc.appendChild(link);
+
+    li.appendChild(link);
+    tocList.appendChild(li);
   });
 });
 </script>
