@@ -387,17 +387,19 @@ footer {
 
 .toc-h1 {
   font-weight: bold;
+  font-size: 1.2em;
   color: #000;
 }
 
 .toc-h2 {
-  padding-left: 1rem;
+  margin-left: 1.5rem;
+  font-size: 1em;
   color: #555;
 }
 
 .toc-h3 {
-  padding-left: 2rem;
-  font-size: 0.85em;
+  margin-left: 2.5rem;
+  font-size: 0.8em;
   color: #888;
 }
 
