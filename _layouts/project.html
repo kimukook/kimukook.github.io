@@ -31,6 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const link = document.createElement("a");
     link.href = "#" + header.id;
 
+    // THIS IS THE KEY: wrap text in span.toc-text
     const span = document.createElement("span");
     span.classList.add("toc-text");
     span.textContent = header.textContent;
@@ -41,3 +42,4 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 </script>
+
