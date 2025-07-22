@@ -344,20 +344,57 @@ footer {
   flex: 1;
   margin-left: 260px; // aligns with TOC width
 }
-.toc-container {
 
-  // shared style
-  .toc-h1, .toc-h2, .toc-h3 {
+.toc-container {
+  width: 240px;
+  position: sticky;
+  top: 100px;
+  align-self: flex-start;
+  padding: 1rem;
+  background-color: #f8f8f8;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  max-height: 80vh;
+  overflow-y: auto;
+  flex-shrink: 0;
+  word-wrap: break-word;
+  white-space: normal;
+
+  h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.6rem;
+    color: #222;
+  }
+
+  ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+  }
+
+  li {
+    margin-bottom: 0.3rem;
+    line-height: 1.4;
+    word-break: break-word;
+    white-space: normal;
+  }
+
+  // TOC level styling
+  .toc-h1,
+  .toc-h2,
+  .toc-h3 {
     a {
       display: block;
-      line-height: 1.5;
-      text-indent: 0;
-      padding-left: 0;
-    }
+      line-height: 1.4;
 
-    a .toc-text {
-      display: block;              // ensures wrapping aligns
-      margin-left: 0;              // reset any default
+      .toc-text {
+        display: inline-block;
+        white-space: normal;
+        word-break: break-word;
+      }
     }
   }
 
@@ -368,6 +405,7 @@ footer {
 
     a .toc-text {
       padding-left: 0.5rem;
+      text-indent: -0.5rem;
     }
   }
 
@@ -377,23 +415,25 @@ footer {
 
     a .toc-text {
       padding-left: 1.5rem;
+      text-indent: -1.5rem;
     }
   }
 
   .toc-h3 {
-    font-size: 0.85em;
+    font-size: 0.8em;
     color: #888;
 
     a .toc-text {
       padding-left: 2.5rem;
+      text-indent: -2.5rem;
     }
   }
 }
-
 
 .project-content {
   flex: 1;
   max-width: 880px;
   margin-left: -0.5rem;
 }
+
 
