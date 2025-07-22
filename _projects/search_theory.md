@@ -1,6 +1,6 @@
 ---
 layout: project
-title: "Probabilistic Search Theory for Randomly Moving Targets"
+title: "Probabilistic Search for Randomly Moving Targets"
 ---
 # Motivation
 
@@ -24,7 +24,7 @@ Search problems are common in both military and civilian domains—from rescuing
 </div>
 
 
-### Existing research 
+## Existing research 
 Previous work in probabilistic search has several limitations:
 
 - <a href="#ref1">Phelps et al. [2014]</a> considers only uncertainty in the target's initial location, neglecting uncertainty in its motion;
