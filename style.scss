@@ -354,15 +354,14 @@ footer {
   background-color: #f8f8f8;
   border: 1px solid #ddd;
   border-radius: 8px;
-  font-size: 0.9rem;
+  font-size: 1rem;
   line-height: 1.4;
-  max-height: 80vh;
+  max-height: 90vh;
   overflow-y: auto;
   flex-shrink: 0;
 
   h3 {
     font-size: 1rem;
-    font-weight: 600;
     margin-bottom: 0.6rem;
     color: #222;
   }
@@ -381,7 +380,7 @@ footer {
   a {
     display: block;
     text-align: left;
-    font-size: 0.9rem;
+    font-size: 1rem;
     color: #333;
     text-decoration: none;
     padding: 0.2rem 0;
@@ -391,6 +390,34 @@ footer {
       text-decoration: underline;
     }
   }
+  .toc-h1 {
+    a .toc-text {
+      padding-left: 0.5rem;
+      text-indent: -0.5rem;
+      font-size: 0.95rem; // Normal size
+      font-weight: bold;
+      color: #000000; // Black
+    }
+  }
+
+  .toc-h2 {
+    a .toc-text {
+      padding-left: 1.5rem;
+      text-indent: -1.5rem;
+      font-size: 0.75rem; // Smaller size
+      font-weight: normal;
+      color: #444444; // Dark gray
+    }
+  }
+
+  .toc-h3 {
+    a .toc-text {
+      padding-left: 2.5rem;
+      text-indent: -2.5rem;
+      font-size: 0.55rem;
+      color: #888;
+    }
+  }	
 }
 
 
