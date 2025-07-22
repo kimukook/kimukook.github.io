@@ -382,14 +382,17 @@ footer {
     white-space: normal;
   }
 
-  // TOC level styling
-  .toc-h1, .toc-h2, .toc-h3 {
+  .toc-h1,
+  .toc-h2,
+  .toc-h3 {
     a {
       display: block;
       line-height: 1.4;
 
       .toc-text {
         display: inline-block;
+        white-space: normal;
+        word-break: break-word;
       }
     }
   }
@@ -401,29 +404,24 @@ footer {
 
     a .toc-text {
       padding-left: 0.5rem;
-      text-indent: -0.5rem;
     }
   }
 
   .toc-h2 {
     font-size: 1em;
     color: #555;
-    margin-left: 1.5rem;
 
     a .toc-text {
       padding-left: 1.5rem;
-      text-indent: -1.5rem;
     }
   }
 
   .toc-h3 {
     font-size: 0.8em;
     color: #888;
-    margin-left: 2.5rem;
 
     a .toc-text {
       padding-left: 2.5rem;
-      text-indent: -2.5rem;
     }
   }
 }
@@ -433,4 +431,3 @@ footer {
   max-width: 880px;
   margin-left: -0.5rem;
 }
-
