@@ -359,8 +359,6 @@ footer {
   max-height: 80vh;
   overflow-y: auto;
   flex-shrink: 0;
-  word-wrap: break-word;
-  white-space: normal;
 
   h3 {
     font-size: 1rem;
@@ -376,55 +374,21 @@ footer {
   }
 
   li {
-    margin-bottom: 0.3rem;
+    margin-bottom: 0.4rem;
     line-height: 1.4;
-    word-break: break-word;
-    white-space: normal;
   }
 
-  .toc-h1,
-  .toc-h2,
-  .toc-h3 {
-    a {
-      display: block;
-      line-height: 1.4;
+  a {
+    display: block;
+    text-align: left;
+    font-size: 0.9rem;
+    color: #333;
+    text-decoration: none;
+    padding: 0.2rem 0;
+    font-weight: normal;
 
-      .toc-text {
-        display: inline-block;
-        white-space: normal;
-        word-break: break-word;
-      }
-    }
-  }
-
-  .toc-h1 {
-    font-weight: bold;
-    font-size: 1.2em;
-    color: #000;
-
-    a .toc-text {
-      padding-left: 0.5rem;
-	    text-indent: -0.5rem;
-    }
-  }
-
-  .toc-h2 {
-    font-size: 1em;
-    color: #555;
-
-    a .toc-text {
-      padding-left: 1.5rem;
-      text-indent: -1.5rem;
-    }
-  }
-
-  .toc-h3 {
-    font-size: 0.8em;
-    color: #888;
-
-    a .toc-text {
-      padding-left: 2.5rem;
-      text-indent: -2.5rem;
+    &:hover {
+      text-decoration: underline;
     }
   }
 }
