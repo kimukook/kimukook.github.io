@@ -381,14 +381,15 @@ footer {
   line-height: 1.4;
   word-break: break-word;
   white-space: normal;
-  text-indent: -1rem;
-  padding-left: 1rem;
+  text-indent: 0rem;
+  padding-left: 0rem;
 }
 
 .toc-h1 {
   font-weight: bold;
   font-size: 1.2em;
   color: #000;
+  margin-left: .1em
 }
 
 .toc-h2 {
