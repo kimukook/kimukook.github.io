@@ -39,15 +39,6 @@ Search problems are common in both military and civilian domains—from rescuing
   </div>
 </div>
 
-<div class="center">
-  <div class="image-full">
-    <img src="/assets/target_motion.gif" alt="Target Motion" width="600px">
-    <div class="caption">
-      Figure 3. Illustration of target motion along with searchers' trajectories in red and blue. Traditional target trajectory described by differential equation in yellow; non-evasive (resp. evasive) target trajectory modeled in this project in purple (resp. green).
-    </div>
-  </div>
-</div>
-
 ## Existing research
 Previous state-of-the-art work in probabilistic search has several limitations:
 
@@ -59,19 +50,36 @@ In contrast, this project develops novel and efficient mathematical frameworks f
 searchers tasked with locating an unseen, randomly moving target, whose motion may be <em>non-evasive</em>, or even <em>evasive</em>.
 
 ## Model on target motion
-In the existing literature, such as <a href="#ref1">Phelps et al. \[2014\]</a>, the target is typically modeled with an uncertain initial position but deterministic motion. In these formulations, the initial state is explicitly characterized by a probability density function, while the subsequent motion follows a known differential equation.
+In the existing literature, such as <a href="#ref1">Phelps et al. \[2014\]</a>, the target is typically modeled with an uncertain initial position but deterministic motion. In these formulations, the initial state is explicitly characterized by a probability density function (PDF), while the subsequent motion follows a known differential equation.
 
-In contrast, we model the target motion as a <em>stochastic process</em> $\lbrace \mathrm{x}(t) \mid t \in \[0, t_f\]\rbrace$. The evolution of $\mathrm{x}(t)$ is described by a stochastic differential equation \[see (1) below\]. Figure 3 provides a representative comparison between traditional target modeling approaches and the method proposed in this work.
+In contrast, we model the target motion as a <em>stochastic process</em> $\lbrace \mathrm{x}(t) \mid t \in \[0, t_f\]\rbrace$. The evolution of $\mathrm{x}(t)$ is described by a stochastic differential equation (SDE) \[see (1) below\]. Figure 3 provides a representative comparison between traditional target modeling approaches and the method proposed in this work.
 
 <div style="text-align: center;">
   $$ \mathrm{d}\mathrm{x}(t) = \mathrm{v}(\mathrm{x}, t)\, \mathrm{d}t + D(\mathrm{x}, t)\, \mathrm{d} \omega(t), \tag{1} $$
 </div>
 
-here $\omega(t)$ is a vector Brownian motion process. Examples of the drift term $\mathrm{v}(\mathrm{x}, t)$ and diffusion term $D(\mathrm{x}, t)$ can be found in <a href="#ref5"> Zhao and Bewley \[2025\]</a> and are thus omitted here. We instead highlight the core assumption made regarding the target dynamics in <a href="#ref5"> Zhao and Bewley \[2025\]</a>.
+here $\omega(t)$ is a vector Brownian motion process. Examples of the drift term $\mathrm{v}(\mathrm{x}, t)$ and diffusion term $D(\mathrm{x}, t)$ can be found in <a href="#ref7"> Zhao and Bewley \[2025\]</a> and are thus omitted here. 
 
+<div class="center">
+  <div class="image-full">
+    <img src="/assets/target_motion.gif" alt="Target Motion" width="600px">
+    <div class="caption">
+      Figure 3. Animated illustration of target motion and searcher trajectories. The red and blue curves represent the trajectories of two searchers. The yellow path depicts a traditional target governed by a deterministic differential equation. The purple and green paths correspond to the non-evasive and evasive target behaviors modeled in this work, respectively.
+    </div>
+  </div>
+</div>
+
+It is a well-known result that the PDF of target whose motion is described by SDE is governed by Fokker-Planck equation <a href="#ref5"> Jazwinski \[2013\]</a>. We propose a forced Fokker-Planck equation that governs the time evolution of PDF in the influence of search \[see (2) below\]. Proof can be found from <a href="#ref6">Hellman \[1970\]</a>.
+We instead highlight the core assumption made regarding the target dynamics in <a href="#ref7"> Zhao and Bewley \[2025\]</a>.
+
+<div style="text-align: center;">
+  $$ \frac{\partial p}{\partial t} - \nabla\cdot\big(\D\cdot\nabla p + p\, \nabla\cdot\D - \v\,p\big) = p\, \bigg(\int_\Omega \phi\, p \dx - \phi\bigg), \tag{2} $$
+</div>
 
 **Assumption**
-In the absence of searchers, the probability density function of target's position is statistically stationary.
+In the absence of searchers, the PDF of target's position is statistically stationary.
+
+
 
 <div class="section-divider"></div>
 
@@ -119,12 +127,24 @@ under construction
     <em>An extensible framework for the probabilistic search of stochastically-moving targets characterized by generalized Gaussian distributions or experimentally-defined regions of interest</em></a>, 
     submitted to Automatica, 2025.
   </li>
-  
+
   <li id="ref5">
+    Jazwinski, Andrew H, 
+    <em>Stochastic processes and filtering theory.</em>, 
+    Courier Corporation, 2013.
+  </li>
+
+   <li id="ref6">
+    Hellman, Olavi, 
+    <a href="[https://www.tandfonline.com/doi/full/10.1080/03610926.2024.2439999](https://projecteuclid.org/journals/annals-of-mathematical-statistics/volume-41/issue-5/On-the-Effect-of-a-Search-Upon-the-Probability-Distribution/10.1214/aoms/1177696816.full)">
+    <em>On the effect of a search upon the probability distribution of a target whose motion is a diffusion process.</em></a>, 
+    The Annals of Mathematical Statistics 41.5 (1970): 1717-1724.
+  </li>
+  
+  <li id="ref7">
     <a href="http://robotics.ucsd.edu/pubs/ZB_periodic_search.pdf">
     M. Zhao and T. Bewley, 
     <em>Probabilistic search for randomly moving targets using optimized time-periodic orbits</em></a>, 
     submitted to Automatica, 2025.
   </li>
 </ol>
-
