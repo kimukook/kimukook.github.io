@@ -290,6 +290,12 @@ footer {
 
 // Muhan Added 
 // For showing images from projects
+.center {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0;
+  text-align: center;
+}
 .image-pair {
   display: flex;
   justify-content: center;
