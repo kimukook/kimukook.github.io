@@ -4,9 +4,15 @@ title: "Probabilistic Search for Randomly Moving Targets"
 ---
 # Introduction
 
-This project addresses the <em>probabilistic search problem</em> for uncertain, mobile targets by leveraging continuous-time models and PDE-constrained optimization. We present three complementary contributions: continuous-discrete observation, time-periodic search for non-evasive targets, and collaborative searching for evasive targets.
+This project addresses the <em>probabilistic search</em> of uncertain, mobile targets by leveraging continuous-time modeling and advanced control strategies. We present three complementary developments: (i) a continuous-discrete observation framework, (ii) a time-periodic search strategy tailored for non-evasive targets, and (iii) a collaborative search approach for tracking evasive targets.
 
-The crux of this project is <em>adaptive observation</em>, a framework that couples estimation and control. The estimation task involves modeling the moving target’s likely position as a stochastic process, accounting for the uncertainty in both its initial location and dynamics. The control task involves decision-making and coordination of searchers as they scan their surroundings to locate the target. Crucially, these two components are organically coupled: searchers’ observations not only inform the evolving estimate of the target’s location, but also respond to it, forming a “feedback loop” that iteratively drives both estimation and control. This idea is illustrated in Figure 1 below.
+**Keywords**
+- Probabilistic search theory
+- Stochastic dynamics
+- PDE-constrained optimization
+- Adjoint analysis
+
+The crux of this project is <em>adaptive observation</em>, a framework that couples estimation and control. The estimation task involves modeling the moving target’s likely position as a stochastic process, accounting for the uncertainty in both its initial location and dynamics. The control task involves decision-making and coordination of searchers as they scan their surroundings to locate the target. Crucially, these two components are organically coupled: searchers’ observations not only inform the evolving estimate of the target’s location, but also respond to it, forming a “feedback loop” that iteratively drives both estimation and control tasks. This idea is illustrated in Figure 1 below.
 <div class="center">
   <div class="image-full">
     <img src="/assets/flow_chart_search.svg" alt="Search flowchart" width="600px">
@@ -41,26 +47,31 @@ Search problems are common in both military and civilian domains—from rescuing
 ## Existing research
 Previous state-of-the-art work in probabilistic search has several limitations:
 
-- <a href="#ref1">Phelps et al. [2014]</a> considers only uncertainty in the target's initial location, neglecting uncertainty in its motion;
-- <a href="#ref2">Hellman [1972]</a> focuses on optimizing search trajectories, but ignores dynamic feasibility of searchers;
-- <a href="#ref3">Ohsumi [1991]</a> introduces dynamic programming for optimal control, but is computationally intensive and impractical for complex models;
+- <a href="#ref1">Phelps et al. \[2014\]</a> considers only uncertainty in the target's initial location, neglecting uncertainty in its motion;
+- <a href="#ref2">Hellman \[1972\]</a> focuses on optimizing search trajectories, but ignores dynamic feasibility of searchers;
+- <a href="#ref3">Ohsumi \[1991\]</a> introduces dynamic programming for optimal control, but is computationally intensive and impractical for complex models;
 
 In contrast, this project develops novel and efficient mathematical frameworks for the control of multiple autonomous
 searchers tasked with locating an unseen, randomly moving target, whose motion may be <em>non-evasive</em>, or even <em>evasive</em>.
 
+## Model on target motion
+In existing study<a href="#ref1">Phelps et al. \[2014\]</a>, the target is typically modeled with an uncertain initial position but deterministic motion. Accordingly, the initial state is represented by a probability density function, while the subsequent motion is governed by a known differential equation.
+
+In contrast, we model the target motion as a <em>stochastic process</em>, described by a stochastic differential equation \[see () below\]. Regarding the dynamics of target, we made the following assumption:
+
+**Assumption**
+In the absence of searchers, the probability density function of target is statistically stationary.
+
+In related work<a href="#ref4">Hanson et al. \[2025\]</a> we discuss the construction of region-of-interest where we search for target, either analytically or experimentally. Assuming the equilibruim probability density function, $p_e(x)$, is available.
+
+
 <div class="section-divider"></div>
 
-## Background
+# Part 1 Hybrid search 
+under construction
+<div class="section-divider"></div>
 
-### model on target behavior
-
-<!-- need another image here -->
-
-### update rule
-
-# Part 1
-
-# Part 2
+# Part 2 Probabilistic Search using optimized periodic orbits
 
 # Part 3
 # Main Theory
