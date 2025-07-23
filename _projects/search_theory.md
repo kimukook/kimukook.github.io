@@ -69,17 +69,15 @@ here $\omega(t)$ is a vector Brownian motion process. Examples of the drift term
   </div>
 </div>
 
-It is a well-known result that the PDF of target whose motion is described by SDE is governed by Fokker-Planck equation <a href="#ref5"> Jazwinski \[2013\]</a>. We propose a forced Fokker-Planck equation that governs the time evolution of PDF in the influence of search \[see (2) below\]. Proof can be found from <a href="#ref6">Hellman \[1970\]</a>.
-We instead highlight the core assumption made regarding the target dynamics in <a href="#ref7"> Zhao and Bewley \[2025\]</a>.
+It is a well known that the PDF of a target whose motion is governed by a SDE satisfies Fokker-Planck equation <a href="#ref5"> Jazwinski \[2013\]</a>. In this work, we extend this classical result by proposing a <em><strong>forced Fokker-Planck equation</strong></em> that captures the time evolution of PDF under the influence of search \[see (2) below\]. The derivation of (2) follows the approach outlined in Theorem 1 of <a href="#ref6">Hellman \[1970\]</a>.
 
 <div style="text-align: center;">
-  $$ \frac{\partial p}{\partial t} - \nabla\cdot\big(\D\cdot\nabla p + p\, \nabla\cdot\D - \v\,p\big) = p\, \bigg(\int_\Omega \phi\, p \dx - \phi\bigg), \tag{2} $$
+  $$ \frac{\partial p}{\partial t} - \nabla\cdot\big(D\cdot\nabla p + p\, \nabla\cdot D - \mathrm{v}\,p\big) = p\, \bigg(\int_\Omega \phi\, p\,\mathrm{d}\mathrm{x} - \phi\bigg), \tag{2} $$
 </div>
+here $\phi(\mathrm{x}, t)$ is the instantaneous search density function \[see <a href="#ref7"> Zhao and Bewley \[2025\]</a>]. Finally, we conclude this section by highlighting the core assumption made regarding the target dynamics in <a href="#ref7"> Zhao and Bewley \[2025\]</a>.
 
 **Assumption**
 In the absence of searchers, the PDF of target's position is statistically stationary.
-
-
 
 <div class="section-divider"></div>
 
