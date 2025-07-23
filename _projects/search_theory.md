@@ -53,13 +53,10 @@ searchers tasked with locating an unseen, randomly moving target, whose motion m
 ## Model on target motion
 In existing study <a href="#ref1">Phelps et al. \[2014\]</a>, the target is typically modeled with an uncertain initial position but deterministic motion. In their formulation, accordingly, the initial state is explicitly represented by a probability density function, while the subsequent motion is governed by a known differential equation.
 
-In contrast, we model the target motion as a <em>stochastic process</em> $\{\mathrm{x}(t) \mid t \in [0, t_f]\}$. The evolution of $\mathrm{x}(t)$ is described by a stochastic differential equation \[see (1) below\]. Figure 3 illustrates a representative example highlighting the difference between target modeling in existing approaches and our proposed method. 
+In contrast, we model the target motion as a <em>stochastic process</em> $\lbrace \mathrm{x}(t) \mid t \in \[0, t_f\]\rbrace$. The evolution of $\mathrm{x}(t)$ is described by a stochastic differential equation \[see (1) below\]. Figure 3 illustrates a representative example highlighting the difference between target modeling in existing approaches and our proposed method. 
 
-<div style="display: flex; justify-content: space-between; align-items: center;">
-  <div>
-    $$ \mathrm{d}\mathrm{x}(t) = \mathrm{v}(\mathrm{x}, t)\, \mathrm{d}t + D(\mathrm{x}, t)\, \mathrm{d} \omega(t) $$
-  </div>
-  <div style="margin-left: 1em;">(1)</div>
+<div style="text-align: center;">
+  $$ \mathrm{d}\mathrm{x}(t) = \mathrm{v}(\mathrm{x}, t)\, \mathrm{d}t + D(\mathrm{x}, t)\, \mathrm{d} \omega(t) \tag{1} $$
 </div>
 
 An example of the drift term $\mathrm{v}(\mathrm{x}, t)$ and diffusion term $D(\mathrm{x}, t)$ can be found in <a href="#ref5"> Zhao and Bewley \[2025\]</a> and thus omitted here. We simply bring up the assumption made on target dynamics in <a href="#ref5"> Zhao and Bewley \[2025\]</a>.
