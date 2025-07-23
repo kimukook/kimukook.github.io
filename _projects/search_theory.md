@@ -49,8 +49,8 @@ Previous state-of-the-art work in probabilistic search has several limitations:
 In contrast, this project develops novel and efficient mathematical frameworks for the control of multiple autonomous
 searchers tasked with locating an unseen, randomly moving target, whose motion may be <em>non-evasive</em>, or even <em>evasive</em>.
 
-## Model on target motion
-In the existing literature, such as <a href="#ref1">Phelps et al. \[2014\]</a>, the target is typically modeled with an uncertain initial position but deterministic motion. In these formulations, the initial state is explicitly characterized by a probability density function (PDF), while the subsequent motion follows a known differential equation.
+# Model on target motion
+Readers familiar with stochastic (or search) theory can safely omit this section. In the existing literature, such as <a href="#ref1">Phelps et al. \[2014\]</a>, the target is typically modeled with an uncertain initial position but deterministic motion. In these formulations, the initial state is explicitly characterized by a probability density function (PDF), while the subsequent motion follows a known differential equation.
 
 In contrast, we model the target motion as a <em>stochastic process</em> $\lbrace \mathrm{x}(t) \mid t \in \[0, t_f\]\rbrace$. The evolution of $\mathrm{x}(t)$ is described by a stochastic differential equation (SDE) \[see (1) below\]. Figure 3 provides a representative comparison between traditional target modeling approaches and the method proposed in this work.
 
@@ -60,16 +60,17 @@ In contrast, we model the target motion as a <em>stochastic process</em> $\lbrac
 
 here $\omega(t)$ is a vector Brownian motion process. Examples of the drift term $\mathrm{v}(\mathrm{x}, t)$ and diffusion term $D(\mathrm{x}, t)$ can be found in <a href="#ref7"> Zhao and Bewley \[2025\]</a> and are thus omitted here. 
 
-<div class="center">
-  <div class="image-full">
-    <img src="/assets/target_motion.gif" alt="Target Motion" width="600px">
-    <div class="caption">
-      Figure 3. Animated illustration of target motion and searcher trajectories. The red and blue curves represent the trajectories of two searchers. The yellow path depicts a traditional target governed by a deterministic differential equation. The purple and green paths correspond to the non-evasive and evasive target behaviors modeled in this work, respectively.
-    </div>
-  </div>
-</div>
+<figure style="text-align: center">
+  <video autoplay loop muted playsinline width="600">
+    <source src="/assets/target_motion.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <figcaption>
+    <strong>Figure 3.</strong> Animated illustration of target motion and searcher trajectories. The red and blue curves represent the searchers, while the yellow, purple, and green paths denote the traditional, non-evasive, and evasive targets, respectively.
+  </figcaption>
+</figure>
 
-It is a well known that the PDF of a target whose motion is governed by a SDE satisfies Fokker-Planck equation <a href="#ref5"> Jazwinski \[2013\]</a>. In this work, we extend this classical result by proposing a <em><strong>forced Fokker-Planck equation</strong></em> that captures the time evolution of PDF under the influence of search \[see (2) below\]. The derivation of (2) follows the approach outlined in Theorem 1 of <a href="#ref6">Hellman \[1970\]</a>.
+It is well known that the PDF of a target whose motion is governed by a SDE satisfies Fokker-Planck equation <a href="#ref5"> Jazwinski \[2013\]</a>. In this work, we extend this classical result by proposing a <em><strong>forced Fokker-Planck equation</strong></em> that captures the time evolution of PDF under the influence of search \[see (2) below\]. The derivation of (2) follows the approach outlined in Theorem 1 of <a href="#ref6">Hellman \[1970\]</a>.
 
 <div style="text-align: center;">
   $$ \frac{\partial p}{\partial t} - \nabla\cdot\big(D\cdot\nabla p + p\, \nabla\cdot D - \mathrm{v}\,p\big) = p\, \bigg(\int_\Omega \phi\, p\,\mathrm{d}\mathrm{x} - \phi\bigg), \tag{2} $$
@@ -81,15 +82,16 @@ In the absence of searchers, the PDF of target's position is statistically stati
 
 <div class="section-divider"></div>
 
-# Results
+# Main Results
 
-## Part 1 Hybrid search 
-under construction
+## Part 1 Probabilistic search with continuous-discrete observation
+
+
 <div class="section-divider"></div>
 
-## Part 2 Probabilistic Search using optimized periodic orbits
+## Part 2 Probabilistic search using optimized periodic orbits
 
-## Part 3 Collaborative search strategy
+## Part 3 Probabilistic search and collaborative search strategy
 
 
 # References
@@ -140,8 +142,8 @@ under construction
   </li>
   
   <li id="ref7">
-    <a href="http://robotics.ucsd.edu/pubs/ZB_periodic_search.pdf">
     M. Zhao and T. Bewley, 
+    <a href="http://robotics.ucsd.edu/pubs/ZB_periodic_search.pdf">
     <em>Probabilistic search for randomly moving targets using optimized time-periodic orbits</em></a>, 
     submitted to Automatica, 2025.
   </li>
