@@ -2,7 +2,16 @@
 layout: project
 title: "Probabilistic Search for Randomly Moving Targets"
 ---
-# Motivation
+# Introduction
+
+This project addresses the <em>probabilistic search problem</em> for uncertain, mobile targets by leveraging continuous-time models and PDE-constrained optimization. We present three complementary contributions: continuous-discrete observation, time-periodic search for non-evasive targets, and collaborative searching for evasive targets.
+
+The crux of this project is <em>adaptive observation</em>, a framework that couples estimation and control. The estimation task involves modeling the moving target’s likely position as a stochastic process, accounting for the uncertainty in both its initial location and dynamics. The control task involves decision-making and coordination of searchers as they scan their surroundings to locate the target. Crucially, these two components are organically coupled: searchers’ observations not only inform the evolving estimate of the target’s location, but also respond to it, forming a “feedback loop” that iteratively drives both estimation and control. This idea is illustrated in the figure below.
+
+<img src="assets/flow_chart_search.pdf" alt="Search flowchart" width="600px">
+
+
+## Motivation
 
 Search problems are common in both military and civilian domains—from rescuing missing persons, pets or wreckage like MH370 (non-evasive randomly moving targets), to tracking fugitives or foraging animals (evasive randomly moving targets). Unfortunately, many traditional methods are limited in adaptability and struggle in dynamic or uncertain environments. **Figure 1a and 1b** below showcase the real-world examples illustrating these challenges, often resorting to predetermined or exhaustive sweeps.
 
@@ -24,8 +33,8 @@ Search problems are common in both military and civilian domains—from rescuing
 </div>
 
 
-## Existing research 
-Previous work in probabilistic search has several limitations:
+## Existing research
+Previous state-of-the-art work in probabilistic search has several limitations:
 
 - <a href="#ref1">Phelps et al. [2014]</a> considers only uncertainty in the target's initial location, neglecting uncertainty in its motion;
 - <a href="#ref2">Hellman [1972]</a> focuses on optimizing search trajectories, but ignores dynamic feasibility of searchers;
@@ -36,7 +45,25 @@ searchers tasked with locating an unseen, randomly moving target, whose motion m
 
 <div class="section-divider"></div>
 
+## Background
+
+### model on target behavior
+
+<!-- need another image here -->
+
+### update rule
+
+# Part 1
+
+# Part 2
+
+# Part 3
 # Main Theory
+
+
+
+
+
 
 ## Target Behavior Modeling
 
