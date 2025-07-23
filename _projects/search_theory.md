@@ -8,9 +8,12 @@ This project addresses the <em>probabilistic search problem</em> for uncertain, 
 
 The crux of this project is <em>adaptive observation</em>, a framework that couples estimation and control. The estimation task involves modeling the moving target’s likely position as a stochastic process, accounting for the uncertainty in both its initial location and dynamics. The control task involves decision-making and coordination of searchers as they scan their surroundings to locate the target. Crucially, these two components are organically coupled: searchers’ observations not only inform the evolving estimate of the target’s location, but also respond to it, forming a “feedback loop” that iteratively drives both estimation and control. This idea is illustrated in the figure below.
 
-<p align="center">
-  <img src="assets/flow_chart_search.png" alt="Search flowchart" width="600px">
-</p>
+<div class="image-box">
+  <img src="/assets/flow_chart_search.png" alt="Search flowchart" width="600px">
+  <div class="caption">
+    Figure 1. Discrete-time flow chart of <em>search process</em>. Note that discrete-time flow is for illustration purposes only; the actual work is conducted in continuous-time.
+  </div>
+</div>
 
 ## Motivation
 
@@ -20,14 +23,14 @@ Search problems are common in both military and civilian domains—from rescuing
   <div class="image-box">
     <img src="/assets/lawnmower.jpeg" alt="Lawnmower trajectory">
     <div class="caption">
-      Figure 1a. Lawnmower trajectory used to search for the missing F-35B fighter jet. 
+      Figure 2a. Lawnmower trajectory used to search for the missing F-35B fighter jet. 
       <a href="https://x.com/flightradar24/status/1703827299412455459?lang=en">Image source</a>
     </div>
   </div>
   <div class="image-box">
     <img src="/assets/image-9.png" alt="MH370 search">
     <div class="caption">
-      Figure 1b. Searching for the debris of MH370. 
+      Figure 2b. Searching for the debris of MH370. 
       <a href="https://mh370.radiantphysics.com/2025/03/31/update-on-the-search-for-mh370/">Image source</a>
     </div>
   </div>
