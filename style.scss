@@ -319,15 +319,19 @@ footer {
 
 .image-full {
   width: 100%;
-  max-width: 880px; // same as .project-content max-width
-  margin: 2rem auto;
+  max-width: 880px; // or increase this for wider image
+  margin: 2rem auto;   // centers the container block
+  padding: 0 1rem;     // optional: keeps breathing room on narrow screens
   text-align: center;
 
   img {
     width: 100%;
     height: auto;
+    display: block;     // make sure img behaves like a block element
+    margin: 0 auto;     // center the image horizontally
   }
 }
+
 
 .caption {
   font-size: 0.9em;
