@@ -39,6 +39,14 @@ Search problems are common in both military and civilian domains—from rescuing
   </div>
 </div>
 
+<div class="center">
+  <div class="image-full">
+    <img src="/assets/target_motion.gif" alt="Target Motion" width="600px">
+    <div class="caption">
+      Figure 3. Illustration of target motion along with searchers' trajectories in red and blue. Traditional target trajectory described by differential equation in yellow; non-evasive (resp. evasive) target trajectory modeled in this project in purple (resp. green).
+    </div>
+  </div>
+</div>
 
 ## Existing research
 Previous state-of-the-art work in probabilistic search has several limitations:
@@ -51,18 +59,19 @@ In contrast, this project develops novel and efficient mathematical frameworks f
 searchers tasked with locating an unseen, randomly moving target, whose motion may be <em>non-evasive</em>, or even <em>evasive</em>.
 
 ## Model on target motion
-In existing study <a href="#ref1">Phelps et al. \[2014\]</a>, the target is typically modeled with an uncertain initial position but deterministic motion. In their formulation, accordingly, the initial state is explicitly represented by a probability density function, while the subsequent motion is governed by a known differential equation.
+In the existing literature, such as <a href="#ref1">Phelps et al. \[2014\]</a>, the target is typically modeled with an uncertain initial position but deterministic motion. In these formulations, the initial state is explicitly characterized by a probability density function, while the subsequent motion follows a known differential equation.
 
-In contrast, we model the target motion as a <em>stochastic process</em> $\lbrace \mathrm{x}(t) \mid t \in \[0, t_f\]\rbrace$. The evolution of $\mathrm{x}(t)$ is described by a stochastic differential equation \[see (1) below\]. Figure 3 illustrates a representative example highlighting the difference between target modeling in existing approaches and our proposed method. 
+In contrast, we model the target motion as a <em>stochastic process</em> $\lbrace \mathrm{x}(t) \mid t \in \[0, t_f\]\rbrace$. The evolution of $\mathrm{x}(t)$ is described by a stochastic differential equation \[see (1) below\]. Figure 3 provides a representative comparison between traditional target modeling approaches and the method proposed in this work.
 
 <div style="text-align: center;">
-  $$ \mathrm{d}\mathrm{x}(t) = \mathrm{v}(\mathrm{x}, t)\, \mathrm{d}t + D(\mathrm{x}, t)\, \mathrm{d} \omega(t) \tag{1} $$
+  $$ \mathrm{d}\mathrm{x}(t) = \mathrm{v}(\mathrm{x}, t)\, \mathrm{d}t + D(\mathrm{x}, t)\, \mathrm{d} \omega(t), \tag{1} $$
 </div>
 
-An example of the drift term $\mathrm{v}(\mathrm{x}, t)$ and diffusion term $D(\mathrm{x}, t)$ can be found in <a href="#ref5"> Zhao and Bewley \[2025\]</a> and thus omitted here. We simply bring up the assumption made on target dynamics in <a href="#ref5"> Zhao and Bewley \[2025\]</a>.
+here $\omega(t)$ is a vector Brownian motion process. Examples of the drift term $\mathrm{v}(\mathrm{x}, t)$ and diffusion term $D(\mathrm{x}, t)$ can be found in <a href="#ref5"> Zhao and Bewley \[2025\]</a> and are thus omitted here. We instead highlight the core assumption made regarding the target dynamics in <a href="#ref5"> Zhao and Bewley \[2025\]</a>.
+
 
 **Assumption**
-In the absence of searchers, the probability density function of target is statistically stationary.
+In the absence of searchers, the probability density function of target's position is statistically stationary.
 
 <div class="section-divider"></div>
 
@@ -85,7 +94,7 @@ under construction
     <a href="https://www.sciencedirect.com/science/article/pii/S0005109814004063" target="_blank">
       <em>Consistent approximation of a nonlinear optimal control problem with uncertain parameters</em>
     </a>. 
-    Automatica, 50(12):2987–2997, 2014. <a href="#cite1">↩</a>
+    Automatica, 50(12):2987–2997, 2014.
   </li>
 
   <li id="ref2">
