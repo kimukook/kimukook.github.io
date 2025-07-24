@@ -147,24 +147,26 @@ $$
 - We minimize the objective functional which is a measure of maximizing the probability of finding the target during the period.
 <div style="text-align: center;">
 $$
-J = \frac1{t_f} \int_0^{t_f} \bigl[ \sum_{m=1}^M \mathrm{u}_m^T\, R_m\, \mathrm{u}_m - \int_\Omega p(\mathrm{x}, t)\, \phi(\mathrm{x}, t)\, \mathrm{d}\mathrm{x}\bigr]\,\mathrm{d} t
+J = \frac1{t_f} \int_0^{t_f} \bigl[ \sum_{m=1}^M \mathrm{u}_m^T\, R_m\, \mathrm{u}_m - \int_\Omega p(\mathrm{x}, t)\, \phi(\mathrm{x}, t)\, \mathrm{d}\mathrm{x}\bigr]\,\mathrm{d} t.
 $$
 </div>
+
+### Conclusion
 
 ### Numerical results
 <figure style="text-align: center">
   <video autoplay loop muted playsinline width="600">
-    <source src="/assets/periodic_opt" type="video/mp4">
+    <source src="/assets/periodic_opt.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
   <figcaption style="color: gray; font-style: italic;">
-    <strong>Figure 6.</strong> Time evolution of control inputs for the two autonomous searchers. The top and bottom panels correspond to Agent 1 and Agent 2, respectively. Solid curves represent the executed control inputs $\mathrm{u}_1$, $\mathrm{u}_2$ applied over time, while the lighter dashed lines indicate the planned control trajectories within each predictive horizon. These results illustrate how hybrid search dynamically adjusts control strategies in response to updated PDF of target position.
+    <strong>Figure 6.</strong>  Results of optimized periodic search strategy with three autonomous agents. Top-left: optimized periodic trajectories of the searchers in <span style="color:rgb(0, 114, 189);">blue</span>, <span style="color:rgb(217, 83, 25);">orange</span>, and <span style="color:rgb(237, 177, 32);">yellow</span>. Top-right: convergence of the objective functional, and periodic constraint over iterations, indicating successful adjoint-based optimization. Bottom-left: optimized control inputs $u_1$ and $u_2$ for each agent across one period. Bottom-right: validation of time-periodicity using the trajectory mismatch metric $\gamma(t)$, along with its time-averaged integral. The dashed traces represent previous iterations, and the red horizontal line marks the convergence target. These results demonstrate the effectiveness of time-periodic orbit design for persistent probabilistic search.
   </figcaption>
 </figure>
 
 <figure style="text-align: center">
   <video autoplay loop muted playsinline width="600">
-    <source src="/assets/hybrid_traj.mp4" type="video/mp4">
+    <source src="/assets/periodic_traj.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
   <figcaption style="color: gray; font-style: italic;">
@@ -178,6 +180,9 @@ Under construction
 
 ## Part 4 Probabilistic search for grid-based Bayesian estimation exploiting sparsity
 Theory and code under development...
+
+# Conclusion
+This work presents a principled framework for designing optimized time-periodic search trajectories for autonomous agents operating under uncertainty. By formulating the search task as a PDE-constrained optimization problem, we derive trajectories that repeatedly traverse the domain in a manner that minimizes uncertainty about a target's location over time. The resulting orbits are not only dynamically feasible but also information-optimal, balancing spatial coverage with control efficiency. Numerical results demonstrate fast convergence of the objective and control inputs, as well as successful periodicity enforcement via adjoint-based gradient optimization. This approach is particularly well-suited for long-duration, passive monitoring tasks such as persistent surveillance, environmental monitoring, and non-evasive target tracking.
 
 **References**
 
