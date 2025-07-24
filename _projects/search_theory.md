@@ -8,12 +8,12 @@ This project focuses on adaptive control of autonomous agents searching for rand
 
 **Keywords:** Probabilistic search theory · Stochastic dynamics · PDE-constrained optimization · Adjoint analysis
 
-The crux of this project is <em><strong>adaptive observation</strong></em>, a framework that couples estimation and control. The estimation task involves modeling the moving target’s likely position as a stochastic process, accounting for the uncertainty in both its initial location and dynamics. The control task involves decision-making and coordination of searchers as they scan their surroundings to locate the target. Crucially, these two components are organically coupled: searchers’ observations not only inform the evolving estimate of the target’s location, but also respond to it, forming a “feedback loop” that iteratively drives both estimation and control tasks. This idea is illustrated in Figure 1 below.
+The crux of this project is <em><strong>adaptive observation</strong></em>, a framework that couples estimation and control. The estimation task involves modeling the moving target’s likely position as a stochastic process, accounting for the uncertainty in both its initial location and dynamics. The control task involves decision-making and coordination of searchers as they scan their surroundings to locate the target. Crucially, these two components are organically coupled: searchers’ observations not only inform the evolving estimate of the target’s location, but also respond to it, forming a “feedback loop” that iteratively drives both estimation and control tasks. This idea is illustrated in <a href="">Figure 1</a> below.
 <div class="center">
   <div class="image-full">
     <img src="/assets/Search_flowchart_math.svg" alt="Search flowchart" width="600px">
     <div class="caption">
-      Figure 1. Discrete-time flow chart of <em>search process</em>. Note that discrete-time flow is for illustration purposes   only; the actual work is conducted in continuous-time.
+      <a id="#fig1">Figure 1</a>. Discrete-time flow chart of <em>search process</em>. Note that the discrete-time flow is for illustration purposes   only; the actual work is conducted in continuous-time.
     </div>
   </div>
 </div>
@@ -31,7 +31,7 @@ Search problems are common in both military and civilian domains—from rescuing
     </div>
   </div>
   <div class="image-box">
-    <img src="/assets/searh_MH370.png" alt="MH370 search">
+    <img src="/assets/search_MH370.png" alt="MH370 search">
     <div class="caption">
       Figure 2b. Searching for the debris of MH370. 
       <a href="https://mh370.radiantphysics.com/2025/03/31/update-on-the-search-for-mh370/">Image source</a>
@@ -86,20 +86,20 @@ In the absence of searchers, the PDF of target's position is statistically stati
 # Methodology and Numerical Results
 <a id="part1"></a>
 ## Part 1 Probabilistic search with continuous-discrete observation
-We consider a hybrid search framework in which the target's motion evolves continuously in time, while observations are made at discrete time steps. The core challenge lies in optimizing searcher controls under uncertainty while accounting for the evolving probability density function (PDF) of the target’s position.
+We first consider a hybrid search framework in which the target's motion evolves continuously in time, while observations are made at discrete time steps. The core challenge lies in optimizing searcher controls under uncertainty while accounting for the evolving probability density function (PDF) of the target’s position.
 ### Problem formulation
 This hybrid system is governed by:
 - A Fokker-Planck equation modeling the time evolution of the PDF $p(\mathrm{x}, t)$,
 <div style="text-align: center;">
 $$
-\frac{\partial p}{\partial t} - \nabla\cdot\big(D\cdot\nabla p + p\, \nabla\cdot D - \mathrm{v}\,p\big) = 0,
+\frac{\partial p}{\partial t} - \nabla\cdot\big(D\cdot\nabla p + p\, \nabla\cdot D - \mathrm{v}\,p\big) = 0.
 $$
 </div>
-- Searchers' dynamics $\dot{\mathrm{q}}_m(t) = \mathrm{g}_m(\mathrm{q}_m, \mathrm{u}_m)$, for $m=1,\ldots,M$,
+- Searchers' dynamics $\dot{\mathrm{q}}_m(t) = \mathrm{g}_m(\mathrm{q}_m, \mathrm{u}_m)$, for $m=1,\ldots,M$.
 - A Bayesian rule updating the information collected by searchers at each observation time $t_k$,
 <div style="text-align: center;">
 $$
-\phi({\bf x},\, t_k) = \prod_{m=1}^M\phi_m({\bf x},\, t_k), \quad \phi_m({\bf x},\, t_k) = 1 - \alpha_m\, \exp\big(-\beta_m\, \| {\bf x} - E_m\, {\bf q}_m(t_k)\|^2 \big),
+\phi({\bf x},\, t_k) = \prod_{m=1}^M\phi_m({\bf x},\, t_k), \quad \phi_m({\bf x},\, t_k) = 1 - \alpha_m\, \exp\big(-\beta_m\, \| {\bf x} - E_m\, {\bf q}_m(t_k)\|^2 \big).
 $$
 </div>
 - An objective functional that maximizes the probability of finding the target while penalizing control efforts
@@ -116,7 +116,7 @@ $$
     Your browser does not support the video tag.
   </video>
   <figcaption style="color: gray; font-style: italic;">
-    <strong>Figure 4.</strong> Animated illustration of hybrid search, searchers' trajectories and evolution of PDF.
+    <strong>Figure 4.</strong> Real-time animation of two autonomous searchers performing hybrid search. The searcher trajectories are shown in <span style="color:rgb(0, 114, 189);">blue</span> and <span style="color:rgb(217, 83, 25);">orange</span>, with planned trajectories in lighter dotted lines in the horizon. The grayscale background illustrates the evolving probability density function (PDF) of the target’s location: darker regions indicate lower probability (suppressed by proximity to searchers), while lighter regions represent areas of higher uncertainty and likelihood of target presence. The adaptive control strategy drives the searchers to iteratively explore and shape the PDF landscape in pursuit of the hidden target.
   </figcaption>
 </figure>
 
@@ -126,17 +126,37 @@ $$
     Your browser does not support the video tag.
   </video>
   <figcaption style="color: gray; font-style: italic;">
-    <strong>Figure 4.</strong> Animated illustration of hybrid search, searchers' control inputs.
+    <strong>Figure 5.</strong> Time evolution of control inputs for the two autonomous searchers. The top and bottom panels correspond to Agent 1 and Agent 2, respectively. Solid curves represent the executed control inputs $\mathrm{u}_1$, $\mathrm{u}_2$ applied over time, while the lighter dashed lines indicate the planned control trajectories within each predictive horizon. These results illustrate how hybrid search dynamically adjusts control strategies in response to updated PDF of target position.
   </figcaption>
 </figure>
 
 <a id="part2"></a>
 ## Part 2 Probabilistic search using optimized periodic orbits
+Inspired by the periodic-like trajectories shown in Figure 4, we propose a periodic search strategy for randomly moving targets, meaning that searchers are patrolling on a pre-designed orbits. 
+
+### Problem formulation
+We solve the following optimal control problem:
+- The searchers dynamics is still described by the differential equation as shown in <a href="#part1">Part 1</a>.
+- The evolution of target position's PDF is described by (2) above.
+- We impose the periodic constraint on searchers' state vector
+$$
+\phi(\mathrm{q}_{m}(t_f), \mathrm{q}_{m}(0)) \triangleq \frac1{t_f}\bigl( \mathrm{q}_m(t_f) - \mathrm{q}_m(0)\bigr), \quad \phi(\mathrm{q}_{m}(t_f), \mathrm{q}_{m}(0)) = 0.
+$$
+- We minimize the objective functional which is a measure of maximizing the probability of finding the target during the period.
+$$
+J = \frac1{t_f} \int_0^{t_f} \bigl[ \sum_{m=1}^M \mathrm{u}_m^T\, R_m\, \mathrm{u}_m - \int_\Omega p(\mathrm{x}, t)\, \phi(\mathrm{x}, t)\, \mathrm{d}\mathrm{x}\bigr]\,\mathrm{d} t
+$$
+
+### Numerical results
+
 <a id="part3"></a>
 ## Part 3 Probabilistic search and collaborative search strategy
+Under construction
 
+## Part 4 Probabilistic search for grid-based Bayesian estimation exploiting sparsity
+Theory and code under development...
 
-# References
+**References**
 
 <ol>
   <li id="ref1">
