@@ -10,8 +10,14 @@ layout: default
     <ul id="table-of-contents"></ul>
   </nav>
 
-  <div class="project-content">
+    <div class="project-content">
     {{ content }}
+
+    {% if page.read_time %}
+    <div class="read-time-footer">
+      🕒 Estimated reading time: {{ page.read_time }}
+    </div>
+    {% endif %}
   </div>
 </div>
 
