@@ -105,7 +105,7 @@ $$
 - An objective functional that maximizes the probability of finding the target while penalizing control efforts
 <div style="text-align: center;">
 $$
-J = \left( \int_\Omega \bigl[ p^+({\bf x},\, t_f) \bigr]^2\, \mathrm{d}{\bf x} \right)^{\frac12} + \int_0^{t_f} \sum_{m=1}^M {\bf u}_m^T\, R_m\, {\bf u}_m\, \mathrm{d}t
+J = \left( \int_\Omega \bigl[ p^+({\bf x},\, t_f) \bigr]^2\, \mathrm{d}{\bf x} \right)^{\frac12} + \int_0^{t_f} \sum_{m=1}^M {\bf u}_m^T\, R_m\, {\bf u}_m\, \mathrm{d}t.
 $$
 </div>
 
@@ -139,15 +139,38 @@ We solve the following optimal control problem:
 - The searchers dynamics is still described by the differential equation as shown in <a href="#part1">Part 1</a>.
 - The evolution of target position's PDF is described by (2) above.
 - We impose the periodic constraint on searchers' state vector
+<div style="text-align: center;">
 $$
 \phi(\mathrm{q}_{m}(t_f), \mathrm{q}_{m}(0)) \triangleq \frac1{t_f}\bigl( \mathrm{q}_m(t_f) - \mathrm{q}_m(0)\bigr), \quad \phi(\mathrm{q}_{m}(t_f), \mathrm{q}_{m}(0)) = 0.
 $$
+</div>
 - We minimize the objective functional which is a measure of maximizing the probability of finding the target during the period.
+<div style="text-align: center;">
 $$
 J = \frac1{t_f} \int_0^{t_f} \bigl[ \sum_{m=1}^M \mathrm{u}_m^T\, R_m\, \mathrm{u}_m - \int_\Omega p(\mathrm{x}, t)\, \phi(\mathrm{x}, t)\, \mathrm{d}\mathrm{x}\bigr]\,\mathrm{d} t
 $$
+</div>
 
 ### Numerical results
+<figure style="text-align: center">
+  <video autoplay loop muted playsinline width="600">
+    <source src="/assets/periodic_opt" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <figcaption style="color: gray; font-style: italic;">
+    <strong>Figure 6.</strong> Time evolution of control inputs for the two autonomous searchers. The top and bottom panels correspond to Agent 1 and Agent 2, respectively. Solid curves represent the executed control inputs $\mathrm{u}_1$, $\mathrm{u}_2$ applied over time, while the lighter dashed lines indicate the planned control trajectories within each predictive horizon. These results illustrate how hybrid search dynamically adjusts control strategies in response to updated PDF of target position.
+  </figcaption>
+</figure>
+
+<figure style="text-align: center">
+  <video autoplay loop muted playsinline width="600">
+    <source src="/assets/hybrid_traj.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <figcaption style="color: gray; font-style: italic;">
+    <strong>Figure 7.</strong> Three autonomous searchers executing periodic search trajectories, shown in <span style="color:rgb(0, 114, 189);">blue</span>, <span style="color:rgb(217, 83, 25);">orange</span>, and <span style="color:rgb(237, 177, 32);">yellow</span>. The grayscale background depicts the evolving probability density function (PDF) of the target’s location: darker regions represent suppressed likelihood due to nearby searchers, while lighter regions indicate higher probability areas where the target is more likely to reside. The coordinated periodic motion helps maintain spatial coverage and adaptively sculpts the uncertainty landscape over time.
+  </figcaption>
+</figure>
 
 <a id="part3"></a>
 ## Part 3 Probabilistic search and collaborative search strategy
