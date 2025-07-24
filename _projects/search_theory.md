@@ -182,7 +182,7 @@ Under construction
 Theory and code under development...
 
 # Conclusion
-This work presents a principled framework for designing optimized time-periodic search trajectories for autonomous agents operating under uncertainty. By formulating the search task as a PDE-constrained optimization problem, we derive trajectories that repeatedly traverse the domain in a manner that minimizes uncertainty about a target's location over time. The resulting orbits are not only dynamically feasible but also information-optimal, balancing spatial coverage with control efficiency. Numerical results demonstrate fast convergence of the objective and control inputs, as well as successful periodicity enforcement via adjoint-based gradient optimization. This approach is particularly well-suited for long-duration, passive monitoring tasks such as persistent surveillance, environmental monitoring, and non-evasive target tracking.
+This project presents principled frameworks for designing optimized time-periodic search trajectories for autonomous agents operating under uncertainty. By formulating the search task as a PDE-constrained optimization problem, we derive trajectories that repeatedly traverse the domain in a manner that minimizes uncertainty about a target's location over time. The resulting orbits are not only dynamically feasible but also information-optimal, balancing spatial coverage with control efficiency. Numerical results demonstrate fast convergence of the objective and control inputs, as well as successful periodicity enforcement via adjoint-based gradient optimization. This approach is particularly well-suited for long-duration, passive monitoring tasks such as rescue-and-save missions, persistent surveillance, and environmental monitoring.
 
 **References**
 
@@ -215,7 +215,7 @@ This work presents a principled framework for designing optimized time-periodic 
     B. L. Hanson, M. Zhao and T. R. Bewley, 
     <a href="https://www.tandfonline.com/doi/full/10.1080/03610926.2024.2439999">
     <em>An extensible framework for the probabilistic search of stochastically-moving targets characterized by generalized Gaussian distributions or experimentally-defined regions of interest</em></a>, 
-    submitted to Automatica, 2025.
+    Communications in Statistics-Theory and Methods (2025): 1-26.
   </li>
 
   <li id="ref5">
@@ -235,6 +235,6 @@ This work presents a principled framework for designing optimized time-periodic 
     M. Zhao and T. Bewley, 
     <a href="http://robotics.ucsd.edu/pubs/ZB_periodic_search.pdf">
     <em>Probabilistic search for randomly moving targets using optimized time-periodic orbits</em></a>, 
-    submitted to Automatica, 2025.
+    under review at Automatica since Feb. 2025.
   </li>
 </ol>
