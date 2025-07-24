@@ -438,9 +438,16 @@ footer {
   }	
 }
 
-
 .project-content {
   flex: 1;
   max-width: 880px;
   margin-left: -0.5rem;
+}
+
+.read-time-footer {
+  margin-top: 2em;
+  font-size: 0.9em;
+  color: gray;
+  font-style: italic;
+  text-align: center;
 }
