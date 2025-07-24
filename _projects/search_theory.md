@@ -11,7 +11,7 @@ This project focuses on adaptive control of autonomous agents searching for rand
 The crux of this project is <em><strong>adaptive observation</strong></em>, a framework that couples estimation and control. The estimation task involves modeling the moving target’s likely position as a stochastic process, accounting for the uncertainty in both its initial location and dynamics. The control task involves decision-making and coordination of searchers as they scan their surroundings to locate the target. Crucially, these two components are organically coupled: searchers’ observations not only inform the evolving estimate of the target’s location, but also respond to it, forming a “feedback loop” that iteratively drives both estimation and control tasks. This idea is illustrated in Figure 1 below.
 <div class="center">
   <div class="image-full">
-    <img src="/assets/flow_chart_search.svg" alt="Search flowchart" width="600px">
+    <img src="/assets/Search_flowchart_math.svg" alt="Search flowchart" width="600px">
     <div class="caption">
       Figure 1. Discrete-time flow chart of <em>search process</em>. Note that discrete-time flow is for illustration purposes   only; the actual work is conducted in continuous-time.
     </div>
