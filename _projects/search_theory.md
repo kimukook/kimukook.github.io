@@ -87,22 +87,48 @@ In the absence of searchers, the PDF of target's position is statistically stati
 <a id="part1"></a>
 ## Part 1 Probabilistic search with continuous-discrete observation
 We consider a hybrid search framework in which the target's motion evolves continuously in time, while observations are made at discrete time steps. The core challenge lies in optimizing searcher controls under uncertainty while accounting for the evolving probability density function (PDF) of the target’s position.
-
+### Problem formulation
 This hybrid system is governed by:
 - A Fokker-Planck equation modeling the time evolution of the PDF $p(\mathrm{x}, t)$,
+<div style="text-align: center;">
 $$
 \frac{\partial p}{\partial t} - \nabla\cdot\big(D\cdot\nabla p + p\, \nabla\cdot D - \mathrm{v}\,p\big) = 0,
 $$
-- Searchers' dynamics$\dot\mathrm{q}_m(t) = \mathrm{g}_m(\mathrm{q}_m, \mathrm{u}_m)$, for $m=1,\ldots,M$,
+</div>
+- Searchers' dynamics $\dot\mathrm{q}_m(t) = \mathrm{g}_m(\mathrm{q}_m, \mathrm{u}_m)$, for $m=1,\ldots,M$,
 - A Bayesian rule updating the information collected by searchers at each observation time $t_k$,
+<div style="text-align: center;">
 $$
 \phi({\bf x},\, t_k) = \prod_{m=1}^M\phi_m({\bf x},\, t_k), \quad \phi_m({\bf x},\, t_k) = 1 - \alpha_m\, \exp\big(-\beta_m\, \| {\bf x} - E_m\, {\bf q}_m(t_k)\|^2 \big)
 $$
+</div>
 - An objective functional that maximizes the probability of finding the target while penalizing control efforts
+<div style="text-align: center;">
 $$
 J = \bigg(\int_\Omega \big\[p^+({\bf x},\, t_f) \big\]^2\, \mathrm{d}{\bf x} \bigg)^{\frac12}\, + \, \int_0^{t_f} \sum_{m=1}^M {\bf u}_m^T\, R_m\, {\bf u}_m\, \mathrm{d}t
 $$
+</div>
 
+### Numerical results
+<figure style="text-align: center">
+  <video autoplay loop muted playsinline width="600">
+    <source src="/assets/hybrid_traj.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <figcaption style="color: gray; font-style: italic;">
+    <strong>Figure 4.</strong> Animated illustration of hybrid search, searchers' trajectories and evolution of PDF.
+  </figcaption>
+</figure>
+
+<figure style="text-align: center">
+  <video autoplay loop muted playsinline width="600">
+    <source src="/assets/hybrid_control.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <figcaption style="color: gray; font-style: italic;">
+    <strong>Figure 4.</strong> Animated illustration of hybrid search, searchers' control inputs.
+  </figcaption>
+</figure>
 
 <a id="part2"></a>
 ## Part 2 Probabilistic search using optimized periodic orbits
