@@ -4,6 +4,12 @@ layout: default
 
 <h1>{{ page.title }}</h1>
 
+{% if page.read_time %}
+<div class="read-time-header">
+  🕒 Estimated reading time: {{ page.read_time }}
+</div>
+{% endif %}
+
 <div class="project-wrapper">
   <nav class="toc-container">
     <p><strong>Contents</strong></p>
@@ -12,13 +18,7 @@ layout: default
 
     <div class="project-content">
     {{ content }}
-
-    {% if page.read_time %}
-    <div class="read-time-footer">
-      🕒 Estimated reading time: {{ page.read_time }}
     </div>
-    {% endif %}
-  </div>
 </div>
 
 <script>
