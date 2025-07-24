@@ -116,7 +116,7 @@ $$
     Your browser does not support the video tag.
   </video>
   <figcaption style="color: gray; font-style: italic;">
-    <strong>Figure 4.</strong> Animated illustration of hybrid search, searchers' trajectories and evolution of PDF.
+    <strong>Figure 4.</strong> Real-time animation of two autonomous searchers performing hybrid search. The searcher trajectories are shown in <span style="color:rgb(0, 114, 189);">blue</span> and <span style="color:rgb(217, 83, 25);">orange</span>. The grayscale background illustrates the evolving probability density function (PDF) of the target’s location: darker regions indicate lower probability (suppressed by proximity to searchers), while lighter regions represent areas of higher uncertainty and likelihood of target presence. The adaptive control strategy drives the searchers to iteratively explore and shape the PDF landscape in pursuit of the hidden target.
   </figcaption>
 </figure>
 
@@ -126,7 +126,7 @@ $$
     Your browser does not support the video tag.
   </video>
   <figcaption style="color: gray; font-style: italic;">
-    <strong>Figure 4.</strong> Animated illustration of hybrid search, searchers' control inputs.
+    <strong>Figure 4.</strong> Time evolution of control inputs for the two autonomous searchers. The top and bottom panels correspond to Agent 1 and Agent 2, respectively. Solid curves represent the executed control inputs $\mathrm{u}_1$, $\mathrm{u}_2$ applied over time, while the lighter dashed lines indicate the planned control trajectories within each predictive horizon. These results illustrate how hybrid search dynamically adjusts control strategies in response to updated PDF of target position.
   </figcaption>
 </figure>
 
