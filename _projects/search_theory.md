@@ -31,7 +31,7 @@ Search problems are common in both military and civilian domains—from rescuing
     </div>
   </div>
   <div class="image-box">
-    <img src="/assets/image-9.png" alt="MH370 search">
+    <img src="/assets/searh_MH370.png" alt="MH370 search">
     <div class="caption">
       Figure 2b. Searching for the debris of MH370. 
       <a href="https://mh370.radiantphysics.com/2025/03/31/update-on-the-search-for-mh370/">Image source</a>
@@ -49,7 +49,7 @@ Previous state-of-the-art work in probabilistic search has several limitations:
 In contrast, this project develops novel and efficient mathematical frameworks for the control of multiple autonomous
 searchers tasked with locating an unseen, randomly moving target, whose motion may be <em>non-evasive</em>, or even <em>evasive</em>.
 
-# Modeling Framework
+## Modeling Framework
 Readers familiar with stochastic (or search) theory can safely omit this section, and jump to results part below. 
 
 In the existing literature, such as <a href="#ref1">Phelps et al. \[2014\]</a>, the target is typically modeled with an uncertain initial position but deterministic motion. In these formulations, the initial state is explicitly characterized by a probability density function (PDF), while the subsequent motion follows a known differential equation.
@@ -95,17 +95,17 @@ $$
 \frac{\partial p}{\partial t} - \nabla\cdot\big(D\cdot\nabla p + p\, \nabla\cdot D - \mathrm{v}\,p\big) = 0,
 $$
 </div>
-- Searchers' dynamics $\dot\mathrm{q}_m(t) = \mathrm{g}_m(\mathrm{q}_m, \mathrm{u}_m)$, for $m=1,\ldots,M$,
+- Searchers' dynamics $\dot{\mathrm{q}}_m(t) = \mathrm{g}_m(\mathrm{q}_m, \mathrm{u}_m)$, for $m=1,\ldots,M$,
 - A Bayesian rule updating the information collected by searchers at each observation time $t_k$,
 <div style="text-align: center;">
 $$
-\phi({\bf x},\, t_k) = \prod_{m=1}^M\phi_m({\bf x},\, t_k), \quad \phi_m({\bf x},\, t_k) = 1 - \alpha_m\, \exp\big(-\beta_m\, \| {\bf x} - E_m\, {\bf q}_m(t_k)\|^2 \big)
+\phi({\bf x},\, t_k) = \prod_{m=1}^M\phi_m({\bf x},\, t_k), \quad \phi_m({\bf x},\, t_k) = 1 - \alpha_m\, \exp\big(-\beta_m\, \| {\bf x} - E_m\, {\bf q}_m(t_k)\|^2 \big),
 $$
 </div>
 - An objective functional that maximizes the probability of finding the target while penalizing control efforts
 <div style="text-align: center;">
 $$
-J = \bigg(\int_\Omega \big\[p^+({\bf x},\, t_f) \big\]^2\, \mathrm{d}{\bf x} \bigg)^{\frac12}\, + \, \int_0^{t_f} \sum_{m=1}^M {\bf u}_m^T\, R_m\, {\bf u}_m\, \mathrm{d}t
+J = \left( \int_\Omega \bigl[ p^+({\bf x},\, t_f) \bigr]^2\, \mathrm{d}{\bf x} \right)^{\frac12} + \int_0^{t_f} \sum_{m=1}^M {\bf u}_m^T\, R_m\, {\bf u}_m\, \mathrm{d}t
 $$
 </div>
 
