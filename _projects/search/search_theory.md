@@ -57,21 +57,19 @@ The crux of this project is <em><strong>adaptive observation</strong></em>, a fr
   </div>
 </div>
 
-We simply show numerical results in this general page, for more mathemetical background, inter alia, the model setup for randomly moving targets using stochastic differential equation, the probability density function of target position, and the optimal control problem formulation, click the sub-titles in blue below to see more detailed info. 
-<a id="part1"></a>
+In this homepage of probabilistic search, we focus on showcasing numerical results. For detailed mathematical background—including the modeling of randomly moving targets via stochastic differential equations, the evolution of the target’s probability density function (PDF) using Fokker-Planck equation, and the formulation of the optimal control problem—please click the blue section titles below for expanded explanations.
 
 ## [Part 1 Probabilistic search with continuous-discrete observation]({{ site.baseurl }}/projects/search-theory/part1)
 
 We first consider a hybrid search framework in which the target's motion evolves continuously in time, while observations are made at discrete time steps. The core challenge lies in optimizing searcher controls under uncertainty while accounting for the evolving probability density function (PDF) of the target’s position.
 
-### Numerical results
 <figure style="text-align: center">
   <video autoplay loop muted playsinline width="600">
     <source src="/assets/hybrid_traj.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
-  <figcaption style="color: gray;">
-    <strong>Figure 4.</strong> Real-time animation of two autonomous searchers performing hybrid search. The searcher trajectories are shown in <span style="color:rgb(0, 114, 189);">blue</span> and <span style="color:rgb(217, 83, 25);">orange</span>, with planned trajectories in lighter dotted lines in the horizon. The grayscale background illustrates the evolving probability density function (PDF) of the target’s location: darker regions indicate lower probability (suppressed by proximity to searchers), while lighter regions represent areas of higher uncertainty and likelihood of target presence. The adaptive control strategy drives the searchers to iteratively explore and shape the PDF landscape in pursuit of the hidden target.
+  <figcaption style="color: gray; text-align: left; margin: 0 auto; max-width: 600px;">
+    <strong>Figure 4.</strong> Real-time animation of two autonomous searchers performing hybrid search. The searcher trajectories are shown in <span style="color:rgb(0, 114, 189);">blue</span> and <span style="color:rgb(217, 83, 25);">orange</span>, with planned trajectories in lighter dotted lines in the horizon. The grayscale background illustrates the evolving probability density function (PDF) of the target’s location: darker regions (close to searchers) indicate lower probability (suppressed by searchers' observation), while lighter regions (far from searchers) represent areas of higher uncertainty and likelihood of target presence. The adaptive control strategy drives the searchers to iteratively explore and shape the PDF landscape (exploring lighter regions) in pursuit of the hidden target.
   </figcaption>
 </figure>
 
@@ -90,7 +88,6 @@ We first consider a hybrid search framework in which the target's motion evolves
 
 Inspired by the periodic-like trajectories obtained from optimizing hybrid search strategy as shown in Figure 4 above, <a href="#ref7">Zhao and Bewley \[2025\]</a> investigates a periodic search strategy for randomly moving targets. By optimizing the controls—and thus periodic trajectories—of multiple autonomous agents, the approach efficiently shapes the long-term probability landscape to maximize detection rate under uncertainty.
 
-### Numerical results
 <figure style="text-align: center">
   <video autoplay loop muted playsinline width="600">
     <source src="/assets/periodic_opt.mp4" type="video/mp4">
