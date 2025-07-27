@@ -4,22 +4,13 @@ title: "Probabilistic Search for Randomly Moving Targets"
 read_time: 15–18 minutes
 permalink: /projects/search-theory/
 category: main
+summary: Advancing and optimizing adaptive control strategies to rapidly locate randomly moving targets, whether non-evasive or evasive
 ---
 # Overview
 
 This project focuses on adaptive control of autonomous agents searching for randomly moving targets. This project proposes computational frameworks that iteratively confine control strategies balancing the information gathering and agents mobility. As such, we present three complementary developments: (i) <a href="#part1">a continuous-discrete observation framework</a>, (ii) <a href="#part2">a time-periodic search strategy tailored for non-evasive targets</a>, and (iii) <a href="#part3">a collaborative search approach for tracking evasive targets</a>.
 
 **Keywords:** Probabilistic search theory · Stochastic dynamics · PDE-constrained optimization · Adjoint analysis
-
-The crux of this project is <em><strong>adaptive observation</strong></em>, a framework that couples estimation and control. The estimation task involves modeling the moving target’s likely position as a stochastic process, accounting for the uncertainty in both its initial location and dynamics. The control task involves decision-making and coordination of searchers as they scan their surroundings to locate the target. Crucially, these two components are organically coupled: searchers’ observations not only inform the evolving estimate of the target’s location, but also respond to it, forming a “feedback loop” that iteratively drives both estimation and control tasks. This idea is illustrated in <a href="">Figure 1</a> below.
-<div class="center">
-  <div class="image-full">
-    <img src="/assets/Search_flowchart_math.svg" alt="Search flowchart" width="600px">
-    <div class="caption">
-      <a id="#fig1">Figure 1</a>. Discrete-time flow chart of <em>search process</em>. Note that the discrete-time flow is for illustration purposes   only; the actual work is conducted in continuous-time.
-    </div>
-  </div>
-</div>
 
 ## Motivation
 
@@ -29,14 +20,14 @@ Search problems are common in both military and civilian domains—from rescuing
   <div class="image-box">
     <img src="/assets/lawnmower.jpeg" alt="Lawnmower trajectory">
     <div class="caption">
-      Figure 2a. Lawnmower trajectory used to search for the missing F-35B fighter jet. 
+      Figure 1a. Lawnmower trajectory used to search for the missing F-35B fighter jet. 
       <a href="https://x.com/flightradar24/status/1703827299412455459?lang=en">Image source</a>
     </div>
   </div>
   <div class="image-box">
     <img src="/assets/search_MH370.png" alt="MH370 search">
     <div class="caption">
-      Figure 2b. Searching for the debris of MH370. 
+      Figure 1b. Searching for the debris of MH370. 
       <a href="https://mh370.radiantphysics.com/2025/03/31/update-on-the-search-for-mh370/">Image source</a>
     </div>
   </div>
@@ -70,8 +61,8 @@ here $\omega(t)$ is a vector Brownian motion process. Examples of the drift term
     <source src="/assets/target_motion.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
-  <figcaption style="color: gray; font-style: italic;">
-    <strong>Figure 3.</strong> Animated illustration of target motion and searcher trajectories. The red and blue curves represent the searchers, while the yellow, purple, and green paths denote the traditional, non-evasive, and evasive targets, respectively.
+  <figcaption style="color: gray;">
+    <strong>Figure 2.</strong> Animated illustration of target motion and searcher trajectories. The red and blue curves represent the searchers, while the yellow, purple, and green paths denote the traditional, non-evasive, and evasive targets, respectively.
   </figcaption>
 </figure>
 
@@ -87,6 +78,17 @@ In the absence of searchers, the PDF of target's position is statistically stati
 <div class="section-divider"></div>
 
 # Methodology and Numerical Results
+
+The crux of this project is <em><strong>adaptive observation</strong></em>, a framework that couples estimation and control. The estimation task involves modeling the moving target’s likely position as a stochastic process, accounting for the uncertainty in both its initial location and dynamics. The control task involves decision-making and coordination of searchers as they scan their surroundings to locate the target. Crucially, these two components are organically coupled: searchers’ observations not only inform the evolving estimate of the target’s location, but also respond to it, forming a “feedback loop” that iteratively drives both estimation and control tasks. This idea is illustrated in Figure 3 below.
+<div class="center">
+  <div class="image-full">
+    <img src="/assets/Search_flowchart_math.svg" alt="Search flowchart" width="600px">
+    <div class="caption">
+      Figure 3. Discrete-time flow chart of <em>search process</em>. Note that the discrete-time flow is for illustration purposes only; the actual work is conducted in continuous-time.
+    </div>
+  </div>
+</div>
+
 <a id="part1"></a>
 ## [Part 1 Probabilistic search with continuous-discrete observation]({{ site.baseurl }}/projects/search/part1)
 We first consider a hybrid search framework in which the target's motion evolves continuously in time, while observations are made at discrete time steps. The core challenge lies in optimizing searcher controls under uncertainty while accounting for the evolving probability density function (PDF) of the target’s position.
@@ -118,7 +120,7 @@ $$
     <source src="/assets/hybrid_traj.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
-  <figcaption style="color: gray; font-style: italic;">
+  <figcaption style="color: gray;">
     <strong>Figure 4.</strong> Real-time animation of two autonomous searchers performing hybrid search. The searcher trajectories are shown in <span style="color:rgb(0, 114, 189);">blue</span> and <span style="color:rgb(217, 83, 25);">orange</span>, with planned trajectories in lighter dotted lines in the horizon. The grayscale background illustrates the evolving probability density function (PDF) of the target’s location: darker regions indicate lower probability (suppressed by proximity to searchers), while lighter regions represent areas of higher uncertainty and likelihood of target presence. The adaptive control strategy drives the searchers to iteratively explore and shape the PDF landscape in pursuit of the hidden target.
   </figcaption>
 </figure>
@@ -128,7 +130,7 @@ $$
     <source src="/assets/hybrid_control.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
-  <figcaption style="color: gray; font-style: italic;">
+  <figcaption style="color: gray;">
     <strong>Figure 5.</strong> Time evolution of control inputs for the two autonomous searchers. The top and bottom panels correspond to Agent 1 and Agent 2, respectively. Solid curves represent the executed control inputs $\mathrm{u}_1$, $\mathrm{u}_2$ applied over time, while the lighter dashed lines indicate the planned control trajectories within each predictive horizon. These results illustrate how hybrid search dynamically adjusts control strategies in response to updated PDF of target position.
   </figcaption>
 </figure>
@@ -162,7 +164,7 @@ $$
     <source src="/assets/periodic_opt.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
-  <figcaption style="color: gray; font-style: italic;">
+  <figcaption style="color: gray;">
     <strong>Figure 6.</strong>  Results of optimized periodic search strategy with three autonomous agents. Top-left: optimized periodic trajectories of the searchers in <span style="color:rgb(0, 114, 189);">blue</span>, <span style="color:rgb(217, 83, 25);">orange</span>, and <span style="color:rgb(237, 177, 32);">yellow</span>. Top-right: convergence of the objective functional, and periodic constraint over iterations, indicating successful adjoint-based optimization. Bottom-left: optimized control inputs $u_1$ and $u_2$ for each agent across one period. Bottom-right: validation of time-periodicity using the trajectory mismatch metric $\gamma(t)$, along with its time-averaged integral. The dashed traces represent previous iterations, and the red horizontal line marks the convergence target. These results demonstrate the effectiveness of time-periodic orbit design for persistent probabilistic search.
   </figcaption>
 </figure>
@@ -172,7 +174,7 @@ $$
     <source src="/assets/periodic_traj.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
-  <figcaption style="color: gray; font-style: italic;">
+  <figcaption style="color: gray;">
     <strong>Figure 7.</strong> Three autonomous searchers executing periodic search trajectories, shown in <span style="color:rgb(0, 114, 189);">blue</span>, <span style="color:rgb(217, 83, 25);">orange</span>, and <span style="color:rgb(237, 177, 32);">yellow</span>. The grayscale background depicts the evolving probability density function (PDF) of the target’s location: darker regions represent suppressed likelihood due to nearby searchers, while lighter regions indicate higher probability areas where the target is more likely to reside. The coordinated periodic motion helps maintain spatial coverage and adaptively sculpts the uncertainty landscape over time.
   </figcaption>
 </figure>
