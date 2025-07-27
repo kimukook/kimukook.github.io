@@ -36,3 +36,26 @@ here $\phi(\mathrm{x}, t)$ is the instantaneous search density function \[see <a
 
 **Assumption**
 In the absence of searchers, the PDF of target's position is statistically stationary.
+
+### Problem formulation
+This hybrid system is governed by:
+- A Fokker-Planck equation modeling the time evolution of the PDF $p(\mathrm{x}, t)$,
+<div style="text-align: center;">
+$$
+\frac{\partial p}{\partial t} - \nabla\cdot\big(D\cdot\nabla p + p\, \nabla\cdot D - \mathrm{v}\,p\big) = 0.
+$$
+</div>
+- Searchers' dynamics $\dot{\mathrm{q}}_m(t) = \mathrm{g}_m(\mathrm{q}_m, \mathrm{u}_m)$, for $m=1,\ldots,M$.
+- A Bayesian rule updating the information collected by searchers at each observation time $t_k$,
+<div style="text-align: center;">
+$$
+\phi({\bf x},\, t_k) = \prod_{m=1}^M\phi_m({\bf x},\, t_k), \quad \phi_m({\bf x},\, t_k) = 1 - \alpha_m\, \exp\big(-\beta_m\, \| {\bf x} - E_m\, {\bf q}_m(t_k)\|^2 \big).
+$$
+</div>
+- An objective functional that maximizes the probability of finding the target while penalizing control efforts
+<div style="text-align: center;">
+$$
+J = \left( \int_\Omega \bigl[ p^+({\bf x},\, t_f) \bigr]^2\, \mathrm{d}{\bf x} \right)^{\frac12} + \int_0^{t_f} \sum_{m=1}^M {\bf u}_m^T\, R_m\, {\bf u}_m\, \mathrm{d}t.
+$$
+</div>
+
