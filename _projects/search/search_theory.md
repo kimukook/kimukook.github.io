@@ -3,6 +3,7 @@ layout: project
 title: "Probabilistic Search for Randomly Moving Targets"
 read_time: 15–18 minutes
 permalink: /projects/search-theory/
+category: main
 ---
 # Overview
 
