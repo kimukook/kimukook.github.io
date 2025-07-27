@@ -20,14 +20,14 @@ Search problems are common in both military and civilian domains—from rescuing
   <div class="image-box">
     <img src="/assets/lawnmower.jpeg" alt="Lawnmower trajectory">
     <div class="caption">
-      Figure 1a. Lawnmower trajectory used to search for the missing F-35B fighter jet. 
+      Figure 2a. Lawnmower trajectory used to search for the missing F-35B fighter jet. 
       <a href="https://x.com/flightradar24/status/1703827299412455459?lang=en">Image source</a>
     </div>
   </div>
   <div class="image-box">
     <img src="/assets/search_MH370.png" alt="MH370 search">
     <div class="caption">
-      Figure 1b. Searching for the debris of MH370. 
+      Figure 2b. Searching for the debris of MH370. 
       <a href="https://mh370.radiantphysics.com/2025/03/31/update-on-the-search-for-mh370/">Image source</a>
     </div>
   </div>
@@ -57,30 +57,12 @@ The crux of this project is <em><strong>adaptive observation</strong></em>, a fr
   </div>
 </div>
 
+We simply show numerical results in this general page, for more mathemetical background, inter alia, the model setup for randomly moving targets using stochastic differential equation, the probability density function of target position, and the optimal control problem formulation, click the sub-titles in blue below to see more detailed info. 
 <a id="part1"></a>
+
 ## [Part 1 Probabilistic search with continuous-discrete observation]({{ site.baseurl }}/projects/search-theory/part1)
+
 We first consider a hybrid search framework in which the target's motion evolves continuously in time, while observations are made at discrete time steps. The core challenge lies in optimizing searcher controls under uncertainty while accounting for the evolving probability density function (PDF) of the target’s position.
-### Problem formulation
-This hybrid system is governed by:
-- A Fokker-Planck equation modeling the time evolution of the PDF $p(\mathrm{x}, t)$,
-<div style="text-align: center;">
-$$
-\frac{\partial p}{\partial t} - \nabla\cdot\big(D\cdot\nabla p + p\, \nabla\cdot D - \mathrm{v}\,p\big) = 0.
-$$
-</div>
-- Searchers' dynamics $\dot{\mathrm{q}}_m(t) = \mathrm{g}_m(\mathrm{q}_m, \mathrm{u}_m)$, for $m=1,\ldots,M$.
-- A Bayesian rule updating the information collected by searchers at each observation time $t_k$,
-<div style="text-align: center;">
-$$
-\phi({\bf x},\, t_k) = \prod_{m=1}^M\phi_m({\bf x},\, t_k), \quad \phi_m({\bf x},\, t_k) = 1 - \alpha_m\, \exp\big(-\beta_m\, \| {\bf x} - E_m\, {\bf q}_m(t_k)\|^2 \big).
-$$
-</div>
-- An objective functional that maximizes the probability of finding the target while penalizing control efforts
-<div style="text-align: center;">
-$$
-J = \left( \int_\Omega \bigl[ p^+({\bf x},\, t_f) \bigr]^2\, \mathrm{d}{\bf x} \right)^{\frac12} + \int_0^{t_f} \sum_{m=1}^M {\bf u}_m^T\, R_m\, {\bf u}_m\, \mathrm{d}t.
-$$
-</div>
 
 ### Numerical results
 <figure style="text-align: center">
@@ -105,26 +87,8 @@ $$
 
 <a id="part2"></a>
 ## [Part 2 Probabilistic search using optimized periodic orbits]({{ site.baseurl }}/projects/search-theory/part2)
-Inspired by the periodic-like trajectories shown in Figure 4, we propose a periodic search strategy for randomly moving targets, meaning that searchers are patrolling on a pre-designed orbits. 
 
-### Problem formulation
-We solve the following optimal control problem:
-- The searchers dynamics is still described by the differential equation as shown in <a href="#part1">Part 1</a>.
-- The evolution of target position's PDF is described by (2) above.
-- We impose the periodic constraint on searchers' state vector
-<div style="text-align: center;">
-$$
-\phi(\mathrm{q}_{m}(t_f), \mathrm{q}_{m}(0)) \triangleq \frac1{t_f}\bigl( \mathrm{q}_m(t_f) - \mathrm{q}_m(0)\bigr), \quad \phi(\mathrm{q}_{m}(t_f), \mathrm{q}_{m}(0)) = 0.
-$$
-</div>
-- We minimize the objective functional which is a measure of maximizing the probability of finding the target during the period.
-<div style="text-align: center;">
-$$
-J = \frac1{t_f} \int_0^{t_f} \bigl[ \sum_{m=1}^M \mathrm{u}_m^T\, R_m\, \mathrm{u}_m - \int_\Omega p(\mathrm{x}, t)\, \phi(\mathrm{x}, t)\, \mathrm{d}\mathrm{x}\bigr]\,\mathrm{d} t.
-$$
-</div>
-
-### Conclusion
+Inspired by the periodic-like trajectories obtained from optimizing hybrid search strategy as shown in Figure 4 above, <a href="#ref7">Zhao and Bewley \[2025\]</a> investigates a periodic search strategy for randomly moving targets. By optimizing the controls—and thus periodic trajectories—of multiple autonomous agents, the approach efficiently shapes the long-term probability landscape to maximize detection rate under uncertainty.
 
 ### Numerical results
 <figure style="text-align: center">
