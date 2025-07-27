@@ -87,7 +87,7 @@ In the absence of searchers, the PDF of target's position is statistically stati
 
 # Methodology and Numerical Results
 <a id="part1"></a>
-## [Part 1 Probabilistic search with continuous-discrete observation]({{ site.baseurl }}/projects/search/part1_hybrid)
+## [Part 1 Probabilistic search with continuous-discrete observation]({{ site.baseurl }}/projects/search/part1)
 We first consider a hybrid search framework in which the target's motion evolves continuously in time, while observations are made at discrete time steps. The core challenge lies in optimizing searcher controls under uncertainty while accounting for the evolving probability density function (PDF) of the target’s position.
 ### Problem formulation
 This hybrid system is governed by:
