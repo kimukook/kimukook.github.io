@@ -10,11 +10,13 @@ permalink: /projects/
 
 <ul>
   {% for project in site.projects %}
-    <li>
-      <h3><a href="{{ project.url }}">{{ project.title }}</a></h3>
-      {% if project.summary %}
-        <p>{{ project.summary }}</p>
-      {% endif %}
-    </li>
+    {% if project.category == "main" %}
+      <li>
+        <h3><a href="{{ project.url }}">{{ project.title }}</a></h3>
+        {% if project.summary %}
+          <p>{{ project.summary }}</p>
+        {% endif %}
+      </li>
+    {% endif %}
   {% endfor %}
 </ul>
