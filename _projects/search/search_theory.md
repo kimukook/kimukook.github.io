@@ -1,14 +1,23 @@
 ---
 layout: project
 title: "Probabilistic Search for Randomly Moving Targets"
-read_time: 15–18 minutes
+read_time: 8–10 minutes
 permalink: /projects/search-theory/
 category: main
 summary: Advancing and optimizing adaptive control strategies to rapidly locate randomly moving targets, whether non-evasive or evasive
 ---
 # Overview
 
-This project focuses on adaptive control of autonomous agents searching for randomly moving targets. This project proposes computational frameworks that iteratively confine control strategies balancing the information gathering and agents mobility. As such, we present three complementary developments: (i) <a href="#part1">a continuous-discrete observation framework</a>, (ii) <a href="#part2">a time-periodic search strategy tailored for non-evasive targets</a>, and (iii) <a href="#part3">a collaborative search approach for tracking evasive targets</a>.
+This project focuses on adaptive control of autonomous agents searching for randomly moving targets. This project proposes computational frameworks that iteratively confine control strategies balancing the information gathering and agents mobility. As such, we present three complementary developments: (i) <a href="#part1">a continuous-discrete observation framework</a>, (ii) <a href="#part2">a time-periodic search strategy tailored for non-evasive targets</a>, and (iii) <a href="#part3">a collaborative search approach for tracking evasive targets</a>. An example showcases the problem is shown in Figure 1.
+
+<div class="center">
+  <div class="image-full">
+    <img src="/assets/Search_project_scenario.svg" alt="Search flowchart" width="600px">
+    <div class="caption">
+      Figure 1. Discrete-time flow chart of the <em>search process</em>. While shown in discrete time for illustration purposes, the underlying framework operates in continuous time. The <span style="color: red;">red</span> lines in diagram highlights the core feedback loop: searchers’ observations inform the estimate (i.e., the probability distribution of the target), which then drives control updates—and consequently, the agents’ trajectories.
+    </div>
+  </div>
+</div>
 
 **Keywords:** Probabilistic search theory · Stochastic dynamics · PDE-constrained optimization · Adjoint analysis
 
@@ -52,14 +61,14 @@ The crux of this project is <em><strong>adaptive observation</strong></em>, a fr
   <div class="image-full">
     <img src="/assets/Search_flowchart_math.svg" alt="Search flowchart" width="600px">
     <div class="caption">
-      Figure 3. Discrete-time flow chart of <em>search process</em>. Note that the discrete-time flow is for illustration purposes only; the actual work is conducted in continuous-time.
+      Figure 3. Discrete-time flow chart of the <em>search process</em>. While shown in discrete time for illustration purposes, the underlying framework operates in continuous time. The <span style="color: red;">red</span> lines in diagram highlights the core feedback loop: searchers’ observations inform the estimate (i.e., the probability distribution of the target), which then drives control updates—and consequently, the agents’ trajectories.
     </div>
   </div>
 </div>
 
 In this homepage of probabilistic search, we focus on showcasing numerical results. For detailed mathematical background—including the modeling of randomly moving targets via stochastic differential equations, the evolution of the target’s probability density function (PDF) using Fokker-Planck equation, and the formulation of the optimal control problem—please click the blue section titles below for expanded explanations.
 
-## [Part 1 Probabilistic search with continuous-discrete observation]({{ site.baseurl }}/projects/search-theory/part1)
+## [Part 1 Continuous-discrete observation]({{ site.baseurl }}/projects/search-theory/part1)
 
 We first consider a hybrid search framework in which the target's motion evolves continuously in time, while observations are made at discrete time steps. The core challenge lies in optimizing searcher controls under uncertainty while accounting for the evolving probability density function (PDF) of the target’s position.
 
@@ -84,7 +93,7 @@ We first consider a hybrid search framework in which the target's motion evolves
 </figure>
 
 <a id="part2"></a>
-## [Part 2 Probabilistic search using optimized periodic orbits]({{ site.baseurl }}/projects/search-theory/part2)
+## [Part 2 Optimized periodic orbits]({{ site.baseurl }}/projects/search-theory/part2)
 
 Inspired by the periodic-like trajectories obtained from optimizing hybrid search strategy as shown in Figure 4 above, <a href="#ref7">Zhao and Bewley \[2025\]</a> investigates a periodic search strategy for randomly moving targets. By optimizing the controls—and thus periodic trajectories—of multiple autonomous agents, the approach efficiently shapes the long-term probability landscape to maximize detection rate under uncertainty.
 
@@ -109,7 +118,7 @@ Inspired by the periodic-like trajectories obtained from optimizing hybrid searc
 </figure>
 
 <a id="part3"></a>
-## [Part 3 Probabilistic search and collaborative search strategy]({{ site.baseurl }}/projects/search-theory/part3)
+## [Part 3 Collaborative search strategy]({{ site.baseurl }}/projects/search-theory/part3)
 Under construction
 
 ## Part 4 Probabilistic search for grid-based Bayesian estimation exploiting sparsity
@@ -166,7 +175,7 @@ This project presents principled frameworks for designing optimized time-periodi
   </li>
   
   <li id="ref7">
-    M. Zhao and T. Bewley, 
+    M. Zhao and T. R. Bewley, 
     <a href="http://robotics.ucsd.edu/pubs/ZB_periodic_search.pdf">
     <em>Probabilistic search for randomly moving targets using optimized time-periodic orbits</em></a>, 
     under review at Automatica since Feb. 2025.
