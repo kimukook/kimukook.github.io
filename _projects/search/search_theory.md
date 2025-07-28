@@ -8,13 +8,12 @@ summary: Advancing and optimizing adaptive control strategies to rapidly locate 
 ---
 # Overview
 
-This project focuses on adaptive control of autonomous agents searching for randomly moving targets. This project proposes computational frameworks that iteratively confine control strategies balancing the information gathering and agents mobility. As such, we present three complementary developments: (i) <a href="#part1">a continuous-discrete observation framework</a>, (ii) <a href="#part2">a time-periodic search strategy tailored for non-evasive targets</a>, and (iii) <a href="#part3">a collaborative search approach for tracking evasive targets</a>. An example showcases the problem is shown in Figure 1.
-
+This project focuses on adaptive control of autonomous agents searching for randomly moving targets. This project proposes computational frameworks that iteratively confine control strategies balancing the information gathering and agents mobility. As such, we present three complementary developments: (i) <a href="#part1">a continuous-discrete observation framework</a>, (ii) <a href="#part2">a time-periodic search strategy tailored for non-evasive targets</a>, and (iii) <a href="#part3">a collaborative search approach for tracking evasive targets</a>. An example showcases this problem is shown in Figure 1 below.
 <div class="center">
   <div class="image-full">
     <img src="/assets/Search_project_scenario.svg" alt="Search flowchart" width="600px">
     <div class="caption">
-      Figure 1. Discrete-time flow chart of the <em>search process</em>. While shown in discrete time for illustration purposes, the underlying framework operates in continuous time. The <span style="color: red;">red</span> lines in diagram highlights the core feedback loop: searchers’ observations inform the estimate (i.e., the probability distribution of the target), which then drives control updates—and consequently, the agents’ trajectories.
+      Figure 1. An illustration of the probabilistic search problem. A drone acts as the searcher, actively observing the environment while moving. The target, a lost pet, moves randomly in the field. The searcher's actions adapt based on observations to infer the target's location, and are optimized to quickly find the target.
     </div>
   </div>
 </div>
