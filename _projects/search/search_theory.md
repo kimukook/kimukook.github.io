@@ -8,27 +8,26 @@ summary: Advancing and optimizing adaptive control strategies to rapidly locate 
 ---
 # Overview
 
-This project focuses on adaptive control of autonomous agents searching for randomly moving targets. This project proposes computational frameworks that iteratively confine control strategies balancing the information gathering and agents mobility. As such, we present three complementary developments: (i) <a href="#part1">a continuous-discrete observation framework</a>, (ii) <a href="#part2">a time-periodic search strategy tailored for non-evasive targets</a>, and (iii) <a href="#part3">a collaborative search approach for tracking evasive targets</a>. An example showcases this problem is shown in Figure 1 below.
+This project focuses on optimization on control of autonomous agents searching for randomly moving targets (non-evasive and evasive). Computational frameworks are proposed to iteratively confine control strategies, balancing the information gathering and agents mobility. We present three complementary developments: (i) <a href="#part1">a continuous-discrete observation framework</a>, (ii) <a href="#part2">a time-periodic search strategy tailored for non-evasive targets</a>, and (iii) <a href="#part3">a collaborative search approach for tracking evasive targets</a>. An example of finding the lost pet is shown in Figure 1 below.
 <div class="center">
   <div class="image-full">
     <img src="/assets/Search_project_scenario.svg" alt="Search flowchart" width="600px">
     <div class="caption">
-      Figure 1. An illustration of the probabilistic search problem. A drone acts as the searcher, actively observing the environment while moving. The target, a lost pet, moves randomly in the field. The searcher's actions adapt based on observations to infer the target's location, and are optimized to quickly find the target.
+      Figure 1. An illustration of the probabilistic search problem. A drone acts as the searcher, actively observing the environment while moving. The target, a lost pet whose position is unknown to the drone, moves randomly in the field. The searcher's actions adapt based on observations made along its path to infer the target's location.
     </div>
   </div>
 </div>
-
 **Keywords:** Probabilistic search theory · Stochastic dynamics · PDE-constrained optimization · Adjoint analysis
 
 ## Motivation
 
-Search problems are common in both military and civilian domains—from rescuing missing persons, pets or wreckage like MH370 (non-evasive randomly moving targets), to tracking fugitives or foraging animals (evasive randomly moving targets). Unfortunately, many traditional methods are limited in adaptability and struggle in dynamic or uncertain environments. Figure 2a and 2b below showcase the real-world examples illustrating these challenges, often resorting to predetermined or exhaustive sweeps.
+Search problems are common in both military and civilian domains—from rescuing missing persons, pets or wreckage like MH370 (non-evasive randomly moving targets), to tracking fugitives or foraging animals (evasive randomly moving targets). Unfortunately, many traditional methods are limited in adaptability and struggle in uncertain environments. Figure 2a and 2b below showcase the real-world challenges, often resorting to predetermined or exhaustive sweeps.
 
 <div class="image-pair">
   <div class="image-box">
     <img src="/assets/lawnmower.jpeg" alt="Lawnmower trajectory">
     <div class="caption">
-      Figure 2a. Lawnmower trajectory used to search for the missing F-35B fighter jet. 
+      Figure 2a. Lawnmower trajectory used to search for the missing $109M F-35B fighter jet in 2023. 
       <a href="https://x.com/flightradar24/status/1703827299412455459?lang=en">Image source</a>
     </div>
   </div>
@@ -41,16 +40,14 @@ Search problems are common in both military and civilian domains—from rescuing
   </div>
 </div>
 
-## Key challenges
+## Key challenges in theory
 Previous state-of-the-art work in probabilistic search has several limitations:
 
 - <a href="#ref1">Phelps et al. \[2014\]</a> considers only uncertainty in the target's initial location, neglecting uncertainty in its motion;
 - <a href="#ref2">Hellman \[1972\]</a> focuses on optimizing search trajectories, but ignores dynamic feasibility of searchers;
 - <a href="#ref3">Ohsumi \[1991\]</a> introduces dynamic programming for optimal control, but is computationally intensive and impractical for complex models;
 
-In contrast, this project develops novel and efficient mathematical frameworks for the control of multiple autonomous
-searchers tasked with locating an unseen, randomly moving target, whose motion may be <em>non-evasive</em>, or even <em>evasive</em>.
-
+In contrast, the computational frameworks developed in this project will not only tackle the aforementioned challenges, but will also propose modeling for non-evasive target, or even <em>evasive</em>.
 <div class="section-divider"></div>
 
 # Methodology and Numerical Results
@@ -64,7 +61,6 @@ The crux of this project is <em><strong>adaptive observation</strong></em>, a fr
     </div>
   </div>
 </div>
-
 In this homepage of probabilistic search, we focus on showcasing numerical results. For detailed mathematical background—including the modeling of randomly moving targets via stochastic differential equations, the evolution of the target’s probability density function (PDF) using Fokker-Planck equation, and the formulation of the optimal control problem—please click the blue section titles below for expanded explanations.
 
 ## [Part 1 Continuous-discrete observation]({{ site.baseurl }}/projects/search-theory/part1)
