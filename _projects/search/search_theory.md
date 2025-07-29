@@ -55,11 +55,11 @@ The crux of this project is <em><strong>adaptive observation</strong></em>, a fr
   <div class="image-full">
     <img src="/assets/Search_flowchart_math.svg" alt="Search flowchart" width="600px">
     <div class="caption">
-      Figure 3. Discrete-time flow chart of the <em>search process</em>. While shown in discrete time for illustration purposes, the underlying framework operates in continuous time. The <span style="color: red;">red</span> lines in diagram highlights the core feedback loop: searchers’ observations inform the estimate (i.e., the probability distribution of the target), which then drives control updates—and consequently, the agents’ trajectories.
+      Figure 3. Discrete-time flow chart of the <em>search process</em>. The <span style="color: red;">red</span> lines in diagram highlights the core feedback loop: searchers’ observations inform the estimate (i.e., the probability density function of the target), which then updates searchers' controls—and consequently, the trajectories. The theory developed here is, in fact, continuous-in-time, though the diagram is shown discrete-in-time for illustration purposes only.
     </div>
   </div>
 </div>
-In this homepage of probabilistic search, we focus on showcasing numerical results. For detailed mathematical background—including the modeling of randomly moving targets via stochastic differential equations, the evolution of the target’s probability density function (PDF) using Fokker-Planck equation, and the formulation of the optimal control problem—please click the blue section titles below for expanded explanations.
+In this homepage, we focus on showcasing numerical results. For detailed mathematical background—including the modeling of the target's motion via stochastic differential equations, the evolution of the target’s probability density function (PDF) using Fokker-Planck equation, and the formulation of the optimal control problem—please click the blue section titles below for more details.
 
 ## [Part 1 Continuous-discrete observation]({{ site.baseurl }}/projects/search-theory/part1)
 
@@ -118,7 +118,12 @@ Under construction
 Theory and code under development...
 
 # Conclusion
-This project presents principled frameworks for designing optimized time-periodic search trajectories for autonomous agents operating under uncertainty. By formulating the search task as a PDE-constrained optimization problem, we derive trajectories that repeatedly traverse the domain in a manner that minimizes uncertainty about a target's location over time. The resulting orbits are not only dynamically feasible but also information-optimal, balancing spatial coverage with control efficiency. Numerical results demonstrate fast convergence of the objective and control inputs, as well as successful periodicity enforcement via adjoint-based gradient optimization. This approach is particularly well-suited for long-duration, passive monitoring tasks such as rescue-and-save missions, persistent surveillance, and environmental monitoring.
+We presents principled frameworks for optimizing controls of autonomous agents searching for randomly movingtargets. This project concludes:
+- The proposed framework can efficiently locate the unseen target even under mobile uncertainty;
+- There is enough control authority for optimizing searchers controls (and thus, trajectories), and the proposed adjoint analysis can guide the control synthetics;
+- The proposed periodic and collaborative search strategy can efficiently find the evasive target, balancing the spatial coverage with control efficiency.
+
+Numerical results demonstrate fast convergence of the objective and control inputs, as well as successful periodicity enforcement via adjoint-based gradient optimization. This approach is particularly well-suited for long-duration, passive monitoring tasks such as rescue-and-save missions, persistent surveillance, and environmental monitoring.
 
 **References**
 
