@@ -7,7 +7,7 @@ category: main
 summary: Advancing and optimizing adaptive control strategies to rapidly locate randomly moving targets, whether non-evasive or evasive
 ---
 # Overview
-This project focuses on optimization on control of autonomous agents searching for randomly moving targets (non-evasive and evasive). Computational frameworks are proposed to iteratively confine control strategies, balancing the information gathering and agents mobility. We present three complementary developments: (i) <a href="#part1">a continuous-discrete observation framework</a>, (ii) <a href="#part2">a time-periodic search strategy tailored for non-evasive targets</a>, and (iii) <a href="#part3">a collaborative search approach for tracking evasive targets</a>. An example of finding the lost pet is shown in Figure 1 below.
+This project focuses on optimization on control of autonomous agents searching for randomly moving targets (non-evasive and evasive). Computational frameworks are proposed to iteratively confine control strategies, balancing the information gathering and agents mobility. We present three complementary developments: (i) <a href="#part1">a continuous-discrete observation framework</a>, (ii) <a href="#part2">a time-periodic search strategy tailored for non-evasive targets</a>, and (iii) <a href="#part3">a collaborative search approach for tracking evasive targets</a>. An example of probabilistic search, on finding the lost pet, is shown in Figure 1 below.
 <div class="center">
   <div class="image-full">
     <img src="/assets/Search_project_scenario.svg" alt="Search flowchart" width="600px">
@@ -20,7 +20,7 @@ This project focuses on optimization on control of autonomous agents searching f
 
 ## Motivation
 
-Search problems are common in both military and civilian domains—from rescuing missing persons, pets or wreckage like MH370 (non-evasive randomly moving targets), to tracking fugitives or foraging animals (evasive randomly moving targets). Unfortunately, many traditional methods are limited in adaptability and struggle in uncertain environments. Figure 2a and 2b below showcase the real-world challenges, even just for a stationary target in Figure 2a, often resorting to predetermined or exhaustive sweeps.
+Search problems are common in both military and civilian domains—from rescuing missing persons, pets or wreckage like MH370 (non-evasive randomly moving targets), to tracking fugitives or foraging animals (evasive randomly moving targets). Unfortunately, many traditional methods are limited in adaptability and struggle in uncertain environments. Figure 2a and 2b below showcase the real-world challenges, even just for a stationary target shown in Figure 2a, often resorting to predetermined or exhaustive sweeps.
 <div class="image-pair">
   <div class="image-box">
     <img src="/assets/lawnmower.jpeg" alt="Lawnmower trajectory">
@@ -75,7 +75,7 @@ We first consider a hybrid search framework in which the target's motion evolves
   </figcaption>
 </figure>
 
-<figure style="text-align: left">
+<figure style="text-align: center">
   <video autoplay loop muted playsinline width="600">
     <source src="/assets/hybrid_control.mp4" type="video/mp4">
     Your browser does not support the video tag.
