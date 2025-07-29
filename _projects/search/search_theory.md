@@ -7,7 +7,6 @@ category: main
 summary: Advancing and optimizing adaptive control strategies to rapidly locate randomly moving targets, whether non-evasive or evasive
 ---
 # Overview
-
 This project focuses on optimization on control of autonomous agents searching for randomly moving targets (non-evasive and evasive). Computational frameworks are proposed to iteratively confine control strategies, balancing the information gathering and agents mobility. We present three complementary developments: (i) <a href="#part1">a continuous-discrete observation framework</a>, (ii) <a href="#part2">a time-periodic search strategy tailored for non-evasive targets</a>, and (iii) <a href="#part3">a collaborative search approach for tracking evasive targets</a>. An example of finding the lost pet is shown in Figure 1 below.
 <div class="center">
   <div class="image-full">
@@ -21,8 +20,7 @@ This project focuses on optimization on control of autonomous agents searching f
 
 ## Motivation
 
-Search problems are common in both military and civilian domains—from rescuing missing persons, pets or wreckage like MH370 (non-evasive randomly moving targets), to tracking fugitives or foraging animals (evasive randomly moving targets). Unfortunately, many traditional methods are limited in adaptability and struggle in uncertain environments. Figure 2a and 2b below showcase the real-world challenges, often resorting to predetermined or exhaustive sweeps.
-
+Search problems are common in both military and civilian domains—from rescuing missing persons, pets or wreckage like MH370 (non-evasive randomly moving targets), to tracking fugitives or foraging animals (evasive randomly moving targets). Unfortunately, many traditional methods are limited in adaptability and struggle in uncertain environments. Figure 2a and 2b below showcase the real-world challenges, even just for a stationary target in Figure 2a, often resorting to predetermined or exhaustive sweeps.
 <div class="image-pair">
   <div class="image-box">
     <img src="/assets/lawnmower.jpeg" alt="Lawnmower trajectory">
@@ -77,12 +75,12 @@ We first consider a hybrid search framework in which the target's motion evolves
   </figcaption>
 </figure>
 
-<figure style="text-align: center">
+<figure style="text-align: left">
   <video autoplay loop muted playsinline width="600">
     <source src="/assets/hybrid_control.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
-  <figcaption style="color: gray;">
+  <figcaption style="color: gray; text-align: left;">
     <strong>Figure 5.</strong> Time evolution of control inputs for the two autonomous searchers. The top and bottom panels correspond to Agent 1 and Agent 2, respectively. Solid curves represent the executed control inputs $\mathrm{u}_1$, $\mathrm{u}_2$ applied over time, while the lighter dashed lines indicate the planned control trajectories within each predictive horizon. These results illustrate how hybrid search dynamically adjusts control strategies in response to updated PDF of target position.
   </figcaption>
 </figure>
@@ -97,7 +95,7 @@ Inspired by the periodic-like trajectories obtained from optimizing hybrid searc
     <source src="/assets/periodic_opt.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
-  <figcaption style="color: gray;">
+  <figcaption style="color: gray; text-align: left;">
     <strong>Figure 6.</strong>  Results of optimized periodic search strategy with three autonomous agents. Top-left: optimized periodic trajectories of the searchers in <span style="color:rgb(0, 114, 189);">blue</span>, <span style="color:rgb(217, 83, 25);">orange</span>, and <span style="color:rgb(237, 177, 32);">yellow</span>. Top-right: convergence of the objective functional, and periodic constraint over iterations, indicating successful adjoint-based optimization. Bottom-left: optimized control inputs $u_1$ and $u_2$ for each agent across one period. Bottom-right: validation of time-periodicity using the trajectory mismatch metric $\gamma(t)$, along with its time-averaged integral. The dashed traces represent previous iterations, and the red horizontal line marks the convergence target. These results demonstrate the effectiveness of time-periodic orbit design for persistent probabilistic search.
   </figcaption>
 </figure>
@@ -107,7 +105,7 @@ Inspired by the periodic-like trajectories obtained from optimizing hybrid searc
     <source src="/assets/periodic_traj.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
-  <figcaption style="color: gray;">
+  <figcaption style="color: gray; text-align: left;">
     <strong>Figure 7.</strong> Three autonomous searchers executing periodic search trajectories, shown in <span style="color:rgb(0, 114, 189);">blue</span>, <span style="color:rgb(217, 83, 25);">orange</span>, and <span style="color:rgb(237, 177, 32);">yellow</span>. The grayscale background depicts the evolving probability density function (PDF) of the target’s location: darker regions represent suppressed likelihood due to nearby searchers, while lighter regions indicate higher probability areas where the target is more likely to reside. The coordinated periodic motion helps maintain spatial coverage and adaptively sculpts the uncertainty landscape over time.
   </figcaption>
 </figure>
@@ -135,12 +133,12 @@ This project presents principled frameworks for designing optimized time-periodi
 
   <li id="ref2">
     Olavi Hellman. 
-    <a href="https://www.jstor.org/stable/2099690" target="_blank">
-      <em>On the optimal search for a randomly moving target</em>
+    <a href="[https://www.jstor.org/stable/2099690" target="_blank](https://projecteuclid.org/journals/annals-of-mathematical-statistics/volume-41/issue-5/On-the-Effect-of-a-Search-Upon-the-Probability-Distribution/10.1214/aoms/1177696816.full)">
+      <em>On the effect of a search upon the probability distribution of a target whose motion is a diffusion process</em>
     </a>. 
-    SIAM Journal on Applied Mathematics, 22(4):545–552, 1972.
+    The Annals of Mathematical Statistics 41.5 (1970): 1717-1724.
   </li>
-
+  
   <li id="ref3">
     Akira Ohsumi. 
     <a href="https://onlinelibrary.wiley.com/doi/abs/10.1002/1520-6750%28199108%2938%3A4%3C531%3A%3AAID-NAV3220380407%3E3.0.CO%3B2-L" target="_blank">
