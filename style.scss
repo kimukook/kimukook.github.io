@@ -455,17 +455,16 @@ footer {
 }
 
 /* === project flex container ===*/
-.project-flex {
+.project-block {
   display: flex;
   align-items: center;
   gap: 1.5em;
-  flex-wrap: wrap;
+  margin-bottom: 2.5em;
+  flex-wrap: nowrap;
 }
 
-.project-media video,
-.project-media img {
-  border-radius: 6px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+.project-media {
+  flex-shrink: 0;
 }
 
 .project-text {
@@ -477,4 +476,5 @@ footer {
   font-style: italic;
   margin-top: 0.5em;
 }
+
 
