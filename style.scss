@@ -458,7 +458,7 @@ footer {
 .project-block {
   display: flex !important;
   flex-direction: row !important;
-  align-items: flex-start;
+  align-items: flex-start; !important;
   gap: 1.5em;
   margin-bottom: 2.5em;
 }
