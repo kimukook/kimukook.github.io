@@ -456,12 +456,13 @@ footer {
 
 /* === project flex container ===*/
 .project-block {
-  display: flex;
-  align-items: center;
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: flex-start;
   gap: 1.5em;
   margin-bottom: 2.5em;
-  flex-wrap: nowrap;
 }
+
 
 .project-media {
   flex-shrink: 0;
