@@ -5,6 +5,7 @@ read_time: 8–10 minutes
 permalink: /projects/search-theory/
 category: main
 summary: Advancing and optimizing adaptive control strategies to rapidly locate randomly moving targets, whether non-evasive or evasive
+media: /assets/periodic_traj.mp4
 ---
 # Overview
 This project focuses on optimization on control of autonomous agents searching for randomly moving targets (non-evasive and evasive). Computational frameworks are proposed to iteratively confine control strategies, balancing the information gathering and agents mobility. We present three complementary developments: (i) <a href="#part1">a continuous-discrete observation framework</a>, (ii) <a href="#part2">a time-periodic search strategy tailored for non-evasive targets</a>, and (iii) <a href="#part3">a collaborative search approach for tracking evasive targets</a>. An example of probabilistic search, on finding the lost pet, is shown in Figure 1 below.
