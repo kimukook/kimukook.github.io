@@ -70,11 +70,11 @@ p {
 
 a {
   color: $blue;
-  text-decoration: none;
-	cursor: pointer;
+  text-decoration: underline;
+  cursor: pointer;
   &:hover, &:active {
     color: $blue;
-    text-decoration: underline;
+    font-weight: bold;
   }
 }
 
