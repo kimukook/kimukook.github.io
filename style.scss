@@ -74,6 +74,7 @@ a {
 	cursor: pointer;
   &:hover, &:active {
     color: $blue;
+    text-decoration: underline;
   }
 }
 
