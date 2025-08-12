@@ -166,8 +166,8 @@ img {
 
 .site-avatar {
   float: left;
-  width: 70px;
-  height: 70px;
+  width: 100px;
+  height: 100px;
   margin-right: 15px;
 
   @include mobile {
@@ -484,4 +484,14 @@ footer {
   margin-top: 0.5em;
 }
 
+
+/* Stack title/subtitle and nav; center them */
+.site-header .wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;     /* centers both lines */
+}
+.site-nav {
+  margin-top: 8px;         /* small gap below name */
+}
 
