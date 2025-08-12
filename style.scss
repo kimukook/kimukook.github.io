@@ -420,7 +420,7 @@ footer {
   font-size: 1rem;
   line-height: 1.25;
   flex-shrink: 0;
-  text-align: center;                /* center everything inside */
+  text-align: left;                /* center everything inside */
 
   /* make sure the label doesn't create a side column */
   p, h3, strong { 
