@@ -487,15 +487,3 @@ footer {
   font-style: italic;
   margin-top: 0.5em;
 }
-
-
-/* Stack title/subtitle and nav; center them */
-.site-header .wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;     /* centers both lines */
-}
-.site-nav {
-  margin-top: 8px;         /* small gap below name */
-}
-
