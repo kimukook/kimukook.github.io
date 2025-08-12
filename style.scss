@@ -399,23 +399,23 @@ footer {
 }
 
 .toc-container {
-  width: 240px;
+  width: 220px;
   position: sticky;
-  top: 100px;
+  top: 80px;
   align-self: flex-start;
   padding: 1rem;
   background-color: #f8f8f8;
   border: 1px solid #ddd;
   border-radius: 8px;
   font-size: 1rem;
-  line-height: 1.4;
+  line-height: 1.25;            /* tighter overall line height */
   max-height: 90vh;
   overflow-y: auto;
   flex-shrink: 0;
 
   h3 {
     font-size: 1rem;
-    margin-bottom: 0.6rem;
+    margin: 0 0 0.4rem 0;       /* smaller gap under “Contents” */
     color: #222;
   }
 
@@ -426,8 +426,8 @@ footer {
   }
 
   li {
-    margin-bottom: 0.4rem;
-    line-height: 1.4;
+    margin: 0.15rem 0;          /* tighter vertical spacing per item */
+    line-height: 1.2;           /* keep wrapped lines compact */
   }
 
   a {
@@ -436,36 +436,35 @@ footer {
     font-size: 1rem;
     color: #333;
     text-decoration: none;
-    padding: 0.2rem 0;
+    padding: 0.08rem 0;         /* smaller internal padding */
     font-weight: normal;
+    white-space: normal;        /* allow natural wrapping */
+    word-break: break-word;     /* break very long words if needed */
 
-    &:hover {
-      text-decoration: underline;
-    }
-  }
-  .toc-h1 {
-    a .toc-text {
-      font-size: 0.95rem; // Normal size
-      font-weight: bold;
-      color: #000000; // Black
-    }
+    &:hover { text-decoration: underline; }
   }
 
-  .toc-h2 {
-    a .toc-text {
-      font-size: 0.75rem; // Smaller size
-      font-weight: normal;
-      color: #444444; // Dark gray
-    }
+  .toc-h1 a .toc-text {
+    font-size: 0.95rem;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #000;
   }
 
-  .toc-h3 {
-    a .toc-text {
-      font-size: 0.55rem;
-      color: #888;
-    }
-  }	
+  .toc-h2 a .toc-text {
+    font-size: 0.85rem;         /* a touch larger for readability */
+    font-weight: 400;
+    line-height: 1.2;
+    color: #444;
+  }
+
+  .toc-h3 a .toc-text {
+    font-size: 0.75rem;         /* larger than before, still subordinate */
+    line-height: 1.15;
+    color: #666;
+  }
 }
+
 
 .project-content {
   flex: 1;
