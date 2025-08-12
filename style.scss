@@ -395,40 +395,37 @@ footer {
 
 .project-wrapper > h1 {
   flex: 1;
-  margin-left: 260px; // aligns with TOC width
+  margin-left: 320px; // aligns with TOC width
 }
 
 .toc-container {
-  width: 220px;
+  /* adjust these if you tweak header size later */
+  --header-offset: 140px;               /* space to clear the 2-row header */
+
+  width: 300px;                          /* wider so items don’t break so much */
   position: sticky;
-  top: 80px;
+  top: var(--header-offset);
+  max-height: calc(100vh - (var(--header-offset) + 24px));
+  overflow-y: auto;
+
   align-self: flex-start;
   padding: 1rem;
   background-color: #f8f8f8;
   border: 1px solid #ddd;
   border-radius: 8px;
   font-size: 1rem;
-  line-height: 1.25;            /* tighter overall line height */
-  max-height: 90vh;
-  overflow-y: auto;
+  line-height: 1.25;
   flex-shrink: 0;
 
   h3 {
     font-size: 1rem;
-    margin: 0 0 0.4rem 0;       /* smaller gap under “Contents” */
+    margin: 0 0 0.4rem 0;
     color: #222;
   }
 
-  ul {
-    list-style: none;
-    padding-left: 0;
-    margin: 0;
-  }
+  ul { list-style: none; padding-left: 0; margin: 0; }
 
-  li {
-    margin: 0.15rem 0;          /* tighter vertical spacing per item */
-    line-height: 1.2;           /* keep wrapped lines compact */
-  }
+  li { margin: 0.15rem 0; line-height: 1.2; }
 
   a {
     display: block;
@@ -436,35 +433,18 @@ footer {
     font-size: 1rem;
     color: #333;
     text-decoration: none;
-    padding: 0.08rem 0;         /* smaller internal padding */
+    padding: 0.08rem 0;
     font-weight: normal;
-    white-space: normal;        /* allow natural wrapping */
-    word-break: break-word;     /* break very long words if needed */
+    white-space: normal;                 /* wrap naturally */
+    overflow-wrap: anywhere;             /* only break very long tokens */
 
     &:hover { text-decoration: underline; }
   }
 
-  .toc-h1 a .toc-text {
-    font-size: 0.95rem;
-    font-weight: 700;
-    line-height: 1.2;
-    color: #000;
-  }
-
-  .toc-h2 a .toc-text {
-    font-size: 0.85rem;         /* a touch larger for readability */
-    font-weight: 400;
-    line-height: 1.2;
-    color: #444;
-  }
-
-  .toc-h3 a .toc-text {
-    font-size: 0.75rem;         /* larger than before, still subordinate */
-    line-height: 1.15;
-    color: #666;
-  }
+  .toc-h1 a .toc-text { font-size: 0.95rem; font-weight: 700; line-height: 1.2; color: #000; }
+  .toc-h2 a .toc-text { font-size: 0.85rem; font-weight: 400; line-height: 1.2; color: #444; }
+  .toc-h3 a .toc-text { font-size: 0.75rem; line-height: 1.15; color: #666; }
 }
-
 
 .project-content {
   flex: 1;
@@ -480,6 +460,23 @@ footer {
   font-style: italic;
   text-align: left;
 }
+
+@media (max-width: 1200px) {
+  .toc-container { width: 260px; }
+  .project-wrapper > h1 { margin-left: 280px; }
+}
+
+@media (max-width: 980px) {
+  .project-wrapper { flex-direction: column; }
+  .project-wrapper > h1 { margin-left: 0; }
+  .toc-container {
+    position: static;           /* no sticky on small screens */
+    width: 100%;
+    max-height: none;
+    margin-bottom: 1rem;
+  }
+}
+
 
 /* === project flex container ===*/
 .project-block {
