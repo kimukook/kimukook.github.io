@@ -395,18 +395,22 @@ footer {
 
 .project-wrapper > h1 {
   flex: 1;
-  margin-left: 320px; // aligns with TOC width
+  margin-left: 360px; // aligns with TOC width
 }
 
 .toc-container {
-  /* adjust these if you tweak header size later */
-  --header-offset: 140px;               /* space to clear the 2-row header */
+  /* header height allowance */
+  --header-offset: 140px;
 
-  width: 300px;                          /* wider so items don’t break so much */
+  /* wider so items don't wrap every word */
+  width: 340px;
   position: sticky;
   top: var(--header-offset);
   max-height: calc(100vh - (var(--header-offset) + 24px));
   overflow-y: auto;
+
+  /* ensure single-column flow */
+  display: block;
 
   align-self: flex-start;
   padding: 1rem;
@@ -416,35 +420,50 @@ footer {
   font-size: 1rem;
   line-height: 1.25;
   flex-shrink: 0;
+  text-align: center;                /* center everything inside */
 
-  h3 {
-    font-size: 1rem;
-    margin: 0 0 0.4rem 0;
-    color: #222;
+  /* make sure the label doesn't create a side column */
+  p, h3, strong { 
+    display: block; 
+    margin: 0 0 0.5rem 0; 
+    float: none; 
+    clear: both; 
   }
 
-  ul { list-style: none; padding-left: 0; margin: 0; }
+  ul { 
+    list-style: none; 
+    padding-left: 0; 
+    margin: 0; 
+    clear: both;                  /* ensures ul starts below the label */
+  }
 
-  li { margin: 0.15rem 0; line-height: 1.2; }
+  li { 
+    margin: 0.15rem 0; 
+    line-height: 1.2; 
+  }
 
   a {
     display: block;
-    text-align: left;
+    text-align: center;           /* center each link’s text */
     font-size: 1rem;
     color: #333;
     text-decoration: none;
     padding: 0.08rem 0;
     font-weight: normal;
-    white-space: normal;                 /* wrap naturally */
-    overflow-wrap: anywhere;             /* only break very long tokens */
+
+    /* avoid aggressive word breaking */
+    white-space: normal;
+    overflow-wrap: anywhere;      /* only break very long tokens */
+    word-break: normal;
 
     &:hover { text-decoration: underline; }
   }
 
   .toc-h1 a .toc-text { font-size: 0.95rem; font-weight: 700; line-height: 1.2; color: #000; }
-  .toc-h2 a .toc-text { font-size: 0.85rem; font-weight: 400; line-height: 1.2; color: #444; }
-  .toc-h3 a .toc-text { font-size: 0.75rem; line-height: 1.15; color: #666; }
+  .toc-h2 a .toc-text { font-size: 0.90rem; font-weight: 400; line-height: 1.2; color: #444; }
+  .toc-h3 a .toc-text { font-size: 0.80rem; line-height: 1.15; color: #666; }
 }
+
 
 .project-content {
   flex: 1;
