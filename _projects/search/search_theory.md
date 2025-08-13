@@ -42,7 +42,7 @@ Search problems are common in both military and civilian domains—from rescuing
 Previous state-of-the-art work in probabilistic search has several limitations:
 
 - <a href="#ref1">Phelps et al. \[2014\]</a> considers only uncertainty in the target's initial location, neglecting uncertainty in its motion;
-- <a href="#ref2">Hellman \[1972\]</a> focuses on optimizing search trajectories, but ignores dynamic feasibility of searchers;
+- <a href="#ref2">Hellman \[1970\]</a> focuses on optimizing search trajectories, but ignores dynamic feasibility of searchers;
 - <a href="#ref3">Ohsumi \[1991\]</a> introduces dynamic programming for optimal control, but is computationally intensive and impractical for complex models;
 
 In contrast, the computational frameworks developed in this project will not only tackle the aforementioned challenges, but will also propose modeling for non-evasive target, or even <em>evasive</em>.
@@ -68,7 +68,7 @@ We first consider a hybrid search framework in which the target's motion evolves
     <source src="/assets/hybrid_traj.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
-  <figcaption style="color: gray; text-align: left; margin: 0 auto; max-width: 600px;">
+  <figcaption style="color: gray; text-align: left;">
     <strong>Figure 4.</strong> Real-time animation of two autonomous searchers performing hybrid search. The searcher trajectories are shown in <span style="color:rgb(0, 114, 189);">blue</span> and <span style="color:rgb(217, 83, 25);">orange</span>, with planned trajectories in lighter dotted lines in the horizon. The grayscale background illustrates the evolving probability density function (PDF) of the target’s location: darker regions (close to searchers) indicate lower probability (suppressed by searchers' observation), while lighter regions (far from searchers) represent areas of higher uncertainty and likelihood of target presence. The adaptive control strategy drives the searchers to iteratively explore and shape the PDF landscape (exploring lighter regions) in pursuit of the hidden target.
   </figcaption>
 </figure>
@@ -86,7 +86,7 @@ We first consider a hybrid search framework in which the target's motion evolves
 <a id="part2"></a>
 ## [Part 2 Optimized periodic orbits]({{ site.baseurl }}/projects/search-theory/part2)
 
-Inspired by the periodic-like trajectories obtained from optimizing hybrid search strategy as shown in Figure 4 above, <a href="#ref7">Zhao and Bewley \[2025\]</a> investigates a periodic search strategy for randomly moving targets. By optimizing the controls—and thus periodic trajectories—of multiple autonomous agents, the approach efficiently shapes the long-term probability landscape to maximize detection rate under uncertainty.
+Inspired by the periodic-like trajectories obtained from optimizing hybrid search strategy as shown in Figure 4 above, <a href="#ref4">Zhao and Bewley \[2025\]</a> investigates a periodic search strategy for randomly moving targets. By optimizing the controls—and thus periodic trajectories—of multiple autonomous agents, the approach efficiently shapes the long-term probability landscape to maximize detection rate under uncertainty.
 
 <figure style="text-align: center">
   <video autoplay loop muted playsinline width="600">
@@ -114,6 +114,7 @@ Under construction
 
 ## Part 4 Probabilistic search for grid-based Bayesian estimation exploiting sparsity
 Theory and code under development...
+<div class="section-divider"></div>
 
 # Conclusion
 We presents principled frameworks for optimizing controls of autonomous agents searching for randomly movingtargets. This project concludes:
@@ -123,8 +124,7 @@ We presents principled frameworks for optimizing controls of autonomous agents s
 
 Numerical results demonstrate fast convergence of the objective and control inputs, as well as successful periodicity enforcement via adjoint-based gradient optimization. This approach is particularly well-suited for long-duration, passive monitoring tasks such as rescue-and-save missions, persistent surveillance, and environmental monitoring.
 
-**References**
-
+## References
 <ol>
   <li id="ref1">
     Chris Phelps, Qi Gong, Johannes O. Royset, Claire Walton, and Isaac Kaminer. 
@@ -136,7 +136,7 @@ Numerical results demonstrate fast convergence of the objective and control inpu
 
   <li id="ref2">
     Olavi Hellman. 
-    <a href="[https://www.jstor.org/stable/2099690" target="_blank](https://projecteuclid.org/journals/annals-of-mathematical-statistics/volume-41/issue-5/On-the-Effect-of-a-Search-Upon-the-Probability-Distribution/10.1214/aoms/1177696816.full)">
+    <a href="https://projecteuclid.org/journals/annals-of-mathematical-statistics/volume-41/issue-5/On-the-Effect-of-a-Search-Upon-the-Probability-Distribution/10.1214/aoms/1177696816.full">
       <em>On the effect of a search upon the probability distribution of a target whose motion is a diffusion process</em>
     </a>. 
     The Annals of Mathematical Statistics 41.5 (1970): 1717-1724.
@@ -149,28 +149,8 @@ Numerical results demonstrate fast convergence of the objective and control inpu
     </a>. 
     Naval Research Logistics (NRL), 38(4):531–554, 1991.
   </li>
-
-  <li id="ref4">
-    B. L. Hanson, M. Zhao and T. R. Bewley, 
-    <a href="https://www.tandfonline.com/doi/full/10.1080/03610926.2024.2439999">
-    <em>An extensible framework for the probabilistic search of stochastically-moving targets characterized by generalized Gaussian distributions or experimentally-defined regions of interest</em></a>, 
-    Communications in Statistics-Theory and Methods (2025): 1-26.
-  </li>
-
-  <li id="ref5">
-    Jazwinski, Andrew H, 
-    <em>Stochastic processes and filtering theory.</em>, 
-    Courier Corporation, 2013.
-  </li>
-
-   <li id="ref6">
-    Hellman, Olavi, 
-    <a href="[https://www.tandfonline.com/doi/full/10.1080/03610926.2024.2439999](https://projecteuclid.org/journals/annals-of-mathematical-statistics/volume-41/issue-5/On-the-Effect-of-a-Search-Upon-the-Probability-Distribution/10.1214/aoms/1177696816.full)">
-    <em>On the effect of a search upon the probability distribution of a target whose motion is a diffusion process.</em></a>, 
-    The Annals of Mathematical Statistics 41.5 (1970): 1717-1724.
-  </li>
   
-  <li id="ref7">
+  <li id="ref4">
     M. Zhao and T. R. Bewley, 
     <a href="http://robotics.ucsd.edu/pubs/ZB_periodic_search.pdf">
     <em>Probabilistic search for randomly moving targets using optimized time-periodic orbits</em></a>, 

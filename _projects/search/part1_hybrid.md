@@ -60,3 +60,18 @@ J = \left( \int_\Omega \bigl[ p^+({\bf x},\, t_f) \bigr]^2\, \mathrm{d}{\bf x} \
 $$
 </div>
 
+
+<ol>
+  <li id="ref4">
+    B. L. Hanson, M. Zhao and T. R. Bewley, 
+    <a href="https://www.tandfonline.com/doi/full/10.1080/03610926.2024.2439999">
+    <em>An extensible framework for the probabilistic search of stochastically-moving targets characterized by generalized Gaussian distributions or experimentally-defined regions of interest</em></a>, 
+    Communications in Statistics-Theory and Methods (2025): 1-26.
+  </li>
+
+  <li id="ref5">
+    Jazwinski, Andrew H, 
+    <em>Stochastic processes and filtering theory.</em>, 
+    Courier Corporation, 2013.
+  </li>
+</ol>
