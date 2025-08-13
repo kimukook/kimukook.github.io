@@ -25,7 +25,7 @@ body {
 
 .container {
   margin: 0 auto;
-  max-width: 1200px;
+  max-width: 1300px;
   padding: 0 10px;
   width: 100%;
 }
@@ -403,7 +403,7 @@ footer {
   --header-offset: 140px;
 
   /* wider so items don't wrap every word */
-  width: 320px;
+  width: 300px;
   position: sticky;
   top: var(--header-offset);
   max-height: calc(100vh - (var(--header-offset) + 24px));
