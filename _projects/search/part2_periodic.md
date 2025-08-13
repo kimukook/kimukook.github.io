@@ -4,7 +4,7 @@ title: "Part 2: Periodic Search"
 read_time: 5
 permalink: /projects/search-theory/part2
 ---
-
+Under development! 
 
 ### Problem formulation
 We solve the following optimal control problem:

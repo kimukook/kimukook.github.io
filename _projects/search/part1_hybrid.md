@@ -4,6 +4,7 @@ title: "Part 1: Hybrid Search"
 read_time: 5
 permalink: /projects/search-theory/part1
 ---
+Under development! 
 
 ## Modeling Framework
 Readers familiar with stochastic (or search) theory can safely omit this section, and jump to results part below. 

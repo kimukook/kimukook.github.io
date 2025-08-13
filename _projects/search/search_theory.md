@@ -20,7 +20,6 @@ This project focuses on optimization on control of autonomous agents searching f
 **Keywords:** Probabilistic search theory · Stochastic dynamics · PDE-constrained optimization · Adjoint analysis
 
 ## Motivation
-
 Search problems are common in both military and civilian domains—from rescuing missing persons, pets or wreckage like MH370 (non-evasive randomly moving targets), to tracking fugitives or foraging animals (evasive randomly moving targets). Unfortunately, many traditional methods are limited in adaptability and struggle in uncertain environments. Figure 2a and 2b below showcase the real-world challenges, even just for a stationary target shown in Figure 2a, often resorting to predetermined or exhaustive sweeps.
 <div class="image-pair">
   <div class="image-box">
@@ -50,7 +49,6 @@ In contrast, the computational frameworks developed in this project will not onl
 <div class="section-divider"></div>
 
 # Methodology and Numerical Results
-
 The crux of this project is <em><strong>adaptive observation</strong></em>, a framework that couples estimation and control. The estimation task involves modeling the moving target’s likely position as a stochastic process, accounting for the uncertainty in both its initial location and dynamics. The control task involves decision-making and coordination of searchers as they scan their surroundings to locate the target. Crucially, these two components are organically coupled: searchers’ observations not only inform the evolving estimate of the target’s location, but also respond to it, forming a “feedback loop” that iteratively drives both estimation and control tasks. This idea is illustrated in Figure 3 below.
 <div class="center">
   <div class="image-full">
@@ -63,7 +61,6 @@ The crux of this project is <em><strong>adaptive observation</strong></em>, a fr
 In this homepage, we focus on showcasing numerical results. For detailed mathematical background—including the modeling of the target's motion via stochastic differential equations, the evolution of the target’s probability density function (PDF) using Fokker-Planck equation, and the formulation of the optimal control problem—please click the blue section titles below for more details.
 
 ## [Part 1 Continuous-discrete observation]({{ site.baseurl }}/projects/search-theory/part1)
-
 We first consider a hybrid search framework in which the target's motion evolves continuously in time, while observations are made at discrete time steps. The core challenge lies in optimizing searcher controls under uncertainty while accounting for the evolving probability density function (PDF) of the target’s position.
 
 <figure style="text-align: center">

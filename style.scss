@@ -423,7 +423,16 @@ footer {
   text-align: center;                /* center everything inside */
 
   /* make sure the label doesn't create a side column */
-  p, h3, strong { 
+  p { 
+    border-bottom: 1px solid #ccc;
+    padding-bottom: .3rem;
+    margin-bottom: .8rem;
+    display: block; 
+    margin: 0 0 0.5rem 0; 
+    float: none; 
+    clear: both; 
+  }
+  h3, strong {
     display: block; 
     margin: 0 0 0.5rem 0; 
     float: none; 
