@@ -403,7 +403,7 @@ footer {
   --header-offset: 140px;
 
   /* wider so items don't wrap every word */
-  width: 340px;
+  width: 320px;
   position: sticky;
   top: var(--header-offset);
   max-height: calc(100vh - (var(--header-offset) + 24px));
@@ -420,7 +420,7 @@ footer {
   font-size: 1rem;
   line-height: 1.25;
   flex-shrink: 0;
-  text-align: left;                /* center everything inside */
+  text-align: center;                /* center everything inside */
 
   /* make sure the label doesn't create a side column */
   p, h3, strong { 
@@ -438,13 +438,13 @@ footer {
   }
 
   li { 
-    margin: 0.15rem 0; 
-    line-height: 1.2; 
+    margin: 0.35rem 0; 
+    line-height: 1.4; 
   }
 
   a {
     display: block;
-    text-align: center;           /* center each link’s text */
+    text-align: left;           /* left each link’s text */
     font-size: 1rem;
     color: #333;
     text-decoration: none;
