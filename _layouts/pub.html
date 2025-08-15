@@ -10,7 +10,7 @@ layout: default
 {% endif %}
 
 {% if page.journal %}
-  {% if page.type == "journal-submitted" %}
+  {% if page.type == "journal" and page.status == "submitted" %}
     <p><strong>Submitted to:</strong> {{ page.journal }}{% if page.date %} ({{ page.date | date: "%Y" }}){% endif %}</p>
   {% else %}
     <p><strong>Published in:</strong> {{ page.journal }}{% if page.date %} ({{ page.date | date: "%Y" }}){% endif %}</p>

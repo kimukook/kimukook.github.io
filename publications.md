@@ -26,12 +26,12 @@ We'll display them with `reversed` (newest first), but compute numbers so oldest
 </ul>
 
 <h1>Submitted Journal Articles</h1>
-<ul class="pub-list">
+<ul>
   {% for pub in journals_sub reversed %}
     <li>
       <!-- No numbering for submitted -->
       <a href="{{ pub.url }}">{{ pub.title }}</a>
-      {% if pub.journal %} ({{ pub.journal }}, {{ pub.date | date: "%Y" }}){% endif %}
+      ({{ pub.journal }}, {{ pub.date | date: "%Y" }})
     </li>
   {% endfor %}
 </ul>
