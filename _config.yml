@@ -99,5 +99,5 @@ defaults:
       path: "_publication"
     values:
       layout: pub
-      kind: "journal"   # override per file (journal|conference)
+      type: "journal"   # override per file (journal|conference)
       status: "accepted"  # e.g., accepted|submitted|in-review|in-preparation
