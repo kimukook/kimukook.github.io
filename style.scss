@@ -538,13 +538,16 @@ footer {
 
 /* Align wrapped lines under the title, not under the [J#]/[C#] label */
 .pub-list {
-  /* keep your bullets if you like; no special list-style needed */
-  margin: 0 0 1rem 0;
-  padding-left: 1.2em; /* adjust to taste to position bullets */
+  list-style: none;       /* remove bullets */
+  margin: 0;
+  padding-left: 0; /* adjust to taste to position bullets */
 }
 
 .pub-list li {
-  margin: .35rem 0;
+  display: grid;
+  grid-template-columns: 3.5em 1fr;  /* fixed space for index, rest for title */
+  column-gap: 0.5em;                  /* space between index and text */
+  margin: 0.4em 0;
 }
 
 .pub-idx {
@@ -554,5 +557,5 @@ footer {
 }
 
 .pub-entry {
-  /* nothing special needed; wrapping now starts after the fixed-width label */
+  text-decoration: none;  /* optional, keep or remove underlines */
 }
