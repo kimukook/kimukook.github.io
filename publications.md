@@ -4,20 +4,20 @@ title: Publications
 permalink: /publications/
 ---
 
-{% assign pubs_sorted = site.publications | sort: "date" | reverse %}
-
 {% comment %}
-Build filtered arrays so forloop.index counts within each group.
+Build filtered arrays in chronological order (oldest → newest).
+We'll display them with `reversed` (newest first), but compute numbers so oldest = 1.
 {% endcomment %}
-{% assign journals_acc = pubs_sorted | where: "type", "journal" | where: "status", "accepted" %}
-{% assign journals_sub = pubs_sorted | where: "type", "journal" | where: "status", "submitted" %}
-{% assign conferences = pubs_sorted | where: "type", "conference" %}
+{% assign journals_acc = site.publications | where: "type", "journal" | where: "status", "accepted" | sort: "date" %}
+{% assign journals_sub = site.publications | where: "type", "journal" | where: "status", "submitted" | sort: "date" %}
+{% assign conferences = site.publications | where: "type", "conference" | sort: "date" %}
 
 <h1>Published Journal Articles</h1>
 <ul>
-  {% for pub in journals_acc %}
+  {% for pub in journals_acc reversed %}
+    {% assign jid = forloop.length | minus: forloop.index | plus: 1 %}
     <li>
-      [J{{ forloop.index }}]
+      [J{{ jid }}]
       <a href="{{ pub.url }}">{{ pub.title }}</a>
       {% if pub.journal %} ({{ pub.journal }}, {{ pub.date | date: "%Y" }}){% endif %}
     </li>
@@ -26,9 +26,9 @@ Build filtered arrays so forloop.index counts within each group.
 
 <h1>Submitted Journal Articles</h1>
 <ul>
-  {% for pub in journals_sub %}
+  {% for pub in journals_sub reversed %}
     <li>
-      <!-- Don’t number these with J#, since you only wanted accepted journals indexed -->
+      <!-- No numbering for submitted -->
       <a href="{{ pub.url }}">{{ pub.title }}</a>
       {% if pub.journal %} ({{ pub.journal }}, {{ pub.date | date: "%Y" }}){% endif %}
     </li>
@@ -37,9 +37,10 @@ Build filtered arrays so forloop.index counts within each group.
 
 <h1>Conference Papers</h1>
 <ul>
-  {% for pub in conferences %}
+  {% for pub in conferences reversed %}
+    {% assign cid = forloop.length | minus: forloop.index | plus: 1 %}
     <li>
-      [C{{ forloop.index }}]
+      [C{{ cid }}]
       <a href="{{ pub.url }}">{{ pub.title }}</a>
       {% if pub.conference %} ({{ pub.conference }}, {{ pub.date | date: "%Y" }}){% endif %}
     </li>
