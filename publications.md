@@ -4,30 +4,44 @@ title: Publications
 permalink: /publications/
 ---
 
-<h2>Published Journal Articles</h2>
-<ul>
 {% assign pubs_sorted = site.publications | sort: "date" | reverse %}
-{% for pub in pubs_sorted %}
-  {% if pub.type == "journal-published" %}
-    <li><a href="{{ pub.url }}">{{ pub.title }}</a> ({{ pub.journal }}, {{ pub.date | date: "%Y" }})</li>
-  {% endif %}
-{% endfor %}
+
+{% comment %}
+Build filtered arrays so forloop.index counts within each group.
+{% endcomment %}
+{% assign journals_acc = pubs_sorted | where: "type", "journal" | where: "status", "accepted" %}
+{% assign journals_sub = pubs_sorted | where: "type", "journal" | where: "status", "submitted" %}
+{% assign conferences = pubs_sorted | where: "type", "conference" %}
+
+<h1>Published Journal Articles</h1>
+<ul>
+  {% for pub in journals_acc %}
+    <li>
+      [J{{ forloop.index }}]
+      <a href="{{ pub.url }}">{{ pub.title }}</a>
+      {% if pub.journal %} ({{ pub.journal }}, {{ pub.date | date: "%Y" }}){% endif %}
+    </li>
+  {% endfor %}
 </ul>
 
-<h2>Submitted Journal Articles</h2>
+<h1>Submitted Journal Articles</h1>
 <ul>
-{% for pub in pubs_sorted %}
-  {% if pub.type == "journal-submitted" %}
-    <li><a href="{{ pub.url }}">{{ pub.title }}</a> ({{ pub.journal }}, {{ pub.date | date: "%Y" }})</li>
-  {% endif %}
-{% endfor %}
+  {% for pub in journals_sub %}
+    <li>
+      <!-- Don’t number these with J#, since you only wanted accepted journals indexed -->
+      <a href="{{ pub.url }}">{{ pub.title }}</a>
+      {% if pub.journal %} ({{ pub.journal }}, {{ pub.date | date: "%Y" }}){% endif %}
+    </li>
+  {% endfor %}
 </ul>
 
-<h2>Conference Papers</h2>
+<h1>Conference Papers</h1>
 <ul>
-{% for pub in pubs_sorted %}
-  {% if pub.type == "conference" %}
-    <li><a href="{{ pub.url }}">{{ pub.title }}</a> ({{ pub.conference }}, {{ pub.date | date: "%Y" }})</li>
-  {% endif %}
-{% endfor %}
+  {% for pub in conferences %}
+    <li>
+      [C{{ forloop.index }}]
+      <a href="{{ pub.url }}">{{ pub.title }}</a>
+      {% if pub.conference %} ({{ pub.conference }}, {{ pub.date | date: "%Y" }}){% endif %}
+    </li>
+  {% endfor %}
 </ul>
