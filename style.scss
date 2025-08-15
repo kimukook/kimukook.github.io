@@ -534,3 +534,25 @@ footer {
   font-style: italic;
   margin-top: 0.5em;
 }
+
+
+/* Align wrapped lines under the title, not under the [J#]/[C#] label */
+.pub-list {
+  /* keep your bullets if you like; no special list-style needed */
+  margin: 0 0 1rem 0;
+  padding-left: 1.2em; /* adjust to taste to position bullets */
+}
+
+.pub-list li {
+  margin: .35rem 0;
+}
+
+.pub-idx {
+  display: inline-block;
+  min-width: 3.2em;   /* enough for [J10]; tweak if you reach [J100] */
+  font-weight: 600;
+}
+
+.pub-entry {
+  /* nothing special needed; wrapping now starts after the fixed-width label */
+}

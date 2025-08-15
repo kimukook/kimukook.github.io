@@ -13,19 +13,20 @@ We'll display them with `reversed` (newest first), but compute numbers so oldest
 {% assign conferences = site.publications | where: "type", "conference" | sort: "date" %}
 
 <h1>Published Journal Articles</h1>
-<ul>
+<ul class="pub-list">
   {% for pub in journals_acc reversed %}
     {% assign jid = forloop.length | minus: forloop.index | plus: 1 %}
     <li>
-      [J{{ jid }}]
-      <a href="{{ pub.url }}">{{ pub.title }}</a>
-      {% if pub.journal %} ({{ pub.journal }}, {{ pub.date | date: "%Y" }}){% endif %}
+      <span class="pub-idx">[J{{ jid }}]</span>
+      <span class="pub-entry">
+        <a href="{{ pub.url }}">{{ pub.title }}</a> ({{ pub.journal }}, {{ pub.date | date: "%Y" }})
+      </span>
     </li>
   {% endfor %}
 </ul>
 
 <h1>Submitted Journal Articles</h1>
-<ul>
+<ul class="pub-list">
   {% for pub in journals_sub reversed %}
     <li>
       <!-- No numbering for submitted -->
@@ -36,13 +37,14 @@ We'll display them with `reversed` (newest first), but compute numbers so oldest
 </ul>
 
 <h1>Conference Papers</h1>
-<ul>
+<ul class="pub-list">
   {% for pub in conferences reversed %}
     {% assign cid = forloop.length | minus: forloop.index | plus: 1 %}
     <li>
-      [C{{ cid }}]
-      <a href="{{ pub.url }}">{{ pub.title }}</a>
-      {% if pub.conference %} ({{ pub.conference }}, {{ pub.date | date: "%Y" }}){% endif %}
+      <span class="pub-idx">[C{{ cid }}]</span>
+      <span class="pub-entry">
+        <a href="{{ pub.url }}">{{ pub.title }}</a> ({{ pub.conference }}, {{ pub.date | date: "%Y" }})
+      </span>
     </li>
   {% endfor %}
 </ul>
