@@ -151,7 +151,7 @@ Numerical results demonstrate fast convergence of the objective and control inpu
   </li>
   
   <li id="ref4">
-    M. Zhao and T. R. Bewley, 
+    Muhan Zhao and Thomas R. Bewley, 
     <a href="http://robotics.ucsd.edu/pubs/ZB_periodic_search.pdf">
     <em>Probabilistic search for randomly moving targets using optimized time-periodic orbits</em></a>, 
     under review at Automatica since Feb. 2025.

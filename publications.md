@@ -24,6 +24,7 @@ We'll display them with `reversed` (newest first), but compute numbers so oldest
     </li>
   {% endfor %}
 </ul>
+<div class="section-divider"></div>
 
 <h1>Submitted Journal Articles</h1>
 <ul>
@@ -35,6 +36,7 @@ We'll display them with `reversed` (newest first), but compute numbers so oldest
     </li>
   {% endfor %}
 </ul>
+<div class="section-divider"></div>
 
 <h1>Conference Papers</h1>
 <ul class="pub-list">
