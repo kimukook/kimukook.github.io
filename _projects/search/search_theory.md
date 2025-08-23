@@ -6,13 +6,13 @@ permalink: /projects/search-theory/
 category: main
 spotlight: true
 summary: Advancing and optimizing adaptive control strategies to rapidly locate randomly moving targets, whether non-evasive or evasive
-media: /assets/periodic_traj.mp4
+media: /assets/search/periodic_traj.mp4
 ---
 # Overview
 This project focuses on optimization on control of autonomous agents searching for randomly moving targets (non-evasive and evasive). Computational frameworks are proposed to iteratively confine control strategies, balancing the information gathering and agents mobility. We present three complementary developments: (i) <a href="#part1">a continuous-discrete observation framework</a>, (ii) <a href="#part2">a time-periodic search strategy tailored for non-evasive targets</a>, and (iii) <a href="#part3">a collaborative search approach for tracking evasive targets</a>. An example of probabilistic search, on finding the lost pet, is shown in Figure 1 below.
 <div class="center">
   <div class="image-full">
-    <img src="/assets/Search_project_scenario.svg" alt="Search flowchart" width="600px">
+    <img src="/assets/search/Search_project_scenario.svg" alt="Search flowchart" width="600px">
     <div class="caption">
       Figure 1. An illustration of the probabilistic search problem. A drone acts as the searcher, actively observing the environment while moving. The target, a lost pet whose position is unknown to the drone, moves randomly in the field. The searcher's actions adapt based on observations made along its path to infer the target's location.
     </div>
@@ -24,14 +24,14 @@ This project focuses on optimization on control of autonomous agents searching f
 Search problems are common in both military and civilian domains—from rescuing missing persons, pets or wreckage like MH370 (non-evasive randomly moving targets), to tracking fugitives or foraging animals (evasive randomly moving targets). Unfortunately, many traditional methods are limited in adaptability and struggle in uncertain environments. Figure 2a and 2b below showcase the real-world challenges, even just for a stationary target shown in Figure 2a, often resorting to predetermined or exhaustive sweeps.
 <div class="image-pair">
   <div class="image-box">
-    <img src="/assets/lawnmower.jpeg" alt="Lawnmower trajectory">
+    <img src="/assets/search/lawnmower.jpeg" alt="Lawnmower trajectory">
     <div class="caption">
       Figure 2a. Lawnmower trajectory used to search for the missing $109M F-35B fighter jet in 2023. 
       <a href="https://x.com/flightradar24/status/1703827299412455459?lang=en">Image source</a>
     </div>
   </div>
   <div class="image-box">
-    <img src="/assets/search_MH370.png" alt="MH370 search">
+    <img src="/assets/search/search_MH370.png" alt="MH370 search">
     <div class="caption">
       Figure 2b. Searching for the debris of MH370. 
       <a href="https://mh370.radiantphysics.com/2025/03/31/update-on-the-search-for-mh370/">Image source</a>
@@ -53,7 +53,7 @@ In contrast, the computational frameworks developed in this project will not onl
 The crux of this project is <em><strong>adaptive observation</strong></em>, a framework that couples estimation and control. The estimation task involves modeling the moving target’s likely position as a stochastic process, accounting for the uncertainty in both its initial location and dynamics. The control task involves decision-making and coordination of searchers as they scan their surroundings to locate the target. Crucially, these two components are organically coupled: searchers’ observations not only inform the evolving estimate of the target’s location, but also respond to it, forming a “feedback loop” that iteratively drives both estimation and control tasks. This idea is illustrated in Figure 3 below.
 <div class="center">
   <div class="image-full">
-    <img src="/assets/Search_flowchart_math.svg" alt="Search flowchart" width="600px">
+    <img src="/assets/search/Search_flowchart_math.svg" alt="Search flowchart" width="600px">
     <div class="caption">
       Figure 3. Schematic of the <em>search process</em> in discrete time. The <span style="color: red;">red</span> lines highlights the core feedback loop: searchers’ observations inform the estimate (i.e., the probability density function of the target), which in turn updates searchers' controls (and consequently, the trajectories). This project developed the result in continuous-time, while the diagram is shown in discrete-time for illustration purposes only.
     </div>
@@ -66,7 +66,7 @@ We first consider a hybrid search framework in which the target's motion evolves
 
 <figure style="text-align: center">
   <video autoplay loop muted playsinline width="600">
-    <source src="/assets/hybrid_traj.mp4" type="video/mp4">
+    <source src="/assets/search/hybrid_traj.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
   <figcaption style="color: gray; text-align: left;">
@@ -76,7 +76,7 @@ We first consider a hybrid search framework in which the target's motion evolves
 
 <figure style="text-align: center">
   <video autoplay loop muted playsinline width="600">
-    <source src="/assets/hybrid_control.mp4" type="video/mp4">
+    <source src="/assets/search/hybrid_control.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
   <figcaption style="color: gray; text-align: left;">
@@ -89,7 +89,7 @@ Inspired by the periodic-like trajectories obtained from optimizing hybrid searc
 
 <figure style="text-align: center">
   <video autoplay loop muted playsinline width="600">
-    <source src="/assets/periodic_opt.mp4" type="video/mp4">
+    <source src="/assets/search/periodic_opt.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
   <figcaption style="color: gray; text-align: left;">
@@ -99,7 +99,7 @@ Inspired by the periodic-like trajectories obtained from optimizing hybrid searc
 
 <figure style="text-align: center">
   <video autoplay loop muted playsinline width="600">
-    <source src="/assets/periodic_traj.mp4" type="video/mp4">
+    <source src="/assets/search/periodic_traj.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
   <figcaption style="color: gray; text-align: left;">

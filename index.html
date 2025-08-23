@@ -9,23 +9,15 @@ layout: default
   direct autonomous agents (such as UAVs or robots) as they interact (observe, search, or even put out wildfires...) with complex, uncertain environments. 
   My work blends numerical simulation,  stochastic dynamics, and optimization techniques to tackle real-world challenges.</p>
 <p>My research interests include:</p>
-  <ul>
-    <li>Probabilistic search theory</li>
-    <li>PDE-constrained optimal control</li>
-    <li>Ensemble-based adaptive observation</li>
-    <li>Numerical analysis and computation</li>
-    <li>Surrogate-based derivative-free optimization</li>
-  </ul>
+<p>Probabilistic search theory · PDE-constrained optimal control · Ensemble-based adaptive observation
+  · Stochastic dynamics and filtering · Numerical optimization and optimization · Surrogate-based derivative-free optimization</p>
+</p>
   
 <p>
 I'm actively looking for postdoc positions where I can design theoretical control algorithms to solve real-world problems.
 </p>
 
 <h1>Research spotlights</h1>
-<p>All projects: {{ site.projects | size }} |
-Spotlights: {{ site.projects | where_exp: "p", "p.spotlight == true" | size }} |
-Spotlight+main: {{ site.projects | where_exp: "p", "p.spotlight == true" | where: "category", "main" | size }}</p>
-
 <div class="projects-container">
   <ul style="list-style-type: none; padding: 0; margin: 0;">
     {% assign picks = site.projects | where_exp: "p", "p.spotlight == true" | where: "category", "main" %}
