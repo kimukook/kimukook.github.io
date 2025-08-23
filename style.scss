@@ -24,10 +24,10 @@ body {
 }
 
 .container {
-  margin: 0 auto;
-  max-width: 1300px;
-  padding: 0 10px;
-  width: 100%;
+  margin: 0 auto; // center the container
+  max-width: 1300px; // limit the maximum width
+  padding: 0 10px; // add some padding on the sides
+  width: 100%; // make sure it takes full width on small screens
 }
 
 h1, h2, h3, h4, h5, h6 {
