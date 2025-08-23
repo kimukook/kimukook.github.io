@@ -208,7 +208,7 @@ img {
 // Avatar and site info
 .site-avatar {
   grid-area: avatar;
-  max-height: 250px;
+  max-height: 200px;
   width: auto;
 
   @include mobile {
