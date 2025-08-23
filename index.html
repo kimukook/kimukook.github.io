@@ -22,9 +22,13 @@ I'm actively looking for postdoc positions where I can design theoretical contro
 </p>
 
 <h1>Research spotlights</h1>
+<p>All projects: {{ site.projects | size }} |
+Spotlights: {{ site.projects | where_exp: "p", "p.spotlight == true" | size }} |
+Spotlight+main: {{ site.projects | where_exp: "p", "p.spotlight == true" | where: "category", "main" | size }}</p>
+
 <div class="projects-container">
   <ul style="list-style-type: none; padding: 0; margin: 0;">
-    {% assign picks = site.projects | where: "spotlight", true | where: "category", "main" %}
+    {% assign picks = site.projects | where_exp: "p", "p.spotlight == true" | where: "category", "main" %}
     {% for project in picks %}
       <li style="margin-bottom: 2em;">
         <div class="project-block">
