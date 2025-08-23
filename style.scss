@@ -251,27 +251,31 @@ img {
 
 nav {
   grid-area: nav;
-  margin-top: 8px;
+  margin-top: 4px; // space from above
 
-  display: flex;
-  justify-content: center;
-  gap: 24px;
+  display: flex; // use flexbox for layout
+  justify-content: center; // center the links
+  gap: 30px; // space between links
 
-  @include mobile {
-    margin-top: 9px;
-    display: block;
-    font-size: 16px;
-    text-align: center;
+  @include mobile { // apply these styles only when on small screens (mobile)
+    margin-top: 9px; // more space on mobile
+    display: block; // stack links vertically
+    font-size: 20px; // larger font size for easier tapping
+    text-align: center; // center text
+    line-height: 1.6; // more spacing between lines
+    gap: 10px; // less space between links
   }
 
-  a {
-    color: $darkGray;
-    font-weight: 300;
-    letter-spacing: 1px;
+  a { // style the links inside nav
+    color: $darkGray; // dark gray color for links
+    font-weight: 300; // light font weight
+    text-transform: uppercase; // uppercase letters
+    letter-spacing: 1px; // space between letters
 
     @include mobile {
-      margin: 0 10px;
-      color: $blue;
+      margin: 0 10px; // horizontal margin on mobile
+      font-weight: 500; // slightly bolder on mobile
+      color: $blue; // blue color on mobile
     }
   }
 }
