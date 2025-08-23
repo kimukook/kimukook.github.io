@@ -36,7 +36,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: bold;
 
   line-height: 1.7;
-  margin: 1em 0 15px;
+  margin: 10px 0 15px; 
   padding: 0;
 
   @include mobile {
@@ -208,7 +208,7 @@ img {
 // Avatar and site info
 .site-avatar {
   grid-area: avatar;
-  max-height: 200px;
+  max-height: 180px;
   width: auto;
 
   @include mobile {
