@@ -208,7 +208,7 @@ img {
 // Avatar and site info
 .site-avatar {
   grid-area: avatar;
-  max-height: 180px;
+  max-height: 150px;
   width: auto;
 
   @include mobile {
@@ -398,7 +398,7 @@ footer {
 .section-divider {
   width: 100%;
   height: 2px;
-  margin: 3em 0;
+  margin: 0;
   background: linear-gradient(to right, #ccc, #eee, #ccc);
   border-radius: 2px;
   box-shadow: 0 1px 3px rgba(0,0,0,0.05);
