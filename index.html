@@ -21,6 +21,38 @@ layout: default
 I'm actively looking for postdoc positions where I can design theoretical control algorithms to solve real-world problems.
 </p>
 
+<h1>Research spotlights</h1>
+<div class="projects-container">
+  <ul style="list-style-type: none; padding: 0; margin: 0;">
+    {% assign picks = site.projects | where: "spotlight", true | where: "category", "main" %}
+    {% for project in picks %}
+      <li style="margin-bottom: 2em;">
+        <div class="project-block">
+          <div class="project-media">
+            {% if project.media %}
+              {% if project.media contains '.mp4' %}
+                <video autoplay muted loop playsinline width="300">
+                  <source src="{{ project.media }}" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              {% else %}
+                <img src="{{ project.media }}" alt="Project media" width="300" />
+              {% endif %}
+            {% endif %}
+          </div>
+
+          <div class="project-text">
+            <h3><a href="{{ project.url }}">{{ project.title }}</a></h3>
+            {% if project.summary %}
+              <p class="project-summary">{{ project.summary }}</p>
+            {% endif %}
+          </div>
+        </div>
+      </li>
+    {% endfor %}
+  </ul>
+</div>
+
 
 <p>
 Feel free to reach out if you are interested in any part of my work! Contact info please check below! 

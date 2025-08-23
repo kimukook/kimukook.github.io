@@ -54,7 +54,7 @@ The crux of this project is <em><strong>adaptive observation</strong></em>, a fr
   <div class="image-full">
     <img src="/assets/Search_flowchart_math.svg" alt="Search flowchart" width="600px">
     <div class="caption">
-      Figure 3. Discrete-time flow chart of the <em>search process</em>. The <span style="color: red;">red</span> lines in diagram highlights the core feedback loop: searchers’ observations inform the estimate (i.e., the probability density function of the target), which then updates searchers' controls—and consequently, the trajectories. The theory developed here is, in fact, continuous-in-time, though the diagram is shown discrete-in-time for illustration purposes only.
+      Figure 3. Schematic of the <em>search process</em> in discrete time. The <span style="color: red;">red</span> lines highlights the core feedback loop: searchers’ observations inform the estimate (i.e., the probability density function of the target), which in turn updates searchers' controls (and consequently, the trajectories). This project developed the result in continuous-time, while the diagram is shown in discrete-time for illustration purposes only.
     </div>
   </div>
 </div>
@@ -83,9 +83,7 @@ We first consider a hybrid search framework in which the target's motion evolves
   </figcaption>
 </figure>
 
-<a id="part2"></a>
 ## [Part 2 Optimized periodic orbits]({{ site.baseurl }}/projects/search-theory/part2)
-
 Inspired by the periodic-like trajectories obtained from optimizing hybrid search strategy as shown in Figure 4 above, <a href="#ref4">Zhao and Bewley \[2025\]</a> investigates a periodic search strategy for randomly moving targets. By optimizing the controls—and thus periodic trajectories—of multiple autonomous agents, the approach efficiently shapes the long-term probability landscape to maximize detection rate under uncertainty.
 
 <figure style="text-align: center">

@@ -185,8 +185,8 @@ img {
   float: none;
   grid-area: avatar;
 
-  width: 100px;
-  height: 100px;
+  width: 200px;
+  height: 200px;
   margin-right: 15px;
 
   @include mobile {
@@ -521,7 +521,7 @@ footer {
 }
 
 .project-text {
-  max-width: 600px;
+  max-width: 800px;
 }
 
 .project-text h3 {
