@@ -208,15 +208,21 @@ img {
 // Avatar and site info
 .site-avatar {
   grid-area: avatar;
-  width: 200px;
-  height: 200px;
+  max-height: 300px;
+  width: auto;
 
   @include mobile {
     display: block;
     margin: 0 auto;
+    max-width: 200px;  // optional: cap width on small screens
+    max-height: none;  // remove strict height if you want more flexibility
   }
 
-  img { border-radius: 5px; }
+  img {
+    border-radius: 5px; 
+    max-height: 100%; 
+    width: auto; 
+    }
 }
 
 .site-info {
