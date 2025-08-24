@@ -56,9 +56,9 @@ I am a die-hard fan of Golder State Warriors' point guard, No. 30, Stephen Curry
 ## The Best Cat in the World
 Named by the vets at Towne center hospital!
 <div style="display:flex; gap:20px; flex-wrap:wrap;">
-  <img src="/assets/cat/clay1.jpg" alt="Clay 1"
-       style="width:40%; max-width:300px; border-radius:8px;">
-  <img src="/assets/cat/clay2.jpg" alt="Clay 2"
-       style="width:40%; max-width:300px; border-radius:8px;">
+  <img src="/assets/clay.jpg" alt="Clay 1"
+       style="width:40%; max-width:500px; border-radius:8px;">
+  <img src="/assets/clay-2.jpg" alt="Clay 2"
+       style="width:40%; max-width:500px; border-radius:8px;">
 </div>
 

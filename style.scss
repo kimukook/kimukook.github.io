@@ -583,13 +583,13 @@ footer {
 
 // Education table style
 .edu-table {
-  width: 100%;
+  width: auto;
   border-collapse: collapse;
   margin: 1rem 0; // space above and below
   font-size: 16px;
 }
 
 .edu-table td {
-  padding: 8px 2px;   /* more space top/bottom and left/right */
+  padding: 8px 10px;   /* more space top/bottom and left/right */
   vertical-align: top; /* align text nicely at the top */
 }
