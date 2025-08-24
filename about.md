@@ -21,7 +21,8 @@ under development!
       <td>2016–2018 · San Diego, CA</td>
     </tr>
     <tr>
-      <td>B.S. Department of Mathematics</td>
+      <td>B.S. </td>
+      <td>Department of Mathematics</td>
       <td>Tongji University</td>
       <td>2012–2016 · Shanghai, China</td>
     </tr>
