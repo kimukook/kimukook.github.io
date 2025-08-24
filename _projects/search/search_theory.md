@@ -8,8 +8,7 @@ spotlight: true
 summary: Advancing and optimizing adaptive control strategies to rapidly locate randomly moving targets, whether non-evasive or evasive
 media: /assets/search/periodic_traj.mp4
 ---
-# Overview
-<h1>test</h1>
+<h1 class="highlight">Overview</h1>
 This project focuses on optimization on control of autonomous agents searching for randomly moving targets (non-evasive and evasive). Computational frameworks are proposed to iteratively confine control strategies, balancing the information gathering and agents mobility. We present three complementary developments: (i) <a href="#part1">a continuous-discrete observation framework</a>, (ii) <a href="#part2">a time-periodic search strategy tailored for non-evasive targets</a>, and (iii) <a href="#part3">a collaborative search approach for tracking evasive targets</a>. An example of probabilistic search, on finding the lost pet, is shown in Figure 1 below.
 <div class="center">
   <div class="image-full">
@@ -62,7 +61,7 @@ The crux of this project is <em><strong>adaptive observation</strong></em>, a fr
 </div>
 In this homepage, we focus on showcasing numerical results. For detailed mathematical background—including the modeling of the target's motion via stochastic differential equations, the evolution of the target’s probability density function (PDF) using Fokker-Planck equation, and the formulation of the optimal control problem—please click the blue section titles below for more details.
 
-## [Part 1 Continuous-discrete observation]({{ site.baseurl }}/projects/search-theory/part1)
+<h2  class="highlight">[Part 1 Continuous-discrete observation]({{ site.baseurl }}/projects/search-theory/part1)</h2>
 We first consider a hybrid search framework in which the target's motion evolves continuously in time, while observations are made at discrete time steps. The core challenge lies in optimizing searcher controls under uncertainty while accounting for the evolving probability density function (PDF) of the target’s position.
 
 <figure style="text-align: center">

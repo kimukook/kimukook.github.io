@@ -21,7 +21,7 @@ under development!
     <tr>
       <td>B.S. Department of Mathematics</td>
       <td>University of California, San Diego</td>
-      <td>2012-2016 · Shanghai, China</td>
+      <td>2012–2016 · Shanghai, China</td>
     </tr>
   </tbody>
 </table>
