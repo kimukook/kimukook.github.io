@@ -3,8 +3,6 @@ layout: page
 title: About
 permalink: /about/
 ---
-under development! 
-
 <h2>Education</h2>
 <table class="edu-table">
   <tbody>
@@ -29,7 +27,7 @@ under development!
   </tbody>
 </table>
 
-<h1 class="highlight">Recommended books</h1>
+## Recommended books
 Some books that saved my career.
 
 <ol>
@@ -52,7 +50,11 @@ Some books that saved my career.
   </li>
 </ol>
 
-# More Information
-
+## More Information
 I am a die-hard fan of Golder State Warriors' point guard, No. 30, Stephen Curry.
+
+## The Best Cat in the World
+Named by the vets at Towne center hospital
+![Clay 1](/assets/clay.jpg)
+![Clay 1](/assets/clay-2.jpg)
 
