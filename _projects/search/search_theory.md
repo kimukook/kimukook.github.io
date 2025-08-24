@@ -61,7 +61,7 @@ The crux of this project is <em><strong>adaptive observation</strong></em>, a fr
 </div>
 In this homepage, we focus on showcasing numerical results. For detailed mathematical background—including the modeling of the target's motion via stochastic differential equations, the evolution of the target’s probability density function (PDF) using Fokker-Planck equation, and the formulation of the optimal control problem—please click the blue section titles below for more details.
 
-<h2  class="highlight">[Part 1 Continuous-discrete observation]({{ site.baseurl }}/projects/search-theory/part1)</h2>
+<h2  class="highlight"><a href="/projects/search-theory/part1">Part 1 Continuous-discrete observation</a></h2>
 We first consider a hybrid search framework in which the target's motion evolves continuously in time, while observations are made at discrete time steps. The core challenge lies in optimizing searcher controls under uncertainty while accounting for the evolving probability density function (PDF) of the target’s position.
 
 <figure style="text-align: center">
@@ -84,7 +84,7 @@ We first consider a hybrid search framework in which the target's motion evolves
   </figcaption>
 </figure>
 
-## [Part 2 Optimized periodic orbits]({{ site.baseurl }}/projects/search-theory/part2)
+<h2 class="highlight"><a href="/projects/search-theory/part2">Part 2 Optimized periodic orbits</a></h2>
 Inspired by the periodic-like trajectories obtained from optimizing hybrid search strategy as shown in Figure 4 above, <a href="#ref4">Zhao and Bewley \[2025\]</a> investigates a periodic search strategy for randomly moving targets. By optimizing the controls—and thus periodic trajectories—of multiple autonomous agents, the approach efficiently shapes the long-term probability landscape to maximize detection rate under uncertainty.
 
 <figure style="text-align: center">

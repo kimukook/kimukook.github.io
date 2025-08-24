@@ -9,24 +9,26 @@ under development!
 <table class="edu-table">
   <tbody>
     <tr>
-      <td>Ph.D. Mechanical &amp; Aerospace Engineering (CSME)</td>
-      <td>University of California, San Diego</td>
+      <td>Ph.D. </td>
+      <td>Mechanical &amp; Aerospace Engineering</td>
+      <td>UC, San Diego</td>
       <td>2018–2025 · San Diego, CA</td>
     </tr>
     <tr>
-      <td>M.S. Department of Mathematics</td>
-      <td>University of California, San Diego</td>
+      <td>M.S. </td>
+      <td>Department of Mathematics (CSME)</td>
+      <td>UC, San Diego</td>
       <td>2016–2018 · San Diego, CA</td>
     </tr>
     <tr>
       <td>B.S. Department of Mathematics</td>
-      <td>University of California, San Diego</td>
+      <td>Tongji University</td>
       <td>2012–2016 · Shanghai, China</td>
     </tr>
   </tbody>
 </table>
 
-<h1 id="recommended" class="highlight">Recommended books</h1>
+<h1 class="highlight">Recommended books</h1>
 Some books that saved my career.
 
 <ol>
