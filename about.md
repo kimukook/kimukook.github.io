@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: default
 title: About
 permalink: /about/
 ---
@@ -53,7 +53,7 @@ Some books that saved my career.
 ## More Information
 I am a die-hard fan of Golder State Warriors' point guard, No. 30, Stephen Curry.
 
-## The Best Cat in the World
+## Proudly introduce Clay — The Best Cat in the World
 Named by the vets at Towne center hospital!
 <div style="display:flex; gap:20px; flex-wrap:wrap;">
   <img src="/assets/clay.jpg" alt="Clay 1"

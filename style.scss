@@ -214,14 +214,17 @@ img {
   @include mobile {
     display: block;
     margin: 0 auto;
-    max-width: 200px;  // optional: cap width on small screens
-    max-height: none;  // remove strict height if you want more flexibility
+    max-width: 100px;  // optional: cap width on small screens
+    max-height: 100px;  // remove strict height if you want more flexibility
   }
 
   img {
-    border-radius: 5px; 
-    max-height: 100%; 
-    width: auto; 
+    border-radius: 50%;
+    width: 200px !important;      
+    height: 200px !important;     
+    max-width: none !important;   
+    object-fit: cover;           
+    display: block;
     }
 }
 
