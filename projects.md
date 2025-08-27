@@ -17,12 +17,12 @@ permalink: /projects/
             <div class="project-media">
               {% if project.media %}
                 {% if project.media contains '.mp4' %}
-                  <video autoplay muted loop playsinline width="300">
+                  <video autoplay muted loop playsinline width="400">
                     <source src="{{ project.media }}" type="video/mp4">
                     Your browser does not support the video tag.
                   </video>
                 {% else %}
-                  <img src="{{ project.media }}" alt="Project media" width="300" />
+                  <img src="{{ project.media }}" alt="Project media" width="400" />
                 {% endif %}
               {% endif %}
             </div>
