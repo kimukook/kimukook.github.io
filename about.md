@@ -27,9 +27,7 @@ permalink: /about/
   </tbody>
 </table>
 
-## Recommended books
-Some books that saved my career.
-
+## Books saved my career
 <ol>
   <li>
     A. E. Bryson, Jr. and Y.-C. Ho,
@@ -54,7 +52,7 @@ Some books that saved my career.
 I am a die-hard fan of Golder State Warriors' point guard, No. 30, Stephen Curry.
 
 ## Proudly introduce Clay — The Best Cat in the World
-Named by the vets at Towne center hospital!
+Named by the vets at Towne center hospital in San Diego!
 <div style="display:flex; gap:20px; flex-wrap:wrap;">
   <img src="/assets/clay.jpg" alt="Clay 1"
        style="width:40%; max-width:500px; border-radius:8px;">

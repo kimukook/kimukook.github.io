@@ -165,7 +165,8 @@ img {
   grid-template-columns: 200px 1fr;      /* avatar | info */
   grid-template-areas:
     "avatar info"
-    "nav    nav";                        /* nav full width below */
+    "avatar nav";                        /* nav below info */
+  row-gap: 10px;                        /* spacing between rows */
   column-gap: 20px;
   align-items: center;
 
@@ -412,7 +413,6 @@ footer {
 
   /* ensure single-column flow */
   display: block;
-
   align-self: flex-start;
   padding: 1rem;
   background-color: #f8f8f8;
@@ -422,6 +422,8 @@ footer {
   line-height: 1.25;
   flex-shrink: 0;
   text-align: center;                /* center everything inside */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  text-transform: lowercase;         /* normalize everything to lower-case first */
 
   /* make sure the label doesn't create a side column */
   p { 
@@ -465,6 +467,7 @@ footer {
     white-space: normal;
     overflow-wrap: anywhere;      /* only break very long tokens */
     word-break: normal;
+    text-transform: capitalize !important;  /* then capitalize each word */
 
     &:hover { text-decoration: underline; }
   }
