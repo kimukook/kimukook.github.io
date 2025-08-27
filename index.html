@@ -18,32 +18,40 @@ I'm actively looking for postdoc positions where I can design theoretical contro
 
 <h1>Research spotlights</h1>
 <div class="projects-container">
-  <ul style="list-style-type: none; padding: 0; margin: 0;">
-    {% assign picks = site.projects | where_exp: "p", "p.spotlight == true" %}
-    {% for project in picks %}
-      <li style="margin-bottom: 2em;">
-        <div class="project-block">
-          <div class="project-media">
-            {% if project.media %}
-              {% if project.media contains '.mp4' %}
-                <video autoplay muted loop playsinline width="400">
-                  <source src="{{ project.media }}" type="video/mp4">
-                  Your browser does not support the video tag.
-                </video>
-              {% else %}
-                <img src="{{ project.media }}" alt="Project media" width="400" />
-              {% endif %}
-            {% endif %}
-          </div>
+  <ul style="list-style-type:none; padding:0; margin:0;">
+    {% assign picks = site.projects
+         | where_exp: "p", "p.spotlight == true"
+         | sort: "spotlight_order" %}
 
-          <div class="project-text">
-            <h3><a href="{{ project.url }}">{{ project.title }}</a></h3>
-            {% if project.summary %}
-              <p class="project-summary">{{ project.summary }}</p>
+    {% for project in picks %}
+    <li style="margin-bottom:2em;">
+      <div class="project-block">
+        <div class="project-media">
+          {% if project.media %}
+            {% if project.media contains '.mp4' %}
+              <video autoplay muted loop playsinline width="400" poster="">
+                <source src="{{ project.media }}" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            {% else %}
+              <img src="{{ project.media }}" alt="Project media" width="400" />
             {% endif %}
-          </div>
+          {% endif %}
         </div>
-      </li>
+
+        <div class="project-text">
+          {% if project.disable_link %}
+            <h3>{{ project.title }}</h3>
+          {% else %}
+            <h3><a href="{{ project.url }}">{{ project.title }}</a></h3>
+          {% endif %}
+
+          {% if project.summary %}
+            <p class="project-summary{% if project.disable_link %} muted{% endif %}">{{ project.summary }}</p>
+          {% endif %}
+        </div>
+      </div>
+    </li>
     {% endfor %}
   </ul>
 </div>

@@ -4,6 +4,7 @@ title: "Probabilistic Search for Randomly Moving Targets"
 read_time: 8–10 minutes
 permalink: /projects/search-theory/
 category: main
+spotlight_order: 1
 spotlight: true
 summary: Advancing and optimizing adaptive control strategies to rapidly locate randomly moving targets, whether non-evasive or evasive
 media: /assets/search/periodic_traj.mp4
