@@ -155,16 +155,17 @@ img {
   margin-bottom: 50px;
 }
 
+/* ===== Masthead (desktop → grid; mobile → stacked) ===== */
 .masthead {
   padding: 20px 0;
   border-bottom: 1px solid $lightGray;
 
-  /* new: make a 2-row header (avatar+info, then nav) */
+  /* One grid definition (remove the duplicate block) */
   display: grid;
-  grid-template-columns: auto 1fr;
+  grid-template-columns: 200px 1fr;      /* avatar | info */
   grid-template-areas:
     "avatar info"
-    "nav    nav";
+    "nav    nav";                        /* nav full width below */
   column-gap: 20px;
   align-items: center;
 
@@ -175,66 +176,42 @@ img {
       "avatar"
       "info"
       "nav";
-    row-gap: 10px;
+    row-gap: 12px;                       /* spacing between rows */
   }
 }
 
-
-.masthead {
-  padding: 20px 0;
-  border-bottom: 1px solid $lightGray;
-
-  /* 2×2 grid: avatar spans both rows */
-  display: grid;
-  grid-template-columns: 200px 1fr;
-  grid-template-rows: auto auto;
-  grid-template-areas:
-    "avatar info"
-    "avatar nav";
-  column-gap: 20px;
-  align-items: start;
-
-  @include mobile {
-    text-align: center;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto auto auto;
-    grid-template-areas:
-      "avatar"
-      "info"
-      "nav";
-    row-gap: 10px;
-  }
-}
-// Avatar and site info
+/* ===== Avatar container ===== */
 .site-avatar {
   grid-area: avatar;
-  height: 200px;
-  width: auto;
-
-  @include mobile {
-    display: block;
-    margin: 0 auto;
-    max-width: 100px;  // optional: cap width on small screens
-    max-height: 100px;  // remove strict height if you want more flexibility
-  }
-
-  img {
-    border-radius: 50%;
-    width: 200px !important;      
-    height: 200px !important;     
-    max-width: none !important;   
-    object-fit: cover;           
-    display: block;
-    }
+  /* don't fix container height; let the image size control it */
+  @include mobile { margin: 0 auto; }
 }
 
+/* ===== Avatar image sizing ===== */
+.site-avatar img {
+  border-radius: 50%;
+  width: 200px;               /* desktop size */
+  height: 200px;
+  max-width: none;            /* ignore global img{max-width:100%} */
+  object-fit: cover;
+  display: block;
+}
+
+/* smaller, centered avatar on phones */
+@include mobile {
+  .site-avatar img {
+    width: 120px !important;
+    height: 120px !important;
+    margin: 0 auto;
+  }
+}
+
+/* ===== Site info (subtitle) ===== */
 .site-info {
   grid-area: info;
   align-self: start;
-
   @include mobile {
-    display: block;
-    margin: 0 auto;
+    margin-top: 2px;          /* subtle spacing under avatar */
   }
 }
 
@@ -258,33 +235,33 @@ img {
   }
 }
 
+/* ===== Nav ===== */
 nav {
   grid-area: nav;
-  margin-top: 4px; // space from above
+  margin-top: 6px;
 
-  display: flex; // use flexbox for layout
-  justify-content: center; // center the links
-  gap: 30px; // space between links
+  display: flex;
+  justify-content: center;
+  gap: 30px;
 
-  @include mobile { // apply these styles only when on small screens (mobile)
-    margin-top: 9px; // more space on mobile
-    display: block; // stack links vertically
-    font-size: 20px; // larger font size for easier tapping
-    text-align: center; // center text
-    line-height: 1.6; // more spacing between lines
-    gap: 10px; // less space between links
+  @include mobile {
+    margin-top: 10px;         /* space below the subtitle */
+    display: block;           /* stack links */
+    text-align: center;
+    line-height: 1.7;
   }
 
-  a { // style the links inside nav
-    color: $darkGray; // dark gray color for links
-    font-weight: 300; // light font weight
-    text-transform: uppercase; // uppercase letters
-    letter-spacing: 1px; // space between letters
+  a {
+    color: $darkGray;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 
     @include mobile {
-      margin: 0 10px; // horizontal margin on mobile
-      font-weight: 500; // slightly bolder on mobile
-      color: $blue; // blue color on mobile
+      display: inline-block;
+      margin: 0 10px 6px;
+      font-weight: 500;
+      color: $blue;
     }
   }
 }
