@@ -104,7 +104,7 @@ Inspired by the periodic-like trajectories obtained from optimizing hybrid searc
     Your browser does not support the video tag.
   </video>
   <figcaption style="color: gray; text-align: left;">
-    <strong>Figure 7.</strong> Three autonomous searchers executing periodic search trajectories, shown in <span style="color:rgb(0, 114, 189);">blue</span>, <span style="color:rgb(217, 83, 25);">orange</span>, and <span style="color:rgb(237, 177, 32);">yellow</span>. The grayscale background depicts the evolving probability density function (PDF) of the target’s location: darker regions represent suppressed likelihood due to nearby searchers, while lighter regions indicate higher probability areas where the target is more likely to reside. The coordinated periodic motion helps maintain spatial coverage and adaptively sculpts the uncertainty landscape over time.
+    <strong>Figure 7.</strong> Three autonomous searchers executing periodic search trajectories, shown in <span style="color:rgb(0, 114, 189);">blue</span>, <span style="color:rgb(217, 83, 25);">orange</span>, and <span style="color:rgb(237, 177, 32);">yellow</span>. The grayscale background depicts the evolving probability density function (PDF) of the target’s location: darker regions near searchers represent suppressed likelihood due to the search effect, while lighter regions indicate higher probability areas where the target is more likely to reside. The coordinated periodic motion helps maintain spatial coverage and adaptively sculpts the uncertainty landscape over time.
   </figcaption>
 </figure>
 

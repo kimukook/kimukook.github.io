@@ -42,10 +42,17 @@ permalink: /about/
   </li>
 
   <li>
+    Wright, Stephen, and Jorge Nocedal. 
+      <em>Numerical optimization.</em> 
+    Springer Science 35.67-68 (1999): 7.
+  </li>
+
+  <li>
     Simon, Dan.,
       <em>Optimal state estimation: Kalman, H infinity, and nonlinear approaches</em>.
     John Wiley & Sons, 2006.
   </li>
+  
 </ol>
 
 ## More Information
