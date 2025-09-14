@@ -1,12 +1,12 @@
 ---
 layout: project
-title: "Probabilistic Search for Randomly Moving Targets"
+title: "Adaptive Observation for Probabilistic Search of a Randomly Moving Target"
 read_time: 8–10 minutes
 permalink: /projects/search-theory/
 category: main
 spotlight_order: 1
 spotlight: true
-summary: This project develops a novel and efficient mathematical framework for the control of multiple autonomous searchers tasked with locating an unseen, random moving target, whose movement may be non-evasive or evasive. At the core of this approach is the concept of \emph{Adaptive Observation}, a closed-loop probabilistic search strategy that comprises two intertwined components, estimation (of where the object may be) and control (of the trajectory of searchers). The estimation task involves modeling the moving target's likely position as a stochastic process, using a forced Fokker-Planck formulation, accounting for uncertainty in both the target's initial position and its assumed limitations on its dynamics. The control task involves decision-making and coordination of multiple searchers as they scan their surroundings to locate the target.
+summary: This project develops a novel and efficient mathematical framework for the control of multiple autonomous searchers tasked with locating an unseen, random moving target, whose movement may be non-evasive or evasive. At the core of this approach is the concept of <strong>Adaptive Observation</strong>, a closed-loop probabilistic search strategy that comprises two intertwined components, estimation (of where the object may be) and control (of the trajectory of searchers). The estimation task involves modeling the moving target's likely position as a stochastic process, using a forced Fokker-Planck formulation, accounting for uncertainty in both the target's initial position and its assumed limitations on its dynamics. The control task involves decision-making and coordination of multiple searchers as they scan their surroundings to locate the target.
 media: /assets/search/periodic_traj.mp4
 ---
 <h1 class="highlight">Overview</h1>
