@@ -20,6 +20,17 @@
 }
 
 /* Google scholar icon */
+/* e.g., in _sass/_svg-icons.scss or style.scss */
+.ai {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;     /* vertically center the glyph */
+  text-align: center;
+  font-size: 26px;       /* tweak if you want bigger/smaller */
+  vertical-align: middle;
+}
+
 /* Make Academicons look like the other round icons */
 .scholar-icon {
   display: inline-flex;               /* center the glyph */
