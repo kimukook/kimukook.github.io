@@ -23,14 +23,14 @@
   display: inline-block;
   width: 40px;
   height: 40px;
-  line-height: 40px;     /* vertically center the ::before glyph */
-  text-align: center;
-  font-size: 22px;       /* scale to match the others */
+  // line-height: 40px;     /* vertically center the ::before glyph */
+  // text-align: center;
+  // font-size: 22px;       /* scale to match the others */
   color: #fff;           /* white glyph */
   background: #222;      /* black circle */
   border-radius: 50%;
-  vertical-align: middle;
-  margin: 0 6px;         /* spacing like the others */
+  // vertical-align: middle;
+  // margin: 0 6px;         /* spacing like the others */
 }
 /* ensure the glyph uses the parent color */
 .ai::before { color: inherit; }
