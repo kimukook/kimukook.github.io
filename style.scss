@@ -577,3 +577,11 @@ footer {
   padding: 8px 10px;   /* more space top/bottom and left/right */
   vertical-align: top; /* align text nicely at the top */
 }
+
+.site-motto{
+  text-align:center;
+  color:#888;
+  font-style:italic;       /* optional */
+  font-size:0.95rem;       /* subtle size */
+  margin:8px 0 18px;       /* space above & below */
+}
